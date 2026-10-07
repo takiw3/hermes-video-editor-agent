@@ -1,9 +1,9 @@
 {
   "suite": "installation tests",
   "counts": {
-    "pass": 106,
+    "pass": 107,
     "fail": 0,
-    "not run": 2
+    "not run": 1
   },
   "tests": [
     {
@@ -477,9 +477,9 @@
       "detail": ""
     },
     {
-      "name": "git history secret scan",
-      "status": "not run",
-      "detail": "repository has no commits yet"
+      "name": "git history passes the secret scan",
+      "status": "pass",
+      "detail": ""
     },
     {
       "name": "a second temporary profile named social-media is created",

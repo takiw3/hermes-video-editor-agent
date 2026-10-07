@@ -508,13 +508,12 @@ Your workspace is outside the profile and is never deleted. Node.js and FFmpeg a
 | --- | --- | --- | --- | --- |
 | Measurement and evidence rules | 25 | 0 | 0 | `python3 tests/run.py tests.test_tools` |
 | Launcher gates, against a stand-in CLI | 32 | 0 | 0 | `python3 tests/run.py tests.test_gates` |
-| Install, payload, update, deny rules, Kanban exchange on Hermes 0.21.5 | 106 | 0 | 2 | `python3 tests/test_install.py` |
-| The same on Hermes 0.21.4 | 106 | 0 | 2 | `python3 tests/test_install.py` |
+| Install, payload, update, deny rules, Kanban exchange on Hermes 0.21.5 | 107 | 0 | 1 | `python3 tests/test_install.py` |
+| The same on Hermes 0.21.4 | 107 | 0 | 1 | `python3 tests/test_install.py` |
 | Renders from an installed temporary profile, checked against ground truth | 17 | 0 | 0 | `python3 tests/run.py tests.test_renders` |
 
 Not run:
 
-- git history secret scan: repository has no commits yet
 - install from github.com/takiw3/hermes-video-editor-agent: set VE_TEST_PUBLISHED_URL after publication (and GH_TOKEN while the repository is private)
 <!-- test-status:end -->
 
