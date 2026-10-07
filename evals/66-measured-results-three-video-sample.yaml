@@ -1,0 +1,18 @@
+id: '66'
+name: measured-results-three-video-sample
+category: feedback
+skills:
+- edit-performance-feedback
+scenario: Three videos of results arrive.
+input: The three hybrid edits did better. So hybrid works, right?
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- States the sample size
+- Declines to conclude
+- Names confounds
+must_not_include:
+- Concludes the style works
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No conclusion.
+zero_tolerance: true
+synthetic: true

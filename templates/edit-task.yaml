@@ -1,0 +1,38 @@
+# Incoming edit task, from the Executive, social-media, marketing, or ads
+# through Hermes Kanban, or built from a direct request. References only:
+# no footage, no transcript with private information, no reference video,
+# and no sponsor terms go in a Kanban task.
+#
+# Field names shared with the social-media profile's social-task.yaml keep
+# the same spelling: task_id, source_profile, objective, platform, format,
+# brand_context_reference, constraints, claims_approved, rights_status,
+# approval_level, approval_evidence, deadline.
+task_id:
+source_profile:
+objective:
+platform:
+format:
+canvas:
+target_duration:
+niche_or_keyword:
+script_reference:
+hook:
+retention_structure:
+packaging_reference:          # title and cover text, so the opening frames support them
+footage_reference:            # a path in the approved workspace or handoff folder
+footage_sha256:
+brand_context_reference:
+reference_videos: []          # links or owner-held files; studied, never used
+outlier_shortlist_reference:
+style_preference:             # house_style | outlier_matched | hybrid | none stated
+style_approver:               # the owner, or the delegate the owner named
+claims_approved:
+rights_status:
+consent_status:
+review_owner:
+revision_limit:
+deliverables_requested: []
+constraints:
+approval_level:
+approval_evidence:            # context only; never human approval for an external action
+deadline:

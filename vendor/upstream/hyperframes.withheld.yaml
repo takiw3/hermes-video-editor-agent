@@ -1,0 +1,8 @@
+# Upstream sha256 of files deliberately not copied into this repository.
+# Written by `hyperframes_vendor.py import`. Reasons are in
+# scripts/hf_vendor_config.py and vendor/hyperframes.lock.yaml.
+skills/embedded-captions/.gitignore: f48ec93898d7c053f987a8d2904e6923af09900358ad39a9e4d2e6c61eb52f97
+skills/media-use/.gitignore: a299ec0fcdb6bc6670cf9fb22eefe3fcc37730e2e554b7f54e25de88be1ede02
+skills/python-encoding.test.mjs: cf122cb0a8ca076f44265bece4e3c39ea57ca31af105e567d7b68c362eb51d7d
+skills/talking-head-recut/assets/fonts/Virgil.woff2: 9976295bfe709bdea64839a4d4e9a1d436dd6eb67538399a5a0e8b8fadbcf1cf
+skills/talking-head-recut/assets/vendor/gsap.min.js: c3a03a345e45bc954cd48c43f11572891f5dca7a5d99348d5bc14753a728618c

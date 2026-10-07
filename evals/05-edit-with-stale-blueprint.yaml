@@ -1,0 +1,19 @@
+id: '05'
+name: edit-with-stale-blueprint
+category: outlier-first
+skills:
+- style-library-maintenance
+- style-match-proposal
+scenario: The only blueprint for this format passed its valid_until date.
+input: Use the Shorts blueprint we have and edit this.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Flags the blueprint as stale with its date
+- Asks whether to refresh or reuse
+must_not_include:
+- Reuses the stale blueprint silently
+- Renders a final
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Stale flagged, approver asked.
+zero_tolerance: false
+synthetic: true

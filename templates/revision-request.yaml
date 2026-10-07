@@ -1,0 +1,24 @@
+# Revision request. Feedback becomes numbered notes. Approved notes are applied
+# as a new version. Prior versions stay intact.
+project_id:
+from_version:
+to_version:
+round:                        # against revision_limit
+revision_limit:
+requested_by:
+requested_at:
+notes:
+  - note_id:
+    source:                   # owner | social-media | marketing | ads | executive
+    timecode:
+    note:
+    type:                     # cut | caption | overlay | audio | color | reframe | other
+    conflicts_with:           # the approved paper edit, another note, or nothing
+    status:                   # accepted | needs_approver | declined, with the reason
+    applied_in_version:
+conflicts:
+  - between: []
+    question_for_approver:
+limit_reached: false          # true: stop and ask the approver before another round
+compare_sheet:                # from hf.py compare, when a note changes a cut
+cause:                        # brief unclear | script | footage | edit error | preference; feeds the weekly review

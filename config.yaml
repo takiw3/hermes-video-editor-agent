@@ -1,0 +1,190 @@
+# Provider-neutral profile configuration.
+#
+# Nothing here hardcodes a model, provider, credential, social account
+# handle, niche, keyword, reference account, media, voice, image, data or
+# avatar provider, absolute path, workspace or handoff-folder location,
+# messaging destination, worker count or other hardware assumption, or paid
+# service. Configure a model for this profile the same way you configured
+# your main Hermes install (`hermes -p video-editor model`). Frame inspection
+# needs a vision-capable model.
+#
+# On `hermes profile update` this file is preserved unless you pass
+# --force-config, so local overrides survive updates.
+#
+# Every key below was verified against Hermes 0.21.5 (tag v2026.9.24,
+# hermes_cli/config_defaults.py and tools/approval_floors.py) and tested on
+# 0.21.4 and 0.21.5.
+#
+# No cron job, MCP server, scraping service, video-download tool, or data
+# provider is configured here. Outlier research, style-library refresh, and
+# the weekly review are manually invoked skills.
+
+memory:
+  # Stage memory writes for review instead of writing silently. Nothing about
+  # the owner, their brand, or their footage reaches durable memory without
+  # the owner seeing it first.
+  # Review with /memory pending, /memory approve <id>, /memory reject <id>.
+  write_approval: true
+
+skills:
+  # Stage skill create/edit/delete for review. The agent never edits its
+  # distributed skills or the vendored HyperFrames skills; this gate covers
+  # anything it might propose.
+  write_approval: true
+  # Do not pre-execute !`cmd` snippets found in SKILL.md files. This is the
+  # Hermes default; it is pinned here because third-party skill text ships
+  # with this profile.
+  inline_shell: false
+
+curator:
+  # Background skill maintenance may run, but the LLM consolidation pass
+  # stays off: no silent rewriting or merging of procedures.
+  consolidate: false
+
+delegation:
+  # If a delegated subagent hits a dangerous-command approval prompt, deny it
+  # rather than auto-approving.
+  subagent_auto_approve: false
+
+terminal:
+  # Verified supported at Hermes 0.21.4 and 0.21.5 (config_defaults.py
+  # defaults this to "auto"). "profile" keeps host tool subprocesses inside
+  # the profile's HERMES_HOME/home instead of the real HOME.
+  #
+  # This is a containment convenience, not a tenant boundary. Processes still
+  # share one operating-system user and its filesystem access. See
+  # docs/permissions-and-security.md.
+  home_mode: profile
+
+approvals:
+  # Prompt the operator before any command Hermes classifies as dangerous.
+  mode: manual
+
+  # Fail closed where nobody is watching.
+  cron_mode: deny
+  single_query_mode: deny
+  unattended_mode: deny
+
+  # Hard deny rules. Verified against Hermes 0.21.5 (tools/approval_floors.py):
+  # a deny match fires BEFORE the --yolo / /yolo / approvals.mode=off bypass,
+  # and is matched case-insensitively against normalized command variants.
+  # It is the strongest user-configurable control available for terminal
+  # commands. It does not cover file-tool writes or a command hidden inside a
+  # script the agent writes first. See docs/permissions-and-security.md.
+  #
+  # These block the ROUTES AROUND the pinned launcher, not the launcher. The
+  # sanctioned form is:
+  #   python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" <command>
+  # which matches none of the patterns below for an allowed command.
+  deny:
+    # 1. Any unpinned or package-runner route to the HyperFrames CLI.
+    - "*npx*hyperframes*"
+    - "*bunx*hyperframes*"
+    - "*pnpm*dlx*hyperframes*"
+    - "*yarn*dlx*hyperframes*"
+    - "*npm*install*hyperframes*"
+    - "*npm i *hyperframes*"
+    - "*npm exec*hyperframes*"
+    # 2. Direct execution of the CLI entry point or bundled helper scripts,
+    #    which would skip the allowlist, the workspace check, the style
+    #    decision, the reference exclusion, and the environment switches.
+    - "*hyperframes.mjs*"
+    - "*node_modules/.bin/hyperframes*"
+    - "*plugin-cli.mjs*"
+    - "*node *skills/hyperframes-video/*"
+    - "*bun *skills/hyperframes-video/*"
+    - "*deno *skills/hyperframes-video/*"
+    # 3. A bare `hyperframes` binary. This profile never installs one, so a
+    #    global binary on PATH would be an unpinned version.
+    - "hyperframes *"
+    - "* hyperframes *"
+    - "*;hyperframes *"
+    - "*&hyperframes *"
+    - "*|hyperframes *"
+    # 4. Skill self-update, upgrade, cloud render, upload, publish, feedback,
+    #    capture, provider media, voice, and sign-in, in the launcher's own
+    #    command position. The launcher refuses these itself; the rules make
+    #    that refusal independent of the launcher. Patterns are
+    #    adjacency-based so an output file named "publish-ready.mp4" does not
+    #    trip them.
+    - "*hf.py skills*"
+    - "*hf.py\" skills*"
+    - "*hf.py upgrade*"
+    - "*hf.py\" upgrade*"
+    - "*hf.py publish*"
+    - "*hf.py\" publish*"
+    - "*hf.py cloud*"
+    - "*hf.py\" cloud*"
+    - "*hf.py lambda*"
+    - "*hf.py\" lambda*"
+    - "*hf.py auth*"
+    - "*hf.py\" auth*"
+    - "*hf.py feedback*"
+    - "*hf.py\" feedback*"
+    - "*hf.py capture*"
+    - "*hf.py\" capture*"
+    - "*hf.py media-use*"
+    - "*hf.py\" media-use*"
+    - "*hf.py tts*"
+    - "*hf.py\" tts*"
+    - "*npx*skills add*"
+    #    The Hermes optional skill is also named `hyperframes`. Installing it
+    #    beside the vendored router makes that name ambiguous.
+    - "*skills install*hyperframes*"
+    - "*heygen auth*"
+    - "*heygen login*"
+    #    A HyperFrames project scaffold ships npm scripts that call npx and
+    #    include a publish script. The launcher strips them on init; these
+    #    rules cover a project created some other way. This profile has no
+    #    use for package-manager script runners.
+    - "*npm run*"
+    - "*npm start*"
+    - "*pnpm run*"
+    - "*yarn run*"
+    - "*bun run*"
+    # 5. Toolchain setup is the owner's step, in the owner's terminal. It
+    #    downloads software and approves the workspace, the handoff folder,
+    #    external hosts, and registry fetches.
+    - "*hf.py setup*"
+    - "*hf.py\" setup*"
+    - "*hf.py' setup*"
+    #    A registry fetch follows the upstream main branch, not the pinned
+    #    release, so it is an owner-run setup step too.
+    - "*hf.py add*"
+    - "*hf.py\" add*"
+    - "*hf.py' add*"
+    # 6. The files that hold those approvals, the footage checksums, and the
+    #    reference checksums.
+    - "*video-engine/engine.json*"
+    - "*footage-manifest.json*"
+    - "*reference-hashes.json*"
+    # 7. Provider credentials.
+    - "*heygen_api_key*"
+    - "*hyperframes_api_key*"
+    - "*elevenlabs_api_key*"
+    - "*gemini_api_key*"
+    - "*.heygen/credentials*"
+    # 8. Tools whose purpose is downloading other people's media. This
+    #    profile never downloads a video from a platform.
+    - "*yt-dlp*"
+    - "*youtube-dl*"
+    - "*gallery-dl*"
+    - "*instaloader*"
+    - "*you-get*"
+    - "*streamlink*"
+    - "*tiktok-scraper*"
+    - "*snscrape*"
+    # 9. Source footage is read-only. These catch the plain command forms
+    #    that delete, move, or truncate a file in a footage folder. They are
+    #    a floor, not a sandbox.
+    - "*rm *footage/*"
+    - "*mv *footage/*"
+    - "*shred *footage/*"
+    - "*truncate *footage/*"
+    - "*> *footage/*"
+    # 10. Reference videos are for study. Nothing copies, moves, or links one
+    #     out of the reference folder.
+    - "*cp *references/*"
+    - "*mv *references/*"
+    - "*ln *references/*"
+    - "*rsync *references/*"

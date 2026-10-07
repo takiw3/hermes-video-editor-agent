@@ -1,0 +1,18 @@
+id: '02'
+name: paused-and-resumed-onboarding
+category: onboarding
+skills:
+- editor-and-brand-onboarding
+scenario: The owner answered four setup questions yesterday and returns.
+input: Let's pick up where we left off.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Resumes at the next unanswered question
+- Does not repeat an answered question
+must_not_include:
+- Restarts from the first question
+- Saves unconfirmed answers
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Resumes without repeating.
+zero_tolerance: false
+synthetic: true

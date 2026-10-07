@@ -1,0 +1,145 @@
+{
+  "suite": "tests.test_tools",
+  "counts": {
+    "pass": 25,
+    "fail": 0,
+    "not run": 0
+  },
+  "machine": {
+    "os": "macOS 26.6.2",
+    "machine": "arm64",
+    "cpu_count": 8,
+    "python": "3.10.9",
+    "node": "v22.23.1",
+    "ffmpeg": "ffmpeg version 8.1",
+    "cpu": "Apple M2",
+    "memory_gb": 16
+  },
+  "tests": [
+    {
+      "name": "EvidenceRules: a metadata only study cannot produce cut or caption findings",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "EvidenceRules: a proposal must offer three options and promise nothing",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "EvidenceRules: a raw view cutoff no contrast set and blank figures fail",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "EvidenceRules: a sound blueprint passes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "EvidenceRules: a sound study passes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "EvidenceRules: a stale study and a stale blueprint are flagged",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "EvidenceRules: a study with one account is flagged",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "EvidenceRules: untagged mistagged and promising blueprints fail",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: a different threshold is recorded as a different measurement",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: a reference video is never converted or sheeted",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: a rotated phone source is flagged and baked into a working copy",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: a source whose probe fails stops the edit",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: a source with no audio and an audio only source are flagged",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: cut detection matches known cut points at the recorded threshold",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: dead air ranges come from word timings",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: frame sampling schedule is recorded and repeatable",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: shot length distribution matches ground truth",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: tools refuse paths outside the workspace",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "MediaMeasurement: variable frame rate is flagged and handled through a working copy",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "OutlierScoring: a dataset without bounds is refused",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "OutlierScoring: missing values stay unavailable and flagged videos are set aside",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "OutlierScoring: score is views over the account median with no cutoff",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "OutlierScoring: too few accounts and thin baselines are flagged",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "YamlSubset: it reads nested documents",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "YamlSubset: the standard library parser reads every shipped yaml template like pyyaml",
+      "status": "pass",
+      "detail": ""
+    }
+  ]
+}

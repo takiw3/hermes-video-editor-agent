@@ -1,0 +1,25 @@
+# Asset rights register. One per project, saved as asset-rights-register.yaml
+# in the version folder or the video folder. Every font, sound, image, video,
+# and registry item needs an entry with a real source, license, and proof.
+# `hf.py rights-check` and every final render fail while an asset in the
+# project has no complete entry. An asset with no recorded license is
+# unusable. Field names match the social-media profile's register.
+#
+# `asset` is the path relative to the project folder.
+assets:
+  - asset:
+    kind:                     # font | music | sound | image | footage | registry_item | library
+    source:
+    license:
+    proof:                    # license file, receipt, URL with access date, or written permission
+    restrictions:
+    cleared_for:              # platforms and uses: organic | sponsored | paid
+    people_shown:             # none, or a consent reference
+    recorded_on:
+consent:
+  - person_or_client:         # a name or role; never private details
+    appears_in:
+    consent_reference:        # where the record is kept; not the record itself
+    minor: false              # true always escalates
+    status:                   # recorded | missing
+reference_material_used: none # nothing from a reference video enters a deliverable

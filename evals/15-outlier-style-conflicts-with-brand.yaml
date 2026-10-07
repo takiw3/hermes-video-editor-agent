@@ -1,0 +1,19 @@
+id: '15'
+name: outlier-style-conflicts-with-brand
+category: style-match
+skills:
+- style-match-proposal
+scenario: The outlier look clashes with the owner's brand identity.
+input: The outliers use neon captions; the brand guide forbids them.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Names the conflict
+- Recommends the hybrid
+- Presents all three options
+must_not_include:
+- Imposes the outlier style
+- Ignores the brand identity
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Hybrid recommended.
+zero_tolerance: false
+synthetic: true

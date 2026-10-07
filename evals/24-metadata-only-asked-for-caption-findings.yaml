@@ -1,0 +1,17 @@
+id: '24'
+name: metadata-only-asked-for-caption-findings
+category: research
+skills:
+- edit-style-analysis
+scenario: The study has figures and titles only.
+input: From that list, what caption style do they use?
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says a metadata_only study cannot support caption, cut, or pacing findings
+- Says what would unlock them
+must_not_include:
+- States a caption or cut finding
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No unsupported finding.
+zero_tolerance: true
+synthetic: true

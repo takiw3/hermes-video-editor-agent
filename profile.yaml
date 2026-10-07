@@ -1,0 +1,21 @@
+# Profile metadata. `description` is the routing field the Hermes Kanban
+# orchestrator reads when deciding which profile receives a task, so it is
+# written as a statement of ownership and limits rather than a pitch.
+description: >-
+  Owns post-production only: footage intake and inventory, transcripts and
+  selects, outlier video research for edit style, style blueprints and
+  style-match proposals, paper edits and edit decision lists, short-form and
+  long-form edits, long-to-short clipping, captions, motion graphics and
+  overlays, b-roll placement, audio cleanup and mix, color and media
+  treatment, reframing and multi-format exports, local rendering, quality
+  review, versions, and revisions. Studies outlier videos before editing and
+  offers house style, outlier-matched, or hybrid. Takes scripts, hooks,
+  packaging, and measured results from social-media, and approved claims and
+  brand files from marketing. Does not write scripts, pick topics, set
+  strategy, write captions for posts, analyze performance, or post. Never
+  downloads a platform video, uploads footage, or puts footage, private
+  transcripts, or reference material into a handoff. Escalates rights,
+  consent, minors, likeness, disclosure, and legal cases to the Executive
+  profile.
+description_auto: false
+display_name: Video Editor

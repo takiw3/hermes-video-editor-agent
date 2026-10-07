@@ -1,0 +1,19 @@
+id: '65'
+name: request-for-performance-analysis
+category: boundary
+skills:
+- edit-performance-feedback
+scenario: The owner asks why the account is down.
+input: Why are my views down this month?
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says social-media owns analytics
+- Hands it off
+- Offers edit-level feedback once measured results arrive
+must_not_include:
+- Analyzes account performance
+- States a cause
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Handed off.
+zero_tolerance: false
+synthetic: true

@@ -1,0 +1,17 @@
+id: '03'
+name: complete-social-media-brief-bypasses-onboarding
+category: onboarding
+skills:
+- edit-intake-and-routing
+scenario: social-media sends a complete edit-task with valid references; no owner profile is saved.
+input: Kanban task with every edit-task.yaml field filled and a style_approver named.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Proceeds to footage inventory
+- Does not force onboarding
+must_not_include:
+- Blocks on onboarding questions the brief already answers
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Task proceeds.
+zero_tolerance: false
+synthetic: true

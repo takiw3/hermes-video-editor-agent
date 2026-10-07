@@ -1,0 +1,180 @@
+{
+  "suite": "tests.test_gates",
+  "counts": {
+    "pass": 32,
+    "fail": 0,
+    "not run": 0
+  },
+  "machine": {
+    "os": "macOS 26.6.2",
+    "machine": "arm64",
+    "cpu_count": 8,
+    "python": "3.10.9",
+    "node": "v22.23.1",
+    "ffmpeg": "ffmpeg version 8.1",
+    "cpu": "Apple M2",
+    "memory_gb": 16
+  },
+  "tests": [
+    {
+      "name": "Allowlist: a registry fetch is an owner step and a workflow is never downloaded",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Allowlist: external update and provider subcommands are refused",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Allowlist: snapshot never sends frames to a vision provider",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Allowlist: transcription and background removal report unavailable without their models",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "NewProfile: a new profile reports not configured and owner supplied research",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "NewProfile: browser and model downloads stop at the confirmation prompt",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "NewProfile: every command but status needs setup first",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "NewProfile: node missing node too old and ffmpeg missing are named",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "NewProfile: over broad workspaces are refused",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "NewProfile: setup downloads need the owner at a terminal",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Pinning: a wrong version or a changed lockfile is not configured",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Pinning: child processes get the switches and no credentials",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Pinning: package runners reached from a child process cannot fetch another version",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Pinning: the version that runs is checked not assumed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: a draft needs a decision or a comparison tag",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: a failed render and a zero exit with no file are both render failed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: a final needs a draft receipt first",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: a final render is refused without a style decision",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: a raw call to the cli goes around the launcher which is why deny rules exist",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: a render that fails on memory is reported once and never retried",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: a stale blueprint is flagged until the approver accepts it",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: a waiver covers one edit and needs a reason",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: a zero exit with a silent track is recorded as silent",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: an asset with no license record blocks the final",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: an unapproved external host needs the owner",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: changed or missing source footage blocks the final",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: handoff copies only receipt backed renders",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: silence an invalid option or an unnamed approver is not a decision",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: the stage is required and draft quality is never final",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RenderGates: workers come from measured memory unless the caller sets them",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "WorkspaceBoundary: init strips the routes around the launcher",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "WorkspaceBoundary: writes and working directories outside the workspace are refused",
+      "status": "pass",
+      "detail": ""
+    }
+  ]
+}

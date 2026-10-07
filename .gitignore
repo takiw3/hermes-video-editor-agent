@@ -1,0 +1,93 @@
+# Credentials and secrets. None of these ever belong in this repository.
+.env
+.env.*
+!.env.template
+auth.json
+*token*.json
+client_secret*.json
+mcp_tokens.json
+*.pem
+*.p12
+*.key
+.heygen/
+credentials
+
+# Hermes runtime state. User-owned, never distributed.
+memories/
+sessions/
+logs/
+plans/
+workspace/
+home/
+local/
+checkpoints/
+sandboxes/
+backups/
+cache/
+.cache/
+image_cache/
+audio_cache/
+document_cache/
+browser_screenshots/
+active_profile
+gateway.pid
+gateway_state.json
+processes.json
+.hermes_history
+errors.log
+.update_check
+
+# Runtime databases
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+
+# Video toolchain: installed by the owner, never committed.
+node_modules/
+engine.json
+footage-manifest.json
+reference-hashes.json
+render-measurements.json
+chrome/
+chrome-headless-shell*/
+*.onnx
+*.gguf
+*.safetensors
+
+# The owner's footage, working copies, reference videos, frames sampled from
+# them, renders, snapshots, and contact sheets. Patterns are anchored to
+# folder names and video extensions, not to *.mp3 or *.png, because the
+# vendored HyperFrames skills ship licensed sound effects and images that
+# must stay tracked.
+footage/
+working-copies/
+references/
+!skills/**/references/
+!vendor/**/references/
+renders/
+receipts/
+snapshots/
+.video-editor/
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.m4a
+
+# Transcripts, studies, blueprints, decisions, and plans belong to the owner's
+# workspace and style library, never to this repository.
+style-library/
+style-decision.yaml
+!templates/style-decision.yaml
+*.srt
+*.vtt
+registry-items.lock.json
+
+# Local test output and editor noise
+__pycache__/
+*.pyc
+.DS_Store
+.gstack/
+.pytest_cache/

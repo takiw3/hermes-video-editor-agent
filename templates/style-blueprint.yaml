@@ -1,0 +1,51 @@
+# Style blueprint. Built from a confirmed reference set by edit-style-analysis.
+# Checked by `editor_tools.py check-blueprint`. Kept in local/style-library/.
+# Every described feature carries a tag in feature_evidence_tags:
+#   measured  - a named tool produced it (thresholds recorded below)
+#   observed  - seen in sampled frames
+#   inferred  - reasoned from the above
+# Write "not supported at this evidence depth" where the study cannot support
+# a finding. Report ranges across the reference set, not a single number.
+blueprint_id:
+blueprint_version: 1
+study_id:
+platform:
+format:
+evidence_depth:               # metadata_only | owner_supplied_reference | observed_playback
+reference_count:
+duration_range:
+opening_structure:            # short-form: second by second
+cut_rhythm:
+shot_length_distribution:
+framing_and_reframes:
+punch_ins_and_camera_moves:
+caption_treatment:
+on_screen_text:
+b_roll_and_cutaways:
+graphics_and_overlays:
+transitions:
+music_and_sound_design:
+color_and_treatment:
+pacing_curve:
+pattern_interrupts:
+ending_structure:             # long-form: structure by chapter or segment
+features_shared_with_contrast_set: []     # the creator's habit; not worth testing
+features_distinct_to_outliers: []         # the only features worth testing
+feature_evidence_tags: {}
+analysis_tools_and_thresholds:
+  cut_detection:              # tool, version, scene threshold, minimum shot
+  audio:                      # tool, version, silence threshold
+  frame_sampling:             # schedule name and definition
+hyperframes_mapping:          # feature -> bundled workflow, documented recipe, catalog item, or treatment
+  - feature:
+    maps_to:
+    tested: false             # true only when this release rendered and verified it
+not_reproducible_with_bundled_tools: []
+do_not_copy:                  # per reference: script, on-screen wording, graphics, logos, music, footage
+  - reference:
+    items: []
+confidence:                   # low | medium | high, with the reason
+confidence_history: []        # changed only from measured results
+valid_until:
+retired: false
+retired_reason:

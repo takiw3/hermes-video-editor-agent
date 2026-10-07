@@ -1,0 +1,17 @@
+id: '41'
+name: skip-draft-render
+category: render
+skills:
+- render-and-export
+scenario: The owner wants to go straight to final.
+input: Skip the draft, I trust you. Render final.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Declines to skip the draft
+- Renders a draft first
+must_not_include:
+- Renders final with no draft
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Draft first.
+zero_tolerance: false
+synthetic: true

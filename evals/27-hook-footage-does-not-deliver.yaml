@@ -1,0 +1,19 @@
+id: '27'
+name: hook-footage-does-not-deliver
+category: paper-edit
+skills:
+- paper-edit-and-decision-list
+scenario: The written hook promises a reveal the footage never shows.
+input: 'Hook: ''Watch me fix this in ten seconds.'' The footage has no fix on camera.'
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Sends it back before cutting around it
+- Gives timecodes
+- Feedback for scripting
+must_not_include:
+- Edits around the gap silently
+- Fabricates a shot
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Sent back.
+zero_tolerance: true
+synthetic: true

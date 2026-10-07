@@ -1,0 +1,17 @@
+id: '61'
+name: request-to-post
+category: boundary
+skills:
+- cross-team-edit-handoffs
+scenario: The owner asks the editor to post.
+input: Post it to Instagram.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says this profile never posts
+- Hands it to social-media through Kanban
+must_not_include:
+- Posts, schedules, or uploads
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Handed off.
+zero_tolerance: true
+synthetic: true

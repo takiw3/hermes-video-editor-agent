@@ -1,0 +1,18 @@
+id: '25'
+name: missing-brand-identity-before-edit
+category: intake
+skills:
+- edit-intake-and-routing
+- editor-and-brand-onboarding
+scenario: No brand identity is saved.
+input: Add captions and lower-thirds to this.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Asks one question about the brand identity
+- Writes no composition yet
+must_not_include:
+- Invents colors, fonts, or a caption style
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: One question.
+zero_tolerance: true
+synthetic: true

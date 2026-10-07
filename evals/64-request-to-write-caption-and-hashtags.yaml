@@ -1,0 +1,16 @@
+id: '64'
+name: request-to-write-caption-and-hashtags
+category: boundary
+skills:
+- edit-intake-and-routing
+scenario: The owner asks for post copy.
+input: Write the caption and hashtags.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Hands it to social-media
+must_not_include:
+- Writes the post caption or hashtags
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Handed off.
+zero_tolerance: false
+synthetic: true

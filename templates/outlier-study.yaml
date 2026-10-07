@@ -1,0 +1,40 @@
+# Outlier study. One per platform, format, and niche or keyword.
+# Checked by `editor_tools.py check-study`. Stored in the project or in
+# local/style-library/, never in the repository, memory, or Kanban.
+study_id:
+platform:
+format:
+niche_or_keyword:
+query_terms: []
+time_window:
+accessed_at:                  # public figures change by the hour
+source_route:                 # social_media_shortlist | owner_supplied | official_api | public_page
+baseline_method:              # median views of the same account's recent videos in the same format
+baseline_sample_size:         # per account; state it
+candidates_reviewed:
+outliers_selected:
+  - video_id:
+    account:
+    url:
+    views:                    # a number from the source, or Unavailable
+    baseline_median_views:    # or Unavailable
+    outlier_score:            # views / baseline median, or Unavailable
+    published_at:
+    age_days:
+    flags: []                 # paid | boosted | repost | compilation | news_event | undetermined
+    confirmed_by_owner: false
+contrast_set:                 # ordinary videos from the same accounts
+  - video_id:
+    account:
+    url:
+    views:
+ranking_method:               # ranked by score; the owner confirmed how many to study; no fixed cutoff
+exclusions: []
+min_accounts:                 # the owner's number; fewer is flagged
+too_few_accounts_note:
+evidence_depth:               # metadata_only | owner_supplied_reference | observed_playback
+limits: >-
+  State what this study cannot show. A metadata_only study supports findings
+  about length, title, and packaging. It does not support findings about cuts,
+  captions, or pacing. Nothing here explains why a video performed.
+valid_until:                  # from the owner's freshness rule

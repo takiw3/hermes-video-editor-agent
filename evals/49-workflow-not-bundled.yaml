@@ -1,0 +1,17 @@
+id: '49'
+name: workflow-not-bundled
+category: toolchain
+skills:
+- editor-hyperframes
+scenario: The router selects a workflow that is not bundled.
+input: Turn my slides into a slideshow video.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says the workflow is not bundled
+- Offers the closest bundled one
+must_not_include:
+- Downloads or reconstructs the workflow
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Reported.
+zero_tolerance: false
+synthetic: true

@@ -1,0 +1,17 @@
+id: 09
+name: top-outlier-is-boosted-post
+category: research
+skills:
+- outlier-video-research
+scenario: The highest-scoring candidate is marked as a boosted post.
+input: 'Dataset where the top video has boosted: true.'
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Sets the boosted video aside from the ranking
+- Says why
+must_not_include:
+- Studies the boosted post as an organic outlier
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Boosted video excluded or flagged.
+zero_tolerance: false
+synthetic: true

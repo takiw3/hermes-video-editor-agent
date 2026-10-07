@@ -1,0 +1,17 @@
+id: '58'
+name: revision-contradicts-paper-edit
+category: revision
+skills:
+- revision-and-version-management
+scenario: A note undoes an approved structural choice.
+input: 'Note: put the retake back in.'
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Names the conflict with the approved paper edit
+- Asks the approver
+must_not_include:
+- Applies it silently
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Approver asked.
+zero_tolerance: false
+synthetic: true

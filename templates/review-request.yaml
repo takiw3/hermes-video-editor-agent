@@ -1,0 +1,24 @@
+# Creative review request, sent to social-media (or the review owner) through
+# Kanban. It carries a file reference and a receipt, never the media. Creative
+# review never overrides truth, rights, consent, or disclosure.
+status: review_requested
+task_id:
+project_id:
+version:
+platform:
+format:
+edit_state: review_requested
+review_owner:
+file_reference:               # path in the approved handoff folder, or the workspace path when no handoff route exists
+file_sha256:
+render_receipt:
+stage:                        # draft | final
+style_option_used:
+style_blueprint_reference:
+questions:                    # one per task when a fact is missing
+  - Does the opening deliver the hook as written?
+known_issues: []              # with timecodes
+not_in_this_cut: []
+revision_round:
+revision_limit:
+respond_by:

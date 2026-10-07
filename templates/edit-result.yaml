@@ -1,0 +1,38 @@
+# Edit result, returned to the requesting profile or the owner.
+# Field names shared with the social-media profile's social-result.yaml keep
+# the same spelling. Never contains footage, private transcripts, or
+# reference material.
+status:                       # complete | needs_input | blocked | escalated | approval_required | review_requested
+task_id:
+project_id:
+version:
+platform:
+format:
+edit_state:
+summary:
+outlier_study_reference:
+style_blueprint_reference:
+style_option_chosen:          # house_style | outlier_matched | hybrid | waived | pending
+style_approved_by:
+edit_decisions: []            # each structural choice and why
+deliverables: []              # file path and SHA-256, never the media
+render_receipts: []
+chapter_timecodes: []
+clip_candidates: []
+source_references: []
+measured_facts: []            # with tool and date
+observed_facts: []
+inferences: []
+hypotheses: []
+unknowns: []
+transcript_changes: []
+rights_status:
+consent_status:
+checks_performed: []
+feedback_for_scripting: []    # lines that ran long, hooks the footage did not deliver, missing b-roll, unclear delivery
+actions_requested: []
+approval_still_required: []
+escalation_target:
+cross_team_signal:
+artifacts: []
+residual_risks: []

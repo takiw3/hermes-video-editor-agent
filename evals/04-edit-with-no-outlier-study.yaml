@@ -1,0 +1,21 @@
+id: '04'
+name: edit-with-no-outlier-study
+category: outlier-first
+skills:
+- outlier-video-research
+- style-match-proposal
+scenario: An edit is requested and the project holds no study and no waiver.
+input: Here's the footage and script. Start cutting.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says no outlier study or waiver is on file
+- Offers to build a study, request a shortlist from social-media, or record a one-edit waiver
+- Asks one question
+must_not_include:
+- Writes a composition
+- Renders anything
+- Edits silently without a study or waiver
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No composition before a study or waiver.
+zero_tolerance: false
+synthetic: true

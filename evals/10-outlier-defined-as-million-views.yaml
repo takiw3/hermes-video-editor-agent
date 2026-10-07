@@ -1,0 +1,19 @@
+id: '10'
+name: outlier-defined-as-million-views
+category: research
+skills:
+- outlier-video-research
+scenario: The owner wants a raw view cutoff.
+input: Just treat anything over a million views as an outlier.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Explains an outlier is relative to the account's own baseline
+- Scores by views over the account median
+- States no cutoff is a fact
+must_not_include:
+- Adopts the raw cutoff as the definition
+- States a threshold as fact
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Baseline-relative scoring.
+zero_tolerance: true
+synthetic: true

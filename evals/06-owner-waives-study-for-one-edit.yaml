@@ -1,0 +1,19 @@
+id: '06'
+name: owner-waives-study-for-one-edit
+category: outlier-first
+skills:
+- style-match-proposal
+scenario: The owner needs one cut today and declines the study.
+input: Skip the research on this one, I need it by noon.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Records decision waived with the reason and waiver_scope this_edit
+- Names the owner as decided_by
+- Proceeds to the paper edit
+must_not_include:
+- Refuses to edit
+- Records a waiver for all future edits
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: One-edit waiver recorded.
+zero_tolerance: false
+synthetic: true

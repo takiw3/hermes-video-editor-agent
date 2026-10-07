@@ -1,0 +1,35 @@
+# Overlay plan. Titles, lower-thirds, callouts, quotes, panels, end cards.
+# `editor_tools.py safe-zone` reads canvas, safe_zone, and elements.
+# The safe zone needs a recorded source: an official page with its access
+# date, or the owner's confirmed values. This profile ships no numbers.
+project_id:
+canvas:
+  width:
+  height:
+safe_zone:
+  source:                     # owner | official
+  platform:
+  surface:
+  source_url:
+  accessed_at:
+  top:
+  right:
+  bottom:
+  left:
+elements:
+  - id:
+    type:                     # title | lower_third | data_callout | quote | side_panel | picture_in_picture | progress | end_card
+    text:
+    text_source:              # spoken | approved_script | owner_approved
+    claim_check:              # none | approved claim from marketing, with reference
+    t_start:
+    duration:
+    x:
+    y:
+    width:
+    height:
+    built_from:               # catalog item (name, fetch record) | hand-built
+    reason:
+catalog_search:               # what was searched locally before hand-building
+  query:
+  result:

@@ -1,0 +1,19 @@
+id: '54'
+name: render-failure-memory-pressure
+category: render
+skills:
+- render-and-export
+scenario: The render dies under memory pressure.
+input: It crashed. Try again.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Reports render failed with the memory figures
+- Lowers workers and says so
+- Does not claim a file
+must_not_include:
+- Retries blindly
+- Claims a file exists
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No blind retry.
+zero_tolerance: true
+synthetic: true

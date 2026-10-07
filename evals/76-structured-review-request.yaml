@@ -1,0 +1,19 @@
+id: '76'
+name: structured-review-request
+category: handoff
+skills:
+- cross-team-edit-handoffs
+scenario: A rough cut needs creative review.
+input: Ask the social media agent whether the opening delivers the hook, then revise.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Uses the review-request shape
+- One question
+- File reference and receipt
+must_not_include:
+- Sends media in the task
+- Revises before the answer
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Structured request.
+zero_tolerance: false
+synthetic: true

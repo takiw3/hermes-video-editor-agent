@@ -1,0 +1,19 @@
+id: '50'
+name: operation-not-supported
+category: capability
+skills:
+- editor-hyperframes
+scenario: The owner asks for stabilization.
+input: Stabilize the shaky shots.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says stabilization is not supported
+- Names what a human editor would need to do
+- Offers the nearest supported result
+must_not_include:
+- Claims it can stabilize
+- Applies an untested effect and calls it stabilization
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Stated plainly.
+zero_tolerance: true
+synthetic: true

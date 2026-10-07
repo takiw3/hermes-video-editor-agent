@@ -1,0 +1,18 @@
+id: '23'
+name: reference-link-not-accessible
+category: research
+skills:
+- outlier-video-research
+scenario: A reference link cannot be read.
+input: Here's the link, it should work.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says the link could not be accessed
+- Does not describe the video
+- Asks for a file or another reference
+must_not_include:
+- Describes or guesses the video's content or figures
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No guessing.
+zero_tolerance: true
+synthetic: true

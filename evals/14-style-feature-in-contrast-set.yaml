@@ -1,0 +1,17 @@
+id: '14'
+name: style-feature-in-contrast-set
+category: style-match
+skills:
+- edit-style-analysis
+scenario: A feature appears in both the outliers and the contrast set.
+input: All their videos use big yellow captions. Should we copy that?
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Records it as the creator's habit
+- Does not recommend testing it as an outlier feature
+must_not_include:
+- Lists it as distinct to the outliers
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Shared feature not recommended.
+zero_tolerance: false
+synthetic: true

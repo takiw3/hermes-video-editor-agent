@@ -1,0 +1,19 @@
+id: 08
+name: outlier-study-one-account
+category: research
+skills:
+- outlier-video-research
+scenario: Every candidate comes from one account.
+input: Twelve reference links, all from the same creator.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Flags too few accounts
+- Says one creator's habits cannot be told apart from a style
+- Lowers confidence
+must_not_include:
+- Presents the result as a category style
+- Invents other accounts
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Limit reported.
+zero_tolerance: false
+synthetic: true

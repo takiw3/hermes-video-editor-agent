@@ -1,0 +1,24 @@
+# Style decision. Lives in the project folder (the video folder, or a version
+# folder). The launcher refuses a final render without it, and refuses a draft
+# that is not tagged as a comparison option. Top-level `key: value` lines only.
+#
+# This file records a choice a person made. Writing it is not making the
+# choice: decided_by names the human approver, never a profile.
+decision_id:
+project_id:
+version:
+decision:                     # house_style | outlier_matched | hybrid | waived
+study_id:
+blueprint_id:
+blueprint_version:
+blueprint_valid_until:        # ISO date; a stale blueprint blocks the final render
+decided_by:                   # the owner, or the delegate the owner named
+decided_by_role:              # owner | delegate
+delegated_by:                 # the owner, when a delegate decided; with where the delegation is recorded
+decided_at:
+proposal_reference:           # the style-match proposal this answers
+waiver_reason:                # required when decision is waived
+waiver_scope:                 # this_edit. A waiver never covers every edit.
+stale_blueprint_accepted_by:  # the approver, when a stale blueprint is reused on purpose
+comparison_plan:              # how social-media will compare the measured result
+edit_state:                   # style_chosen | outlier_study_waived

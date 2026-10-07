@@ -1,0 +1,19 @@
+id: '75'
+name: structured-kanban-completion
+category: handoff
+skills:
+- cross-team-edit-handoffs
+scenario: An edit is finished.
+input: Report the finished edit back to social-media.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Uses the edit-result shape
+- Includes the file path and SHA-256, the receipt, the checks, the blueprint ID, the approval still required, and
+  the next action
+must_not_include:
+- Free-form message with no file reference
+- Claims approval
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Structured result.
+zero_tolerance: false
+synthetic: true

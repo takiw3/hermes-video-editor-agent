@@ -1,0 +1,45 @@
+# Render receipt. Written by `hf.py render` for every render, never by hand.
+# The first twenty-five fields match the social-media profile's receipt.
+# A receipt proves a file exists with these properties. It does not prove the
+# cut works: `inspected` stays false until edit-quality-review looks.
+receipt_version: 1
+status:                       # draft rendered | final rendered with file path
+stage:                        # draft | final
+edit_state:                   # rough_cut_rendered | final_rendered
+inspected: false
+inspection_note:
+output_path:
+output_relative:
+sha256:
+size_bytes:
+duration_seconds:
+width:
+height:
+frame_rate:
+container:
+video_codec:
+pixel_format:
+audio_codec:
+has_audio:
+audio_measured:
+audio_peak_db:
+audio_mean_db:
+audio_silent:                 # a zero exit code with a silent track is a failed review
+audio_at_full_scale:
+quality:
+render_seconds:
+workers:
+workers_basis:                # planned from measured memory, or set by the caller
+available_memory_mb_before:
+total_memory_mb:
+peak_tree_rss_mb:
+style_decision:               # house_style | outlier_matched | hybrid | waived | pending
+style_decision_file:
+comparison_option:            # set on a draft made before a style is chosen
+batch_row:
+rendered_at:
+engine:                       # hyperframes@<pinned version>
+upstream_commit:
+cli_arguments:
+project:
+probe_error:

@@ -1,0 +1,315 @@
+# Platform facts this profile is allowed to state, and the research routes it
+# is allowed to use.
+#
+# Rules:
+#   * A fact may be stated to the owner only if its status is `verified`.
+#   * `verified` means the official page was read directly on the `accessed`
+#     date and the statement below is what that page said.
+#   * `not_verified` means the official page could not be read or does not
+#     state the fact. The agent says so and asks the owner for their
+#     requirement. It never fills the gap from memory.
+#   * Platforms change these often. A fact older than 90 days is re-read at
+#     its URL before being relied on. Updating this file is a repository
+#     change, reviewed like any other.
+#   * Nothing here is a benchmark, a best practice, a loudness target, a
+#     caption reading-speed rule, or a claim about ranking. No numeric safe
+#     zone was found on any official page read; safe zones come from the owner.
+#
+# This file summarizes published specifications and terms for reference. It
+# is not legal advice.
+schema_version: 1
+compiled_on: "2026-10-06"
+stale_after_days: 90
+
+facts:
+  # ---------------------------------------------------------------- YouTube
+  - platform: youtube
+    topic: upload_encoding
+    statement: >-
+      Recommended upload encoding: MP4 container with the moov atom at the
+      front of the file, H.264 video codec, progressive scan, and AAC-LC or
+      Opus audio. Content should be encoded and uploaded at the frame rate it
+      was recorded in; common frame rates include 24, 25, 30, 48, 50, and 60
+      frames per second. No bitrate limit is required.
+    source_url: https://support.google.com/youtube/answer/1722171
+    accessed: "2026-10-06"
+    status: verified
+  - platform: youtube
+    topic: shorts_definition
+    statement: >-
+      A video uploaded on or after October 15, 2024 with a square or vertical
+      aspect ratio and a length of up to three minutes is categorized as a
+      Short. To keep a video from being classified as a Short, YouTube says to
+      use a wider aspect ratio such as 16:9.
+    source_url: https://support.google.com/youtube/answer/15424877
+    accessed: "2026-10-06"
+    status: verified
+  - platform: youtube
+    topic: ai_content_disclosure
+    statement: >-
+      YouTube requires creators to disclose, with the AI use setting in
+      YouTube Studio, when they use AI to meaningfully alter or generate
+      photorealistic content, including a realistic scene that did not occur.
+      Realistic AI content and meaningful changes require disclosure;
+      non-realistic content and minor edits do not.
+    source_url: https://support.google.com/youtube/answer/14328491
+    accessed: "2026-10-06"
+    status: verified
+  - platform: youtube
+    topic: safe_zones
+    statement: No official page stating numeric safe-zone margins was read.
+    source_url: https://support.google.com/youtube
+    accessed: "2026-10-06"
+    status: not_verified
+
+  # -------------------------------------------------------------- Instagram
+  - platform: instagram
+    topic: reels_specs
+    statement: >-
+      A reel can be uploaded with an aspect ratio between 1.91:1 and 9:16.
+      Reels should have a minimum frame rate of 30 frames per second and a
+      minimum resolution of 720 pixels. The recommended cover photo size is
+      420 by 654 pixels (1:1.55).
+    source_url: https://help.instagram.com/1038071743007909
+    accessed: "2026-10-06"
+    status: verified
+  - platform: instagram
+    topic: ai_content_label
+    statement: >-
+      Instagram publishes a "Label AI content on Instagram" help article. Its
+      device-specific instructions and the conditions that require a label
+      were not readable when this file was compiled.
+    source_url: https://help.instagram.com/761121959519495
+    accessed: "2026-10-06"
+    status: not_verified
+  - platform: instagram
+    topic: safe_zones_duration_and_file_size
+    statement: >-
+      No official page stating numeric safe-zone margins, a maximum reel
+      duration, or a file-size limit was read.
+    source_url: https://help.instagram.com
+    accessed: "2026-10-06"
+    status: not_verified
+
+  # --------------------------------------------------------------- Facebook
+  - platform: facebook
+    topic: reels_specs
+    statement: >-
+      Since June 2025 all videos posted to Facebook are shared as reels, and
+      reels can be any length or orientation. Recommended format is MP4,
+      recommended resolution 1080p, recommended video codec H.264 or H.265,
+      recommended frame rate 24 to 60 frames per second, progressive scan,
+      and stereo AAC Low Complexity audio at 44.1 kHz or 48 kHz.
+    source_url: https://www.facebook.com/business/help/1197310377458196
+    accessed: "2026-10-06"
+    status: verified
+  - platform: facebook
+    topic: ai_content_label_and_safe_zones
+    statement: >-
+      No official page stating Facebook's AI labeling conditions or numeric
+      safe-zone margins was read.
+    source_url: https://www.facebook.com/business/help
+    accessed: "2026-10-06"
+    status: not_verified
+
+  # ----------------------------------------------------------------- TikTok
+  - platform: tiktok
+    topic: video_length
+    statement: >-
+      Videos recorded in TikTok can be up to 10 minutes long. Videos uploaded
+      to TikTok can be up to 60 minutes long.
+    source_url: https://support.tiktok.com/en/using-tiktok/creating-videos/camera-tools
+    accessed: "2026-10-06"
+    status: verified
+  - platform: tiktok
+    topic: ai_content_label
+    statement: >-
+      TikTok describes AI-generated content as images, video, or audio
+      generated or modified by AI, and treats content as significantly edited
+      when the primary subjects are shown doing or saying something they did
+      not do or say. Creators apply a label that reads "creator labeled as
+      AI-generated" to content completely generated or significantly edited
+      by AI. TikTok also applies automatic labels. Labeling unaltered content
+      as AI-generated is a violation of its Terms of Service.
+    source_url: https://www.tiktok.com/support/faq_detail?id=7636670084747893268
+    accessed: "2026-10-06"
+    status: verified
+  - platform: tiktok
+    topic: file_specs_and_safe_zones
+    statement: >-
+      No official page stating upload resolution, aspect ratio, file size,
+      codec requirements, or numeric safe-zone margins for organic posts was
+      read. TikTok's ad specifications are a different product and are not
+      used here.
+    source_url: https://support.tiktok.com
+    accessed: "2026-10-06"
+    status: not_verified
+
+  # --------------------------------------------------------------- LinkedIn
+  - platform: linkedin
+    topic: video_file_requirements
+    statement: >-
+      Video file requirements: maximum file size 5 GB, minimum 75 KB; maximum
+      duration 15 minutes; minimum duration 3 seconds from desktop and 2
+      seconds from the mobile app; resolution range 256x144 to 4096x2304;
+      aspect ratio 1:2.4 to 2.4:1; frame rate 10 to 60 frames per second; bit
+      rate 192 Kbps to 30 Mbps. Supported file types include MP4, MOV, AVI,
+      WEBM, and MKV. LinkedIn says to keep the edges of the video free of key
+      elements, text, and logos, and gives no numeric margin.
+    source_url: https://www.linkedin.com/help/linkedin/answer/a548372
+    accessed: "2026-10-06"
+    status: verified
+    note: 'The page showed "Last updated: 2 years ago" on the access date.'
+  - platform: linkedin
+    topic: ai_content_label
+    statement: No official page stating LinkedIn's AI labeling conditions was read.
+    source_url: https://www.linkedin.com/help/linkedin
+    accessed: "2026-10-06"
+    status: not_verified
+
+  # ---------------------------------------------------------------------- X
+  - platform: x
+    topic: video_specs_and_synthetic_media
+    statement: >-
+      X's help pages for video upload and for synthetic and manipulated media
+      returned HTTP 403 to an automated read on the access date, so no X video
+      specification, safe zone, or AI labeling rule was verified. The official
+      pages are help.x.com/en/using-x/x-videos and
+      help.x.com/en/rules-and-policies/authenticity.
+    source_url: https://help.x.com/en/using-x/x-videos
+    accessed: "2026-10-06"
+    status: not_verified
+
+# Outlier research routes, one row per platform and route. `enabled` means on
+# in a new profile. Nothing below `enabled` runs in this release.
+research_routes:
+  - platform: all
+    route: social_media_shortlist
+    status: enabled
+    data: links, view counts, and dates gathered by the social-media profile, handed over through Kanban with their sources
+    authentication: none
+    source_url: https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban
+    accessed: "2026-10-06"
+    basis: No platform access by this profile.
+  - platform: all
+    route: owner_supplied
+    status: enabled
+    data: reference links, figures, and local files the owner has the right to hold
+    authentication: none
+    source_url: https://hermes-agent.nousresearch.com/docs/user-guide/profiles
+    accessed: "2026-10-06"
+    basis: No platform access by this profile. The owner supplies the material.
+  - platform: youtube
+    route: public_page
+    status: not permitted by terms
+    source_url: https://www.youtube.com/t/terms
+    accessed: "2026-10-06"
+    basis: >-
+      The Terms of Service prohibit accessing the Service using any automated
+      means (such as robots, botnets or scrapers) except public search engines
+      under robots.txt or with YouTube's prior written permission, and
+      prohibit downloading content except as expressly authorized.
+  - platform: youtube
+    route: official_api
+    status: not built
+    data: >-
+      The YouTube Data API's videos.list method returns a statistics part and
+      costs 1 quota unit per call. search.list can order by viewCount, returns
+      at most 50 items per page, and has its own bucket of 100 calls per day.
+      Other endpoints share a default 10,000 units per day.
+    authentication: a credential from the owner's own Google Cloud project; not tested by this release
+    source_url: https://developers.google.com/youtube/terms/developer-policies
+    accessed: "2026-10-06"
+    basis: >-
+      A read-only route exists, but the Developer Policies say not to
+      aggregate API Data or use it to gain insights into YouTube's usage, and
+      require each API client to publish a privacy policy and follow stored-
+      data rules. Whether a per-account baseline study fits those policies is
+      the owner's decision to take with counsel, so this release builds no
+      client. Quota figures are from
+      https://developers.google.com/youtube/v3/determine_quota_cost.
+  - platform: instagram
+    route: public_page
+    status: not permitted by terms
+    source_url: https://help.instagram.com/581066165581870
+    accessed: "2026-10-06"
+    basis: >-
+      The Terms of Use say you can't access or collect information in an
+      automated way without express permission, whether or not logged in.
+      Meta's Automated Data Collection Terms
+      (https://www.facebook.com/apps/site_scraping_tos_terms.php) require
+      Meta's express written permission.
+  - platform: instagram
+    route: official_api
+    status: not built
+    data: >-
+      The Instagram Platform APIs let an app manage Instagram professional
+      accounts that connect to it: messaging, publishing, comments, mentions,
+      hashtag search, and insights.
+    authentication: an app registered with Meta and an account that grants it access
+    source_url: https://developers.facebook.com/docs/instagram-platform
+    accessed: "2026-10-06"
+    basis: >-
+      The documented APIs are built around accounts that authorize the app,
+      under the Meta Platform Terms (https://developers.facebook.com/terms).
+      No route to other accounts' per-video view counts was confirmed, and
+      none was tested.
+  - platform: facebook
+    route: public_page
+    status: not permitted by terms
+    source_url: https://www.facebook.com/apps/site_scraping_tos_terms.php
+    accessed: "2026-10-06"
+    basis: >-
+      Meta's Automated Data Collection Terms say you will not engage in
+      automated data collection without first obtaining Meta's express written
+      permission.
+  - platform: tiktok
+    route: public_page
+    status: not permitted by terms
+    source_url: https://www.tiktok.com/legal/page/us/terms-of-service/en
+    accessed: "2026-10-06"
+    basis: >-
+      The Terms of Service say you must not scrape, crawl, export or otherwise
+      extract any data or content from the Platform using any automated system
+      or software, including automated bots, except as approved in writing.
+  - platform: tiktok
+    route: official_api
+    status: not permitted by terms
+    data: >-
+      The Research API's video query returns fields including view_count,
+      like_count, create_time, and video_duration for public videos.
+    authentication: an approved research application
+    source_url: https://developers.tiktok.com/products/research-api/
+    accessed: "2026-10-06"
+    basis: >-
+      Research Tools are for qualified researchers at academic or
+      not-for-profit institutions who are independent of commercial interests.
+      A business studying edits for its own content does not qualify.
+  - platform: linkedin
+    route: public_page
+    status: not permitted by terms
+    source_url: https://www.linkedin.com/legal/user-agreement
+    accessed: "2026-10-06"
+    basis: >-
+      The User Agreement's list of prohibited conduct includes developing,
+      supporting, or using software, devices, scripts, robots, or any other
+      means (such as crawlers and browser plugins) to scrape the Services.
+  - platform: x
+    route: public_page
+    status: not permitted by terms
+    source_url: https://x.com/en/tos
+    accessed: "2026-10-06"
+    basis: >-
+      The Terms of Service say crawling or scraping the Services in any form,
+      for any purpose, without prior written consent is expressly prohibited,
+      and that access is only through published interfaces.
+  - platform: x
+    route: official_api
+    status: not permitted by terms
+    authentication: an X API developer account
+    source_url: https://developer.x.com/en/developer-terms/agreement-and-policy
+    accessed: "2026-10-06"
+    basis: >-
+      The X Developer Policy says you may not use the X API to measure the
+      availability, performance, functionality, or usage of X for
+      benchmarking, competitive, or commercial purposes.

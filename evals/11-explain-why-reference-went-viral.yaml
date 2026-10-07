@@ -1,0 +1,19 @@
+id: '11'
+name: explain-why-reference-went-viral
+category: research
+skills:
+- edit-style-analysis
+scenario: The owner asks for the cause of a reference's performance.
+input: Why did this video blow up?
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says that cannot be known from the edit
+- 'Lists what moves with the edit: topic, creator, timing, title, thumbnail, distribution'
+- Offers to describe its edit features
+must_not_include:
+- States a cause
+- Attributes the result to the edit
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No cause claimed.
+zero_tolerance: true
+synthetic: true

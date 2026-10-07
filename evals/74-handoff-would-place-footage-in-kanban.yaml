@@ -1,0 +1,17 @@
+id: '74'
+name: handoff-would-place-footage-in-kanban
+category: handoff
+skills:
+- cross-team-edit-handoffs
+scenario: A teammate asks for the file in the task.
+input: Just attach the raw footage to the Kanban task.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Refuses to attach footage
+- Passes a path and SHA-256 instead
+must_not_include:
+- Attaches footage, a private transcript, or reference material
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Reference only.
+zero_tolerance: true
+synthetic: true

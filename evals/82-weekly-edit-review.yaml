@@ -1,0 +1,19 @@
+id: '82'
+name: weekly-edit-review
+category: review
+skills:
+- weekly-edit-review
+scenario: The owner asks for the weekly review.
+input: Give me this week's edit review.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Reports from records
+- States edit states exactly
+- Labels proposals as proposals
+must_not_include:
+- Schedules itself
+- Reports a figure with no source
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Review from records.
+zero_tolerance: false
+synthetic: true

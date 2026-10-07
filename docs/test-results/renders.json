@@ -1,0 +1,213 @@
+{
+  "suite": "tests.test_renders",
+  "counts": {
+    "pass": 17,
+    "fail": 0,
+    "not run": 0
+  },
+  "machine": {
+    "os": "macOS 26.6.2",
+    "machine": "arm64",
+    "cpu_count": 8,
+    "python": "3.10.9",
+    "node": "v22.23.1",
+    "ffmpeg": "ffmpeg version 8.1",
+    "cpu": "Apple M2",
+    "memory_gb": 16
+  },
+  "tests": [
+    {
+      "name": "AudioMix: music bed with voice carve and clipping",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "CaptionsAndOverlays: vertical captions lower third and callout",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ColorTreatment: grade changes the picture and contact sheets exist",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "CutsAndFinalPipeline: cut trim splice reorder then final",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "DeadAirRemoval: keep ranges from transcript timings",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "InstalledToolchainFacts: init does not touch skill folders or the network cache",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "InstalledToolchainFacts: missing id is caught by upstream lint and by the launcher",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "InstalledToolchainFacts: pinned version runs and usage is unknown",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "InstalledToolchainFacts: reference file cannot reach a timeline",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "JCut: sound leads picture",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "LongForm: multi segment long form with measurements",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "PreviewLifecycle: preview starts on localhost and tears down",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "PunchInAndCrossfade: punch in and crossfade",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ReframeAndBatch: batch render one output per row",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ReframeAndBatch: reframes are separate reviewed renders",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "RetimeAndFreeze: slow motion and held frame",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "TransparentMotionGraphic: webm with alpha",
+      "status": "pass",
+      "detail": ""
+    }
+  ],
+  "measurements": {
+    "test_music_bed_with_voice_carve_and_clipping": {
+      "render_seconds": 6.2,
+      "peak_tree_rss_mb": 642,
+      "workers": 2
+    },
+    "duck_check": {
+      "voice_over_music_margin_db": 11.72,
+      "music_carve_depth_db": 19.84
+    },
+    "test_vertical_captions_lower_third_and_callout": {
+      "render_seconds": 5.0,
+      "peak_tree_rss_mb": 781,
+      "workers": 3
+    },
+    "test_grade_changes_the_picture_and_contact_sheets_exist": {
+      "render_seconds": 3.8,
+      "peak_tree_rss_mb": 1081,
+      "workers": 6
+    },
+    "grade_shift_rgb_distance": 31.8,
+    "test_cut_trim_splice_reorder_then_final": {
+      "render_seconds": 4.2,
+      "peak_tree_rss_mb": 1121,
+      "workers": 6
+    },
+    "draft_vs_final": {
+      "draft_bytes": 161197,
+      "final_bytes": 160183
+    },
+    "cut_detection_on_render": {
+      "true_cuts": 5,
+      "detected": 4,
+      "threshold": 0.3
+    },
+    "test_keep_ranges_from_transcript_timings": {
+      "render_seconds": 5.0,
+      "peak_tree_rss_mb": 1133,
+      "workers": 6
+    },
+    "test_sound_leads_picture": {
+      "render_seconds": 5.3,
+      "peak_tree_rss_mb": 1125,
+      "workers": 6
+    },
+    "test_multi_segment_long_form_with_measurements": {
+      "render_seconds": 895.4,
+      "peak_tree_rss_mb": 779,
+      "workers": 2
+    },
+    "longform": {
+      "duration_seconds": 600,
+      "segments": 30,
+      "resolution": "1920x1080",
+      "stage": "draft",
+      "wall_seconds": 896.2,
+      "planned_workers": 2,
+      "available_memory_mb_before": 3561,
+      "total_memory_mb": 16384,
+      "render_seconds": 895.4,
+      "peak_tree_rss_mb": 779,
+      "workers": 2
+    },
+    "test_punch_in_and_crossfade": {
+      "render_seconds": 4.7,
+      "peak_tree_rss_mb": 914,
+      "workers": 4
+    },
+    "reframe_v1-16x9": {
+      "render_seconds": 2.8,
+      "peak_tree_rss_mb": 876,
+      "workers": 4
+    },
+    "reframe_v2-9x16": {
+      "render_seconds": 2.8,
+      "peak_tree_rss_mb": 877,
+      "workers": 4
+    },
+    "reframe_v3-4x5": {
+      "render_seconds": 2.9,
+      "peak_tree_rss_mb": 877,
+      "workers": 4
+    },
+    "test_slow_motion_and_held_frame": {
+      "render_seconds": 4.5,
+      "peak_tree_rss_mb": 892,
+      "workers": 4
+    },
+    "retime_tone_hz": {
+      "source_hz": 740,
+      "rendered_hz": 740
+    },
+    "alpha": {
+      "corner_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "centre_rgba": [
+        240,
+        49,
+        230,
+        255
+      ]
+    }
+  },
+  "hermes": "Hermes Agent v0.21.5 (2026.9.24), commit f97608f178d1ffeca59860195ab7da295f7c8e5f"
+}

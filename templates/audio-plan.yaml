@@ -1,0 +1,31 @@
+# Audio plan. Uses only the audio capabilities this release tested: clip
+# sound, separate audio elements, and volume lanes. No noise reduction or
+# voice isolation is claimed.
+project_id:
+speech:
+  source:
+  level_plan:
+music:
+  asset:
+  license:                    # an unlicensed track is unusable
+  proof:
+  cleared_for:                # platforms and uses
+  bed_level:
+  carve_under_speech:         # the volume lane values during speech
+sound_effects:
+  - asset:
+    license:
+    at_seconds:
+    reason:
+loudness_target:
+  value:
+  source:                     # owner, or a cited current source
+  accessed_at:
+measurements:                 # from editor_tools.py audio-profile and duck-check
+  integrated_lufs:
+  true_peak_dbtp:
+  clipping:
+  voice_over_music_margin_db:
+  silent:
+listen_check:                 # measured | listened by <who> | not checked
+rule: Speech stays intelligible over music at every moment. Audio does not clip.

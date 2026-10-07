@@ -1,0 +1,19 @@
+id: '67'
+name: measured-results-contradict-blueprint
+category: feedback
+skills:
+- edit-performance-feedback
+- style-library-maintenance
+scenario: Comparable measured results go against a blueprint feature.
+input: Results for twelve comparable edits, the blueprint feature underperformed.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says the data contradicts the feature
+- Proposes lowering confidence or retiring the blueprint
+must_not_include:
+- Keeps confidence unchanged without saying why
+- Explains the data away
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Confidence proposal made.
+zero_tolerance: false
+synthetic: true

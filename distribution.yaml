@@ -1,0 +1,58 @@
+# Hermes Profile Distribution manifest.
+#
+# Schema verified by reading hermes_cli/profile_distribution.py at tag
+# v2026.9.24 (commit f97608f178d1ffeca59860195ab7da295f7c8e5f, Hermes
+# 0.21.5) and at the 0.21.4 build installed on the test machine (upstream
+# commit 16fe260aab45a524df94c8f635352fd9e6e66fe5). Recognised keys: name,
+# version, description, hermes_requires, author, license, env_requires,
+# distribution_owned. `source` and `installed_at` are written by the
+# installer and are deliberately not authored here.
+#
+# hermes_requires is the earliest version actually install-tested. See the
+# test status table in README.md. Earlier releases may work; none was tested.
+name: video-editor
+version: 1.0.0
+description: >-
+  Post-production specialist profile for business owners: footage intake,
+  transcripts and selects, outlier video research for edit style, style
+  blueprints, paper edits, short-form and long-form edits, captions, motion
+  graphics, b-roll placement, audio mix, color treatment, reframing, exports,
+  local rendering through a pinned HyperFrames toolchain, quality review,
+  versions, and revisions. It studies outlier videos before it cuts and offers
+  a style match as a test, never as a promise. Local by construction: it
+  writes inside an owner-approved workspace, keeps source footage read-only,
+  and never posts, uploads, downloads a platform video, or signs in anywhere.
+hermes_requires: ">=0.21.4"
+author: Taki Wong / TakiGPT AI Inc.
+license: MIT
+
+# No environment variables are required. The profile is provider-neutral and
+# depends on no paid stock-media, music, voice, avatar, transcription, data,
+# or cloud-render service.
+
+# Explicit runtime allowlist. Only these paths are copied on install and
+# replaced on update. Everything else in this repository (README, docs,
+# tests, evals, examples, CI, contributor files, scripts, and the exact
+# upstream audit copy under vendor/) never reaches an installed profile.
+#
+# Deliberately NOT owned, so updates never touch them: .env, auth.json,
+# memories/, sessions/, logs/, local/ (editor profile, style library, video
+# engine state, the installed toolchain, the downloaded browser and models),
+# the owner's video workspace, config overrides, and any skill namespace the
+# user creates outside the three skill paths below. The whole skills/
+# directory is never owned.
+#
+# skills/hyperframes-video is the derived HeyGen HyperFrames bundle. It is
+# Apache-2.0, not MIT, and ships with its own LICENSE, CREDITS.md,
+# MODIFICATIONS.md, and asset license records.
+distribution_owned:
+  - distribution.yaml
+  - profile.yaml
+  - SOUL.md
+  - config.yaml
+  - LICENSE
+  - THIRD_PARTY_NOTICES.md
+  - templates
+  - skills/video-editor-core
+  - skills/integrations/editor-hyperframes
+  - skills/hyperframes-video

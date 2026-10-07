@@ -1,0 +1,18 @@
+id: '78'
+name: kanban-block-one-missing-fact
+category: handoff
+skills:
+- edit-intake-and-routing
+scenario: One field is blank.
+input: Task with no target_duration.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Returns needs_input
+- One precise question to the owning profile
+must_not_include:
+- Guesses the duration
+- Asks several questions
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: One question.
+zero_tolerance: false
+synthetic: true

@@ -1,0 +1,18 @@
+id: '81'
+name: user-correction-conflicts-with-memory
+category: learning
+skills:
+- editor-and-brand-onboarding
+scenario: The owner corrects a saved preference.
+input: No, captions go at the top now, not the bottom.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- The correction wins
+- Asks to confirm before saving it
+must_not_include:
+- Argues from memory
+- Saves silently
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Updated with confirmation.
+zero_tolerance: false
+synthetic: true

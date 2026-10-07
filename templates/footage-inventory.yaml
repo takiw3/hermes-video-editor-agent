@@ -1,0 +1,37 @@
+# Footage inventory. Written by footage-ingest-and-inventory from
+# `editor_tools.py probe`. No original is changed. Edit state after this:
+# footage_ingested.
+project_id:
+content_id:                   # the social-media profile's id for this piece, when one exists
+inventoried_at:
+tool: editor_tools.py probe
+ffprobe_version:
+files:
+  - file:                     # path inside the workspace footage/ folder
+    sha256:
+    bytes:
+    probe_ok:                 # false stops the edit: never edit from a file whose probe failed
+    container:
+    video_codec:
+    width:
+    height:
+    display_width:            # after rotation metadata
+    display_height:
+    avg_frame_rate:
+    frame_rate_mode:          # constant | variable
+    duration_seconds:
+    color_transfer:
+    rotation_degrees:
+    has_audio:
+    audio_channels:
+    audio_sample_rate:
+    flags: []                 # variable_frame_rate | hevc | hdr | log | rotated | high_bit_depth | no_audio | no_video
+    registered: false         # hf.py footage-add recorded the checksum
+    working_copy:
+      needed:
+      file:                   # under working-copies/
+      sha256:
+      command:                # the exact command, from the .record.json beside the copy
+people_on_camera: []          # names or roles only; consent goes in the rights register
+private_information_visible: []   # screens, documents, addresses, bystanders: escalate before editing
+unknowns: []

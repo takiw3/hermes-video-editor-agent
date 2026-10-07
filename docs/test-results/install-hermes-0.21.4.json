@@ -1,0 +1,550 @@
+{
+  "suite": "installation tests",
+  "counts": {
+    "pass": 106,
+    "fail": 0,
+    "not run": 2
+  },
+  "tests": [
+    {
+      "name": "manifest uses only fields the tested Hermes schema parses",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "name is video-editor",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "version is 1.0.0",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "license is MIT",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "author is set",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no environment variable is required",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "distribution_owned is the exact narrow allowlist",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the whole skills/ directory is never owned",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no cron definitions ship",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no symlinks anywhere in the repository",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Hermes under test: Hermes Agent v0.21.4 (2026.9.21) \u00b7 upstream 16fe260a",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "`hermes profile install <repo> --alias --yes` succeeds",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "profile info reports the name",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "profile info reports version 1.0.0",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "profile info reports the source",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "profile info reports the Hermes requirement",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "profile.yaml carries a routing description",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "profile.yaml display name is Video Editor",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "installed profile.yaml carries no backend-assigned role",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "SOUL.md installed and identical",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "profile list shows the profile and its distribution",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Hermes skill index builds for the profile",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "25 core skills are indexed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the wrapper skill is indexed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "16 vendored HyperFrames skills are indexed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the internal upstream skill captions-overlay is indexed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "every skill loads through skill_view",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "a cross-skill reference file loads through skill_view",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the wrapper's capability reference loads through skill_view",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no duplicate skill names",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "exactly one skill is named hyperframes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "documented collision reproduced: with the optional skill installed, `hyperframes` no longer loads the vendored router",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "removing the optional skill restores the vendored router",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the profile's deny rules load in the tested Hermes release",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "46 route-around, external, download, and footage-destroying command forms are denied",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "25 sanctioned launcher and tool commands are not denied",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "observed limit: a deny rule matches the command text, so a script file that calls the CLI is not matched",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "every allowlisted file is installed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "installed files are byte-identical to the repository",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no unexpected file inside owned paths",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no unexpected top-level file in the profile",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "repository-only files are not installed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "license notice installed: LICENSE",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "license notice installed: THIRD_PARTY_NOTICES.md",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "license notice installed: skills/hyperframes-video/LICENSE",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "license notice installed: skills/hyperframes-video/CREDITS.md",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "license notice installed: skills/hyperframes-video/MODIFICATIONS.md",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "license notice installed: skills/hyperframes-video/ASSET-LICENSES.md",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "license notice installed: skills/hyperframes-video/licenses/OFL-1.1.txt",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Apache-2.0 text and HeyGen copyright travel with the vendored skills",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no credentials, state, footage, reference material, renders, or node_modules installed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no symlinks installed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no Git LFS pointer files installed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "alias wrapper created",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "alias wrapper targets `-p video-editor`",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "README primary command is the confirmation-enabled install with --alias",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "doctor reports `not configured` with exit code 3",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "doctor names the missing pieces",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "research reports `owner-supplied only`",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "install created no engine state, toolchain, browser, or workspace",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the network-deny wrapper really blocks outbound connections",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "profile installs with network denied (no download, no network write)",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "network-denied install matches the repository payload exactly",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "no node_modules, browser, or model appeared",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "install started no server, preview, or render process from the sandbox",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "`setup --plan` names the sandbox profile, not the developer's home",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "`setup --plan` lists each download with source, size, and license",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "`setup --plan` changed nothing",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "`setup --workspace` writes engine state inside the test profile only",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the workspace has footage, working-copies, references, and projects folders",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "`hermes profile update video-editor` succeeds",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/.env",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/auth.json",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/memories/MEMORY.md",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/sessions/s1.json",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/local/editor-profile.md",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/local/brand-and-visual-identity.md",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/local/style-library/SB-SENTINEL-001.v1.yaml",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/local/style-library/SB-SENTINEL-001.v2.yaml",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/workspace/projects/demo/v1/index.html",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: external-workspace/projects/demo/style-decision.yaml",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: external-workspace/projects/demo/v1/index.html",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: external-workspace/projects/demo/v2/index.html",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: external-workspace/footage/take.txt",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: external-workspace/references/ref.txt",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/skills/my-own/my-skill/SKILL.md",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/skills/integrations/my-integration/SKILL.md",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "config.yaml overrides preserved",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "video engine state (workspace approval) preserved",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "owned SOUL.md restored",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "owned skill restored",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "owned launcher restored",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "a skill retired from the distribution is removed on update",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "vendor verification passes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "git history secret scan",
+      "status": "not run",
+      "detail": "repository has no commits yet"
+    },
+    {
+      "name": "a second temporary profile named social-media is created",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "`hermes kanban create ... --assignee video-editor` creates the task",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the video-editor profile reads the task and its brief",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the task is listed for the video-editor assignee",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the video-editor profile answers with a structured result",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "`hermes kanban create ... --assignee social-media` creates the review request",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the social-media profile reads the review request and its checksum",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the social-media profile reads the editor's result on the original task",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the task completes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the board holds references and checksums, and no media bytes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "observed: this Hermes release supports Kanban attachments (policy still passes references only)",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the second profile cannot be assumed to read this profile's files: the profiles have separate homes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "install from github.com/takiw3/hermes-video-editor-agent",
+      "status": "not run",
+      "detail": "set VE_TEST_PUBLISHED_URL after publication (and GH_TOKEN while the repository is private)"
+    }
+  ]
+}

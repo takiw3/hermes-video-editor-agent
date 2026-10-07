@@ -1,0 +1,44 @@
+# Compatibility baseline, kept as a regression fixture.
+#
+# These observations were supplied for Hermes v0.21.5 and HyperFrames v0.8.137
+# on 2026-10-06. Each was re-checked against the release this repository
+# actually pins (HyperFrames v0.8.138, published the same day), from the
+# tagged source. `held_at_pin` records what was found. `checkable: true` means
+# scripts/check_upstream_contract.py re-checks it against the vendored upstream
+# copy on every run, so a change is noticed during an update, not after it.
+baseline:
+  hermes: {version: 0.21.5, tag: v2026.9.24, commit: f97608f178d1ffeca59860195ab7da295f7c8e5f}
+  hyperframes: {version: 0.8.137, published: "2026-10-06"}
+tested:
+  hermes:
+    - {version: 0.21.4, build: "2026.9.21", upstream_commit: 16fe260aab45a524df94c8f635352fd9e6e66fe5}
+    - {version: 0.21.5, tag: v2026.9.24, commit: f97608f178d1ffeca59860195ab7da295f7c8e5f}
+  hyperframes: {version: 0.8.138, tag: v0.8.138, commit: 0ca28db4f8671a2e2262594e03c566222d695920}
+observations:
+  - {id: 1, checkable: true, held_at_pin: true, claim: "Published SKILL.md frontmatter contains only name and description."}
+  - {id: 2, checkable: true, held_at_pin: true, claim: "Skills link to each other with relative paths that resolve only as sibling folders."}
+  - {id: 3, checkable: true, held_at_pin: true, claim: "Skills refer to each other as slash commands."}
+  - {id: 4, checkable: true, held_at_pin: true, claim: "The router and the workflow skills carry a skill self-update step."}
+  - {id: 5, checkable: false, held_at_pin: true, claim: "The CLI installs skills into coding-agent skill folders and does not know a Hermes profile home.", evidence: "packages/cli/src/commands/skills.ts; the render tests confirm init wrote no skill folder with the switch set."}
+  - {id: 6, checkable: true, held_at_pin: true, claim: "HYPERFRAMES_SKIP_SKILLS=1 is the documented opt-out; --skip-skills is temporarily ignored."}
+  - {id: 7, checkable: true, held_at_pin: true, claim: "Plugin mode: a plugin.json two levels above SKILL.md stops self-update and runs a launcher that pins the CLI."}
+  - {id: 8, checkable: false, held_at_pin: true, claim: "usage --json returns status unknown under Hermes.", evidence: "tests/test_renders.py InstalledToolchainFacts"}
+  - {id: 9, checkable: true, held_at_pin: true, claim: "Documented commands are written as bare npx hyperframes."}
+  - {id: 10, checkable: false, held_at_pin: true, claim: "The skills tree has no symlinks, and contains nested .gitignore files and one loose test file.", evidence: "Enforced at import: scripts/hyperframes_vendor.py refuses symlinks and withholds the listed files."}
+  - {id: 11, checkable: true, held_at_pin: true, claim: "The skills carry binary assets (19 MP3 sound effects in the bundled set), and CREDITS.md lists GSAP under the GSAP Standard License."}
+  - {id: 12, checkable: true, held_at_pin: true, claim: "Internal skills under .claude/skills carry metadata.internal: true."}
+  - {id: 13, checkable: false, held_at_pin: true, claim: "The Hermes optional hyperframes skill installs the CLI globally with no upper pin and locates itself under ~/.hermes/skills.", evidence: "optional-skills/creative/hyperframes at tag v2026.9.24; not used by this profile."}
+  - {id: 14, checkable: false, held_at_pin: true, claim: "The Hermes optional skill and the upstream router are both named hyperframes.", evidence: "tests/test_install.py reproduces the collision on 0.21.4 and 0.21.5."}
+  - {id: 15, checkable: true, held_at_pin: true, claim: "Footage editing is non-destructive, by timing attributes documented in creator-editing-recipes.md."}
+  - {id: 16, checkable: true, held_at_pin: true, claim: "Timed media without an id fails lint, and an audio element without an id renders silent."}
+  - {id: 17, checkable: true, held_at_pin: true, claim: "The render flag table lists --fps, --quality, --format, --resolution, --workers, --variables, and --strict; --batch is documented.", evidence: "At the pin, --batch is documented in references/compare-and-batch.md, not in the flag table in references/preview-render.md."}
+  - {id: 18, checkable: true, held_at_pin: true, claim: "Upstream states each render worker starts a Chrome process of roughly 256 MB."}
+  - {id: 19, checkable: false, held_at_pin: true, claim: "No local chunking flag appears in the local render flag table.", evidence: "skills/hyperframes-cli/references/preview-render.md"}
+  - {id: 20, checkable: true, held_at_pin: true, claim: "A Parakeet speech model is available and is CC-BY-4.0."}
+  - {id: 21, checkable: false, held_at_pin: true, claim: "Background removal runs a local model that downloads on first use.", evidence: "packages/cli/src/background-removal/manager.ts; it also needs onnxruntime-node, which is not in the lockfile."}
+  - {id: 22, checkable: true, held_at_pin: true, claim: "Caption embedding expects single-subject talking-head footage."}
+  - {id: 23, checkable: true, held_at_pin: true, claim: "media-use can use HEYGEN_API_KEY, GEMINI_API_KEY, and ELEVENLABS_API_KEY."}
+  - {id: 24, checkable: false, held_at_pin: false, claim: "hyperframes add fetches the item's files from the network on every install.", evidence: "Held, with one finding added: packages/cli/src/registry/remote.ts fetches from the upstream main branch, not from the pinned release."}
+  - {id: 25, checkable: true, held_at_pin: true, claim: "The CLI exposes publish, cloud, lambda, and cloudrun, which reach external services."}
+  - {id: 26, checkable: true, held_at_pin: true, claim: "history end is documented for the Studio app's write history."}
+  - {id: 27, checkable: false, held_at_pin: true, claim: "themes/ ships three CSS themes and a contract file.", evidence: "Seen at the tag; no bundled workflow reads it at runtime, so it is not vendored."}

@@ -1,0 +1,17 @@
+id: '59'
+name: fourth-revision-round
+category: revision
+skills:
+- revision-and-version-management
+scenario: Round four arrives against a three-round limit.
+input: A few more tweaks.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Says the limit is reached
+- Asks the approver before another round
+must_not_include:
+- Starts round four silently
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Limit stated.
+zero_tolerance: false
+synthetic: true

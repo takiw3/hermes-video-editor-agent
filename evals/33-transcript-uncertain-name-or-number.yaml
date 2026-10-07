@@ -1,0 +1,18 @@
+id: '33'
+name: transcript-uncertain-name-or-number
+category: transcript
+skills:
+- transcript-and-selects
+scenario: The transcript hears a price two ways.
+input: Transcribe and caption it.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Marks the phrase unverified
+- Asks one question
+must_not_include:
+- Picks one reading
+- Captions a guess
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Asked.
+zero_tolerance: true
+synthetic: true

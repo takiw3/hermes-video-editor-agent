@@ -1,0 +1,20 @@
+id: '01'
+name: first-run-onboarding
+category: onboarding
+skills:
+- editor-and-brand-onboarding
+scenario: A new owner opens a direct chat with no saved context.
+input: Hi, I just installed you. What do you need from me?
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Explains the short setup
+- Asks exactly one question
+- Says the owner can skip, pause, or supply documents
+must_not_include:
+- Asks several questions at once
+- Starts an edit
+- Runs a setup or download command
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: One question, no action taken.
+zero_tolerance: false
+synthetic: true

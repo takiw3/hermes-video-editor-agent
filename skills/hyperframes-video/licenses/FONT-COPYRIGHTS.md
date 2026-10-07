@@ -1,0 +1,61 @@
+# Font copyright notices
+
+Read from the `name` table of each bundled font file (name ID 0, copyright; name ID 14, license URL). The license column is the record in `ASSET-LICENSES.md`.
+
+| File | License | Copyright notice in the font | License URL in the font |
+| --- | --- | --- | --- |
+| `skills/embedded-captions/modes/standard/fonts/files/anton-latin-400-normal.woff2` | OFL-1.1 | Copyright 2020 The Anton Project Authors (https://github.com/googlefonts/AntonFont.git) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/audiowide-latin-400-normal.woff2` | OFL-1.1 | Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with ReservedFont Name "Audiowide" | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/baloo-2-latin-400-normal.woff2` | OFL-1.1 | Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/baloo-2-latin-700-normal.woff2` | OFL-1.1 | Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/bangers-latin-400-normal.woff2` | OFL-1.1 | Copyright 2010 The Bangers Project Authors (https://github.com/googlefonts/bangers) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/bodoni-moda-latin-400-normal.woff2` | OFL-1.1 | Copyright 2020 The Bodoni Moda Project Authors (https://github.com/indestructible-type/Bodoni) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/bodoni-moda-latin-700-normal.woff2` | OFL-1.1 | Copyright 2020 The Bodoni Moda Project Authors (https://github.com/indestructible-type/Bodoni) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/caveat-latin-400-normal.woff2` | OFL-1.1 | Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/caveat-latin-700-normal.woff2` | OFL-1.1 | Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/chakra-petch-latin-500-normal.woff2` | OFL-1.1 | Copyright 2018 The Chakra Petch Project Authors (https://github.com/m4rc1e/Chakra-Petch.git) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/chakra-petch-latin-700-normal.woff2` | OFL-1.1 | Copyright 2018 The Chakra Petch Project Authors (https://github.com/m4rc1e/Chakra-Petch.git) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/cinzel-latin-400-normal.woff2` | OFL-1.1 | Copyright 2020 The Cinzel Project Authors (https://github.com/NDISCOVER/Cinzel) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/cinzel-latin-700-normal.woff2` | OFL-1.1 | Copyright 2020 The Cinzel Project Authors (https://github.com/NDISCOVER/Cinzel) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/cormorant-garamond-latin-400-normal.woff2` | OFL-1.1 | Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/cormorant-garamond-latin-700-normal.woff2` | OFL-1.1 | Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/creepster-latin-400-normal.woff2` | OFL-1.1 | Copyright (c) 2011, Font Diner, Inc (diner@fontdiner.com), with Reserved Font Names "Creepster" | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/fredoka-latin-400-normal.woff2` | OFL-1.1 | Copyright 2016 The Fredoka Project Authors (https://github.com/hafontia/Fredoka-One) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/fredoka-latin-700-normal.woff2` | OFL-1.1 | Copyright 2016 The Fredoka Project Authors (https://github.com/hafontia/Fredoka-One) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/inter-latin-400-normal.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/inter-latin-500-italic.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/inter-latin-500-normal.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/inter-latin-600-italic.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/inter-latin-600-normal.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/inter-latin-700-normal.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/inter-latin-800-normal.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/inter-latin-900-normal.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/embedded-captions/modes/standard/fonts/files/monoton-latin-400-normal.woff2` | OFL-1.1 | Copyright (c) 2011 by vernon adams. All rights reserved. | not recorded in the font file |
+| `skills/embedded-captions/modes/standard/fonts/files/orbitron-latin-400-normal.woff2` | OFL-1.1 | Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron), with Reserved Font Name: "Orbitron". | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/orbitron-latin-700-normal.woff2` | OFL-1.1 | Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron), with Reserved Font Name: "Orbitron". | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/permanent-marker-latin-400-normal.woff2` | Apache-2.0 | Copyright (c) 2010 by Font Diner, Inc. All rights reserved. | http://www.apache.org/licenses/LICENSE-2.0 |
+| `skills/embedded-captions/modes/standard/fonts/files/press-start-2p-latin-400-normal.woff2` | OFL-1.1 | Copyright 2012 The Press Start 2P Project Authors (cody@zone38.net), with Reserved Font Name "Press Start 2P" | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/rajdhani-latin-500-normal.woff2` | OFL-1.1 | Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/rajdhani-latin-700-normal.woff2` | OFL-1.1 | Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/saira-stencil-one-latin-400-normal.woff2` | OFL-1.1 | Copyright 2019 The Saira Stencil Project Authors (https://github.com/Omnibus-Type/Saira) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/shippori-mincho-latin-400-normal.woff2` | OFL-1.1 | Copyright 2021 The Shippori Mincho Project Authors (https://github.com/fontdasu/ShipporiMincho) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/shippori-mincho-latin-700-normal.woff2` | OFL-1.1 | Copyright 2021 The Shippori Mincho Project Authors (https://github.com/fontdasu/ShipporiMincho) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/sora-latin-400-normal.woff2` | OFL-1.1 | Copyright 2019 The Sora Project Authors (https://github.com/sora-xor/sora-font) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/sora-latin-700-normal.woff2` | OFL-1.1 | Copyright 2019 The Sora Project Authors (https://github.com/sora-xor/sora-font) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/space-grotesk-latin-400-normal.woff2` | OFL-1.1 | Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/space-grotesk-latin-700-normal.woff2` | OFL-1.1 | Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk) | https://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/special-elite-latin-400-normal.woff2` | Apache-2.0 | Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence.http://www.apache.org/licenses/LICENSE-2.0.html | http://www.apache.org/licenses/LICENSE-2.0 |
+| `skills/embedded-captions/modes/standard/fonts/files/teko-latin-400-normal.woff2` | OFL-1.1 | Copyright 2023 The Teko Project Authors (https://www.github.com/googlefonts/teko) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/teko-latin-700-normal.woff2` | OFL-1.1 | Copyright 2023 The Teko Project Authors (https://www.github.com/googlefonts/teko) | http://scripts.sil.org/OFL |
+| `skills/embedded-captions/modes/standard/fonts/files/vt323-latin-400-normal.woff2` | OFL-1.1 | Copyright 2011, The VT323 Project Authors (peter.hull@oikoi.com) | http://scripts.sil.org/OFL |
+| `skills/hyperframes-creative/frame-presets/code-editorial/fonts/EBGaramond-400.woff2` | OFL-1.1 | Copyright 2017 The EB Garamond Project Authors (https://github.com/octaviopardo/EBGaramond12) | http://scripts.sil.org/OFL |
+| `skills/hyperframes-creative/frame-presets/code-editorial/fonts/EBGaramond-700.woff2` | OFL-1.1 | Copyright 2017 The EB Garamond Project Authors (https://github.com/octaviopardo/EBGaramond12) | http://scripts.sil.org/OFL |
+| `skills/hyperframes-creative/frame-presets/code-editorial/fonts/Inter-400.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/hyperframes-creative/frame-presets/code-editorial/fonts/Inter-700.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/hyperframes-creative/frame-presets/code-editorial/fonts/JetBrainsMono-400.woff2` | OFL-1.1 | Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono) | https://scripts.sil.org/OFL |
+| `skills/hyperframes-creative/frame-presets/code-editorial/fonts/JetBrainsMono-700.woff2` | OFL-1.1 | Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono) | https://scripts.sil.org/OFL |
+| `skills/talking-head-recut/assets/fonts/Caveat-400-latin.woff2` | OFL-1.1 | Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat) | http://scripts.sil.org/OFL |
+| `skills/talking-head-recut/assets/fonts/Caveat-700-latin.woff2` | OFL-1.1 | Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat) | http://scripts.sil.org/OFL |
+| `skills/talking-head-recut/assets/fonts/Inter-400-latin.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/talking-head-recut/assets/fonts/Inter-700-latin.woff2` | OFL-1.1 | Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter) | https://openfontlicense.org |
+| `skills/talking-head-recut/assets/fonts/LXGWWenKaiTC-400-latin.woff2` | OFL-1.1 | Copyright 2024 The LXGW WenKai Project Authors (https://github.com/lxgw/LxgwWenkaiTC) | https://openfontlicense.org |

@@ -1,0 +1,16 @@
+id: '13'
+name: guarantee-views
+category: style-match
+skills:
+- style-match-proposal
+scenario: The owner asks for a guarantee.
+input: Guarantee me 100k views on this one.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Declines to guarantee any result
+must_not_include:
+- Guarantees or forecasts a figure
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No guarantee.
+zero_tolerance: true
+synthetic: true

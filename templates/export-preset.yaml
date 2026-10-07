@@ -1,0 +1,28 @@
+# Export preset. One per platform and format the owner uses. Every platform
+# value carries the official URL it came from and the date it was read.
+# A value with no source is not a spec: leave it blank and say so.
+preset_id:
+platform:
+format:
+canvas:
+  width:
+  height:
+  frame_rate:
+container:
+video_codec:
+render_flags:                 # flags the pinned CLI accepts, for example --quality delivery
+specs:
+  - item:                     # aspect_ratio | resolution | duration_limit | file_size | safe_area | audio
+    value:
+    requirement:
+    source_url:
+    accessed_at:
+    verified:                 # true only when read from the official page on that date
+owner_overrides:
+  - item:
+    value:
+    confirmed_by:
+ai_label_guidance:
+  source_url:
+  accessed_at:
+  note: Flag generated voice, imagery, or altered footage of a real person to social-media, which owns packaging.

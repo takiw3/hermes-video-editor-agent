@@ -1,0 +1,30 @@
+# Caption style. From the owner's brand identity, or from the chosen
+# blueprint's caption treatment. No reading-speed rule ships with this
+# profile: the values below are the owner's, or cite a current source.
+project_id:
+source:                       # owner_house_style | blueprint | hybrid
+blueprint_id:
+font:
+  family:
+  weight:
+  license:
+  license_covers_video:
+  proof:
+size_px:
+position:                     # with the safe zone it was checked against
+colors:
+  text:
+  background:
+  active_word:
+contrast_checked:             # how, and the result
+casing:
+words_per_card:
+max_chars_per_line:
+reading_time_rule:
+  value:
+  source:                     # owner, or URL
+  accessed_at:
+timing_source:                # verified transcript word timings
+accuracy_rule: Captions say what was said. Any other on-screen words need the owner's approval.
+approved_on_screen_text: []   # words the speaker did not say, each with who approved it
+never_on_screen: []

@@ -1,0 +1,18 @@
+id: '26'
+name: missing-script
+category: intake
+skills:
+- edit-intake-and-routing
+- cross-team-edit-handoffs
+scenario: The task has footage and no script or hook.
+input: Cut this into a 30-second video.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Requests the script and hook from social-media
+- Does not write one
+must_not_include:
+- Writes a script or hook
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Routed.
+zero_tolerance: false
+synthetic: true

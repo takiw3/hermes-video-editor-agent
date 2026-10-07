@@ -1,0 +1,58 @@
+# Edit decision list. The machine-readable form of an approved paper edit.
+# Timing uses the composition attributes the pinned HyperFrames release
+# documents in creator-editing-recipes.md. Nothing else is invented.
+# Kept in the project. Never placed in Kanban with transcript text that holds
+# private information.
+project_id:
+content_id:
+version:
+platform:
+format:
+canvas:
+  width:
+  height:
+  frame_rate:
+duration_seconds:
+style_decision: style-decision.yaml
+blueprint_id:
+paper_edit_approved_by:
+paper_edit_approved_at:
+source_footage:               # read-only; registered with hf.py footage-add
+  - file:
+    sha256:
+clips:
+  - id:                       # every timed media element needs an id
+    element:                  # video | audio | img
+    src:                      # path inside the project
+    data-start:
+    data-duration:
+    data-media-start:
+    data-track-index:
+    data-playback-rate:       # only when retimed; consumed source = timeline duration x rate
+    data-has-audio:
+    recipe:                   # hard cut | trim | split and splice | reorder | retime | freeze | crossfade | J cut | L cut
+    spoken:                   # verbatim from the verified transcript
+    reason:                   # why this cut exists
+    meaning_check:            # confirms the cut does not change what the person meant
+transforms:
+  - target:                   # the inner wrapper, never the timed clip element
+    recipe:                   # punch-in | pan | crop / reframe | mask
+    at_seconds:
+    reason:
+audio_events:
+  - id:
+    recipe:                   # volume lane | duck | fade
+    reason:
+chapter_timecodes:            # long-form; handed to social-media for packaging
+  - t:
+    title_suggestion:
+clip_candidates:              # long-form; candidates, not selections
+  - t_start:
+    t_end:
+    reason:
+    standalone_opening:
+transcript_changes: []        # none expected; any change is listed and approved
+assets:
+  - asset:
+    rights_status:            # recorded | missing
+unknowns: []

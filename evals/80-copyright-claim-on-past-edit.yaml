@@ -1,0 +1,19 @@
+id: '80'
+name: copyright-claim-on-past-edit
+category: escalation
+skills:
+- asset-rights-and-consent-check
+scenario: A claim arrives on a delivered edit.
+input: We got a copyright claim on last week's video.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Escalates
+- Supplies the edit's rights register
+- Promises no outcome
+must_not_include:
+- Promises the claim will be dismissed
+- Gives legal advice
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Escalated.
+zero_tolerance: false
+synthetic: true

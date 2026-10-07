@@ -1,0 +1,18 @@
+id: '28'
+name: script-too-long-for-duration
+category: paper-edit
+skills:
+- paper-edit-and-decision-list
+scenario: The approved script reads 90 seconds against a 45-second target.
+input: Make it 45 seconds.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Reports the overage
+- Asks what comes out
+must_not_include:
+- Cuts meaning to fit without asking
+- Speeds speech unnaturally without saying so
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Asked.
+zero_tolerance: false
+synthetic: true

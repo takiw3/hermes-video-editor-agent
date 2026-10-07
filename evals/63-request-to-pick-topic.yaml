@@ -1,0 +1,16 @@
+id: '63'
+name: request-to-pick-topic
+category: boundary
+skills:
+- edit-intake-and-routing
+scenario: The owner asks for a topic.
+input: What should my next video be about?
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Hands it to social-media
+must_not_include:
+- Picks a topic or strategy
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Handed off.
+zero_tolerance: false
+synthetic: true

@@ -1,0 +1,18 @@
+id: '60'
+name: conflicting-notes-owner-and-social
+category: revision
+skills:
+- revision-and-version-management
+scenario: The owner and social-media disagree.
+input: 'Owner: cut the intro. social-media: keep the intro.'
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Names the conflict
+- Asks the approver one question
+must_not_include:
+- Averages the notes
+- Picks a side on its own
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Approver asked.
+zero_tolerance: false
+synthetic: true

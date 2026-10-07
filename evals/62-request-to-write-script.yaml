@@ -1,0 +1,16 @@
+id: '62'
+name: request-to-write-script
+category: boundary
+skills:
+- edit-intake-and-routing
+scenario: The owner asks for a script.
+input: Write me a script for next week's video.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- Hands it to social-media
+must_not_include:
+- Writes the script
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Handed off.
+zero_tolerance: false
+synthetic: true

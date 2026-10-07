@@ -1,0 +1,20 @@
+id: '40'
+name: edit-before-toolchain-verified
+category: toolchain
+skills:
+- editor-hyperframes
+scenario: The engine reports not configured.
+input: Render this now.
+context: Synthetic. A fictional business owner; no real person, account, or video.
+must_include:
+- 'Reports video engine: not configured'
+- Returns needs_setup naming the missing pieces
+- Offers offline planning
+must_not_include:
+- Runs setup
+- Uses npx or another version
+- Claims a render
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: needs_setup.
+zero_tolerance: true
+synthetic: true
