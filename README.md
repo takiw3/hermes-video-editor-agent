@@ -508,16 +508,14 @@ Your workspace is outside the profile and is never deleted. Node.js and FFmpeg a
 | --- | --- | --- | --- | --- |
 | Measurement and evidence rules | 25 | 0 | 0 | `python3 tests/run.py tests.test_tools` |
 | Launcher gates, against a stand-in CLI | 32 | 0 | 0 | `python3 tests/run.py tests.test_gates` |
-| Install, payload, update, deny rules, Kanban exchange on Hermes 0.21.5 | 107 | 0 | 1 | `python3 tests/test_install.py` |
-| The same on Hermes 0.21.4 | 107 | 0 | 1 | `python3 tests/test_install.py` |
+| Install, payload, update, deny rules, Kanban exchange on Hermes 0.21.5 | 111 | 0 | 0 | `python3 tests/test_install.py` |
+| The same on Hermes 0.21.4 | 111 | 0 | 0 | `python3 tests/test_install.py` |
 | Renders from an installed temporary profile, checked against ground truth | 17 | 0 | 0 | `python3 tests/run.py tests.test_renders` |
-
-Not run:
-
-- install from github.com/takiw3/hermes-video-editor-agent: set VE_TEST_PUBLISHED_URL after publication (and GH_TOKEN while the repository is private)
 <!-- test-status:end -->
 
-Not run in any environment: a model-backed behavior evaluation, an end-to-end Kanban run with a dispatcher, a live registry fetch, local transcription with the speech model, and CI. Results are recorded in `docs/test-results/`, and every figure above is generated from those files.
+The table is from runs on the release test machine (macOS, Apple silicon). CI on Ubuntu also runs repository validation, the measurement suite, and the launcher-gate suite on every push. It has no Hermes install and no render toolchain, so it reports the Hermes-dependent install steps and the render suite as not run.
+
+Not run in any environment: a model-backed behavior evaluation, an end-to-end Kanban run with a dispatcher, a live registry fetch, a browser download, and local transcription with the speech model. Results are recorded in `docs/test-results/`, and every figure above is generated from those files.
 
 ## Unresolved limits
 
@@ -530,7 +528,7 @@ Not run in any environment: a model-backed behavior evaluation, an end-to-end Ka
 - X specifications, and numeric safe zones on every platform, are not verified.
 - The reference exclusion compares checksums and paths, so a re-encoded copy is not detected.
 - The browser download, the speech model install, and a registry fetch were tested only up to their confirmation prompt. The release tests used a headless Chrome already on the machine.
-- Windows and Linux were not tested.
+- Renders and installs were tested on macOS with Apple silicon only. CI runs the measurement and launcher-gate suites on Ubuntu. Windows was not tested.
 
 ## Contributing
 

@@ -30,4 +30,4 @@ Release status: edit-and-render release.
 
 - The bundled upstream workflows were loaded in an installed profile and not rendered end to end.
 - Long-form was tested at draft quality on one machine.
-- Tested on macOS with Apple silicon only.
+- Renders and installs were tested on macOS with Apple silicon only. CI runs the measurement and launcher-gate suites on Ubuntu.
