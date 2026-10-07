@@ -827,7 +827,7 @@ asset_licenses:
     Standards) and may not be redistributed in the original NTIS format.
 sha256:
   vendor_tree: 8616bb739ec887c9a55f92e8dcc5e0d7bf81440d6b83176ccff0d02f7252df7e
-  derived_tree: 36be32c5d50d86962a93f842ed5b85e6efc49375aa924ce363a7023c37a88ef2
+  derived_tree: 93620cb3cf3d9c8f8b28314648d7964f3ba029c9c3a28ffe846db0a54b054454
 file_inventory:
   vendor:
     .claude/skills/captions-overlay/SKILL.md: dde58d4fcad6b244c2b0295636758a61c44d015ffa59e982e56eee3c60b4c66b
@@ -1446,7 +1446,7 @@ file_inventory:
     LICENSE: 4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8
     MODIFICATIONS.md: ad58e4d36ef7df9905e8d308c9b8a4bcb8031c2d76af733125021c21226cfdae
     licenses/Apache-2.0.txt: 4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8
-    licenses/FONT-COPYRIGHTS.md: 3ee454d32777f1e20d42b9df2831ff204e961c5ac5f633c82b4ee8f841fbf6f4
+    licenses/FONT-COPYRIGHTS.md: 6859a687f7a4e29af73e1fd8e0844daaa88e90a56292f5d8a7af56e1aa11ef30
     licenses/OFL-1.1.txt: 9804a9ec72fbc9d79e1036c5e733ce883d8a15d8d1b165d46681cc0f9c6bf504
     plugin.json: e907f36e3d13aae814004ba3b56a75e70f8eea5bb9512b081b995bb75a62d774
     skills/captions-overlay/SKILL.md: 58fa5ab4252e91886e8b339224907bf8a4826bcd4739aaa862fc631fd20879a9

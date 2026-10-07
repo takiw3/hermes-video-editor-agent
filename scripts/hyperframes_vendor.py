@@ -710,7 +710,7 @@ def write_added_files(out: Path, inventory: dict, record) -> None:
     shutil.copy2(VENDOR / "LICENSE", lic_dir / "Apache-2.0.txt")
     record("licenses/Apache-2.0.txt", "added", [], None)
 
-    (lic_dir / "FONT-COPYRIGHTS.md").write_text(font_copyrights(), encoding="utf-8")
+    (lic_dir / "FONT-COPYRIGHTS.md").write_bytes(font_copyrights().encode("utf-8"))
     record("licenses/FONT-COPYRIGHTS.md", "added", [], None)
 
     (out / "ASSET-LICENSES.md").write_text(asset_licenses_md(), encoding="utf-8")
@@ -760,15 +760,17 @@ def font_copyrights() -> str:
         from fontTools.ttLib import TTFont  # type: ignore
     except Exception:
         if cached.is_file():
-            return cached.read_text(encoding="utf-8")
+            # Bytes, not read_text: universal-newline translation would alter the file.
+            return cached.read_bytes().decode("utf-8")
         raise PatchError("fontTools (with brotli) is required to generate FONT-COPYRIGHTS.md")
 
     rows = []
     for font in sorted(VENDOR.rglob("*.woff2")):
         rel = font.relative_to(VENDOR).as_posix()
         name = TTFont(str(font))["name"]
-        copyright_line = (name.getDebugName(0) or "").strip().replace("|", "/")
-        license_url = (name.getDebugName(14) or "").strip() or "not recorded in the font file"
+        # Collapse whitespace: some fonts carry a carriage return or newline in the notice.
+        copyright_line = " ".join((name.getDebugName(0) or "").replace("|", "/").split())
+        license_url = " ".join((name.getDebugName(14) or "").split()) or "not recorded in the font file"
         group = asset_group_for(rel)
         rows.append(f"| `{rel}` | {group['license']} | {copyright_line} | {license_url} |")
     return (
