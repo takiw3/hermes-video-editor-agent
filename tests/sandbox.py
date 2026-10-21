@@ -58,6 +58,33 @@ class Results:
         return 1 if counts["fail"] else 0
 
 
+_SHIM_DIR: Path | None = None
+# Loaded before any test code: drops editable-install finders (for example a
+# Hermes venv that has `pip install -e` of another release), so a module the
+# source under test lacks fails to import instead of loading from that release.
+# setuptools puts the finder on sys.meta_path as a class, so its own __module__
+# is checked, not its type's (which is `builtins`). The namespace path hook and
+# its sys.path placeholder go too.
+_SHIM = """import sys
+def _editable(o):
+    return str(getattr(o, "__module__", "")).startswith("__editable__")
+sys.meta_path[:] = [f for f in sys.meta_path if not _editable(f)]
+sys.path_hooks[:] = [h for h in sys.path_hooks if not _editable(h)]
+sys.path[:] = [p for p in sys.path if not str(p).startswith("__editable__")]
+sys.path_importer_cache.clear()
+"""
+
+
+def source_only_pythonpath(src: str) -> str:
+    """PYTHONPATH that imports Hermes from `src` and nothing else."""
+    global _SHIM_DIR
+    if _SHIM_DIR is None:
+        _SHIM_DIR = Path(tempfile.mkdtemp(prefix="video-editor-hermes-shim-"))
+        (_SHIM_DIR / "sitecustomize.py").write_text(_SHIM, encoding="utf-8")
+        atexit.register(shutil.rmtree, _SHIM_DIR, ignore_errors=True)
+    return os.pathsep.join([str(_SHIM_DIR), str(Path(src).resolve())])
+
+
 class Sandbox:
     """A temporary HOME and HERMES_HOME."""
 
@@ -84,6 +111,8 @@ class Sandbox:
         env = dict(os.environ)
         env.update({"HOME": str(self.home), "HERMES_HOME": str(self.hermes_home)})
         env.pop("PYTHONPATH", None)
+        if os.environ.get("HERMES_SRC"):
+            env["PYTHONPATH"] = source_only_pythonpath(os.environ["HERMES_SRC"])
         env.update(extra)
         return env
 

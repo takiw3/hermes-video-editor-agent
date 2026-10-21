@@ -197,6 +197,27 @@ def main() -> int:
         else:
             r.check("the optional skill could not be installed beside the vendored router", a["count"] == 1, str(a))
 
+        # Its own HERMES_HOME: importing agent and model_tools writes state.db, which the
+        # payload checks below would find in the profile.
+        probe_home = sb.root / "import-probe"
+        probe_home.mkdir(exist_ok=True)
+        where = subprocess.run(
+            [os.environ.get("HERMES_PYTHON") or sys.executable, "-c",
+             "import json, sys, hermes_cli, tools, agent, model_tools\n"
+             "print(json.dumps({'files': [m.__file__ for m in (hermes_cli, tools, agent, model_tools)],"
+             " 'editable': [str(getattr(f, '__module__', '')) for f in sys.meta_path + sys.path_hooks"
+             " if str(getattr(f, '__module__', '')).startswith('__editable__')]}))\n"],
+            cwd=os.environ["HERMES_SRC"], env=sb.env(HERMES_HOME=str(probe_home)),
+            capture_output=True, text=True, timeout=300)
+        try:
+            wd = json.loads(where.stdout.strip().splitlines()[-1])
+        except Exception:
+            wd = None
+        src_root = str(Path(os.environ["HERMES_SRC"]).resolve())
+        r.check("Hermes modules load only from the source under test",
+                wd is not None and not wd["editable"] and all(str(Path(f).resolve()).startswith(src_root) for f in wd["files"]),
+                str(wd)[:300] if wd else (where.stdout + where.stderr)[-300:])
+
         print("\n== deny rules at the Hermes approval floor ==")
         probe = ("import json, sys\n"
                  "from tools.approval_floors import _match_user_deny_rule as m\n"

@@ -2,6 +2,12 @@
 
 This project follows semantic versioning. Changes to distributed files, vendored code, permissions, or escalation rules are made here, visibly, and never by the agent editing itself.
 
+## Unreleased
+
+### Fixed
+
+- The install tests now import Hermes only from `HERMES_SRC`. Before, a module missing from the release under test could load from an editable Hermes install in the same venv. A new check fails if anything else is imported. Results on 0.21.4 and 0.21.5 are unchanged.
+
 ## 1.0.0 - 2026-10-06
 
 Release status: edit-and-render release.
