@@ -1,0 +1,26 @@
+# Reference style notes: what one reference video does, as technique, with
+# the closest verified catalog effects. Written by edit-style-analysis when the
+# owner points at a single reference. Not a style blueprint: no outlier claim,
+# no performance explanation, and it does not unlock the style decision.
+notes_id:
+reference:                    # a link or an owner-held file name; never downloaded by this profile
+studied_at:
+measured:
+  duration:
+  cut_count:
+  time_to_first_cut:
+  shot_length_range:
+  integrated_loudness:
+observed:                     # tag each entry observed
+  look:
+  transitions: []
+  overlays: []
+  text_motion: []
+  layouts: []
+  camera_moves: []
+effect_candidates:            # {observed, catalog_effect_id or "none in catalog", gap}
+  - observed:
+    catalog_effect_id:
+    gap:
+do_not_copy: []               # wording, graphics, logos, music, footage, signature phrases
+confidence:                   # low | medium | high, with the reason

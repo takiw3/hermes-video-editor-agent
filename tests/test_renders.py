@@ -572,7 +572,7 @@ class InstalledToolchainFacts(RenderCase):
     def test_pinned_version_runs_and_usage_is_unknown(self) -> None:
         deep = json.loads(H.hf(self.profile, "doctor", "--json", "--deep").stdout)
         self.assertEqual(deep["video_engine"], "toolchain verified")
-        self.assertEqual(deep["upstream_doctor"]["version"], "0.8.138")
+        self.assertEqual(deep["upstream_doctor"]["version"], json.loads((H.REPO / "skills/integrations/editor-hyperframes/toolchain/pin.json").read_text())["npm_version"])
         self.assertEqual(deep["research"], "owner-supplied only")
         usage = H.hf(self.profile, "usage", "--json", cwd=self.ws / "projects")
         self.assertIn('"status":"unknown"', usage.stdout.replace(" ", ""))
@@ -585,7 +585,7 @@ class InstalledToolchainFacts(RenderCase):
             self.assertFalse((self.profile / "local" / "video-editor" / "video-engine" / "home" / leak).exists(),
                              f"init wrote skills into the engine home: {leak}")
         installed = {p.relative_to(self.profile / "skills").parts[0] for p in (self.profile / "skills").iterdir()}
-        self.assertEqual(installed - {".DS_Store"}, {"video-editor-core", "integrations", "hyperframes-video"})
+        self.assertEqual(installed - {".DS_Store"}, {"video-editor-core", "video-effects-core", "integrations", "hyperframes-video"})
 
     def test_missing_id_is_caught_by_upstream_lint_and_by_the_launcher(self) -> None:
         project = self.project("noid")

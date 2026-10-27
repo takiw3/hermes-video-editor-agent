@@ -1,0 +1,62 @@
+{
+  "effect_id": "picture-in-picture",
+  "display_name": "Picture in picture",
+  "family": "creator-composites",
+  "kind": "composite",
+  "description": "The second shot sits small in a corner with rounded corners and a shadow, and pops in.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "composite",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "size",
+      "label": "Size",
+      "min": 0.2,
+      "max": 0.5,
+      "default": 0.32,
+      "unit": "of frame",
+      "animatable": true
+    },
+    {
+      "key": "corner",
+      "label": "Corner (0 top left, 1 top right, 2 bottom left, 3 bottom right)",
+      "min": 0,
+      "max": 3,
+      "default": 3,
+      "unit": "choice",
+      "animatable": false
+    },
+    {
+      "key": "intro",
+      "label": "Pop-in time",
+      "min": 0,
+      "max": 0.6,
+      "default": 0.3,
+      "unit": "s",
+      "animatable": false
+    }
+  ],
+  "fixture": "two-clips",
+  "writes": [
+    "transform"
+  ],
+  "probe": null,
+  "markup_in_target": false,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

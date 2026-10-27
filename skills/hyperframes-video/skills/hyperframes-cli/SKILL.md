@@ -7,7 +7,7 @@ description: >
   benchmark, telemetry, transcribe, auth, tts, and remove-background. Also use when diagnosing build
   or render failures. validate, inspect, and layout are deprecated aliases; use check. Covers local,
   HeyGen-hosted cloud, AWS Lambda, and Google Cloud Run rendering.
-version: 0.8.138
+version: 0.8.183
 author: HeyGen, Inc. (modified by TakiGPT AI Inc.)
 license: Apache-2.0
 metadata:
@@ -16,7 +16,7 @@ metadata:
     related_skills: [editor-hyperframes]
 ---
 
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, local-render-only, neutralize-external-commands, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, local-render-only, neutralize-external-commands, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 > **Profile runtime rules. These override anything below.**
 >
@@ -41,11 +41,11 @@ Run commands as `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/sc
 3. **Author:** write the composition using `/hyperframes-core`. To know what is on a project's timeline (tracks, clips, starts, ends, what plays), run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" timeline --json` instead of reading `index.html` and every sub-composition file: nested rows carry absolute main-timeline `absStart`/`absEnd` and their owning `file`, not just their local, per-sub-composition time. Prefer `--json` over the text form; it costs fewer tokens for the same or better correctness. See `references/upgrade-info-misc.md` for one-liners that answer common questions without reading the whole output.
 4. **Get fast feedback while editing:** run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" lint` after the first HTML pass and after structural changes.
 5. **Run the final gate:** run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" check`; it reruns lint before opening the browser. Do not prepend a redundant standalone lint invocation. Add `--snapshots` for annotated overview frames and finding crops.
-6. **Inspect sub-compositions:** when `index.html` mounts `data-composition-src`, capture midpoint snapshots and inspect each mounted scene.
+6. **Inspect sub-compositions:** when `index.html` mounts `data-composition-src`, capture midpoint snapshots and inspect each mounted scene. Inspect the opening 30 seconds and reported problem times at full resolution; zoom into fine geometry, text, and WebGL edges rather than judging a contact sheet alone.
 7. **Open the final Studio preview:** run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" preview --background`, verify the URL returns HTTP 200, hand the timeline project URL to the user, and ask whether to revise or render. Keep it alive until review ends.
 8. **Render only after approval:** use `--quality draft` while iterating, `--quality looks` for the first real encode (the CLI default), and `--quality delivery` for final delivery.
 9. **Desktop app hand-off:** not available in this profile. Skip this step.
-10. **Verify the output:** confirm the file exists and is non-empty. Read the render summary's second line (`beginframe` vs `screenshot`, GPU, stage timings). `screenshot` + `software gpu` on Linux is the slow path. `ffprobe -v error -show_format -show_streams` and compare duration (and fps if the brief set it) to the root `data-duration`.
+10. **Verify the output:** confirm the file exists and is non-empty. Read the render summary's second line (`beginframe` vs `screenshot`, GPU, stage timings). `screenshot` + `software gpu` on Linux is the slow path. `ffprobe -v error -show_format -show_streams` and compare duration (and fps if the brief set it) to the root `data-duration`. Visually inspect decoded output frames at the same times as the preview, including close-ups; a successful check or encode does not certify the pixels inside a canvas.
 
 <!-- history (trial): remove this block together with the command -->
 
@@ -90,7 +90,7 @@ ffprobe -v error -show_format -show_streams out.mp4
 
 ## Preview before render
 
-Open the final composition preview (`#project/<name>`) only after `check` passes, to review the assembled timeline. The plan in chat and the `storyboard.html` sketch sheet are not approval of the final video. Rendering always requires the final approval defined by `hyperframes/references/review-loop.md`.
+Open the final composition preview (`#project/<name>`) only after `check` passes, to review the assembled timeline. The plan in chat and the storyboard board (`boards/storyboard.html`, format in `hyperframes-creative/references/storyboard-recipe.md`) are not approval of the final video. Rendering always requires the final approval defined by `hyperframes/references/review-loop.md`.
 
 ## Sub-composition smoke test
 
@@ -98,6 +98,9 @@ Static audits cannot catch every mount failure. When the project uses sub-compos
 
 ```bash
 python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" snapshot --at <t1>,<t2>,<t3>
+# For multiple samples within one scene or interval:
+python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" snapshot --composition <data-composition-id> --frames 8
+python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" snapshot --range 3:5 --frames 8
 ```
 
 Treat tiny unstyled content, canvas-sized icons, missing hero elements, or timeline-registration timeouts as render-blocking mount defects. See `hyperframes-core/references/sub-compositions.md` for the corresponding fixes.
@@ -120,8 +123,9 @@ Treat tiny unstyled content, canvas-sized icons, missing hero elements, or timel
 
 - Non-TTY mode is automatic and scaffolds the centered blank. Pass `--example` only to start from a named example. Use `--non-interactive` to force flag-only mode on a TTY.
 - Use one `HYPERFRAMES_RUN_ID` for all commands in the same verification loop.
-- When disk is tight, run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" clean` (`--dry-run` to list first); it removes what dead renders left and idle caches that rebuild themselves, never outputs, sources or anything a running render uses. Write QC frames to a temp dir, not the project.
+- When disk is tight, run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" clean` (`--dry-run` to list first); it removes what dead renders left and idle caches that rebuild themselves, never outputs, sources or anything a running render uses. Write disposable QC frames to a temp dir, then remove only that owned directory. Managed snapshot runs retain the newest 10 plus current/latest/rendered evidence; active captures and runs younger than 24 hours are protected. Copy intentional before/after evidence outside managed storage before it ages out. Never delete `.hyperframes` wholesale: it also holds project history.
 - Use `--strict`, `--strict-all`, and `--strict-variables` when the corresponding warnings, variables, or CI conditions must gate the render.
+- For `shader_unbounded_cosine_pow`, clamp the cosine to `[0, 1]` before `pow(1 - cosine, exponent)`; a lower-only `max` is insufficient. Follow `/hyperframes-animation` → `adapters/three.md` for the source fix and affected-GPU preview/export verification. Lint only recognizes static shader expressions, and software rendering can miss hardware-specific invalid pixels.
 - JSON paths redact the home directory as `$HOME`; do not try to reverse the redaction.
 - When a hosted cloud project approaches or exceeds the 200 MB upload limit, use `cloud render --dry-run --json` and follow the `.hyperframesignore` investigation in `references/cloud.md`. Never ignore an asset merely because it is large.
 - Never render merely because checks pass. Pause at the final preview and wait for approval.
@@ -145,6 +149,8 @@ Use `selection.target.hfId` when available, otherwise its selector and source fi
 | Final local delivery                     | `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" render --quality delivery --output out.mp4`                  |
 | Reproducible container render            | `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" render --docker --strict --output out.mp4`                   |
 | Local variable-driven batch render       | `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" render --batch rows.json --output "renders/{name}.mp4"`      |
+
+A render stops when whatever started it stops, so a Ctrl-C or a closed terminal never leaves Chrome running. If your tool kills its whole process group when a command times out or ends, a long render dies with it. Start such a render in its own process group with `HYPERFRAMES_RENDER_DETACHED=1`, for example `bash -c 'set -m; HYPERFRAMES_RENDER_DETACHED=1 python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" render --output out.mp4 < /dev/null > render.log 2>&1 &'` (works on macOS and Linux), then check the log and the output file instead of waiting on the command.
 
 Skill attribution is automatic — the examples above need no `--skill`. A project scaffolded by a workflow (`hyperframes init --skill=<workflow>`) records its owning skill in `hyperframes.json`, and every later render inherits it on anonymous telemetry: re-renders, `npm run render`, and `--batch` alike. Pass `--skill=<slug>` explicitly only to stamp a project that was not created through a workflow (its first render then persists it).
 
@@ -194,6 +200,6 @@ Two entries in `hyperframes --help` are not part of the authoring loop, and reac
 
 Run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" usage --json` at the start of a video workflow and again at milestones such as after drafting and before rendering. A fresh read at handoff can serve as the start read. Use `--harness claude-code`, `--harness codex`, or `--harness grok` to select explicitly.
 
-Known results contain `status: "known"`, `harness`, `planTier`, `session`, and `weekly`. Each available window contains `usedPercent`, `remainingPercent`, and `resetsAt`; an unavailable window is `null`. `planTier` is the readable subscription tier when available, otherwise `null`. Claude Code reports its shared five-hour and weekly windows. Codex reports its shared session and weekly windows when available. Grok reports its included weekly allowance with `session: null`.
+Known results contain `status: "known"`, `harness`, `planTier`, `session`, `weekly`, and `spend`. Each available window contains `usedPercent`, `remainingPercent`, and `resetsAt`; an unavailable window is `null`. `planTier` is the readable subscription tier when available, otherwise `null`. Claude Code reports its shared five-hour and weekly windows; a spend-metered plan (such as Enterprise) has neither and reports `spend`, the share of its billing-period spend limit already used, with `resetsAt: null`. Codex reports its shared session and weekly windows when available. Grok reports its included weekly allowance with `session: null`. Only Claude Code reports `spend`; it is `null` elsewhere. When no window is available the result is `status: "unknown"` with `reason: "no_usage_windows"`.
 
 Unknown results contain `status: "unknown"` and a token-free `reason`. Missing, expired, unsupported, ambiguous, or unreadable logins and unavailable provider responses return unknown. Report the unknown state without guessing allowance. The command reads existing credentials without refreshing or rewriting them and emits no tokens or telemetry. Usage is a snapshot; it does not reserve allowance or estimate the next video's cost. Keep scope and workflow choices with the user.

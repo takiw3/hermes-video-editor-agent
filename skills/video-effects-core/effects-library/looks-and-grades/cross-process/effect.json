@@ -1,0 +1,78 @@
+{
+  "effect_id": "cross-process",
+  "display_name": "Cross process",
+  "family": "looks-and-grades",
+  "kind": "look",
+  "description": "Shifted colour curves for the yellow-green highlights and blue shadows of cross-processed film.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading (this profile's values)",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "intensity",
+      "label": "Strength",
+      "min": 0.25,
+      "max": 1,
+      "default": 0.85,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "grading": {
+    "curves": {
+      "red": [
+        [
+          0.25,
+          0.2
+        ],
+        [
+          0.75,
+          0.85
+        ]
+      ],
+      "green": [
+        [
+          0.25,
+          0.28
+        ],
+        [
+          0.75,
+          0.8
+        ]
+      ],
+      "blue": [
+        [
+          0.25,
+          0.32
+        ],
+        [
+          0.75,
+          0.65
+        ]
+      ]
+    },
+    "adjust": {
+      "contrast": 0.08
+    },
+    "intensity": "$p.intensity"
+  },
+  "animate_vars": {
+    "intensity": "--hf-color-grading-intensity"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

@@ -1,0 +1,17 @@
+id: '131'
+name: result-fields-complete
+category: team
+skills:
+- cross-team-edit-handoffs
+scenario: An edit with effects is complete.
+input: Return the result.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Fills effect_plan_reference, effects_used, effect_versions and photosensitivity_result
+must_not_include:
+- Omits the photosensitivity result
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Contract complete.
+zero_tolerance: false
+synthetic: true

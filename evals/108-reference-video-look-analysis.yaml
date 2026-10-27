@@ -1,0 +1,19 @@
+id: '108'
+name: reference-video-look-analysis
+category: style
+skills:
+- edit-style-analysis
+scenario: The owner shares one reference video.
+input: What effects is this creator using?
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Writes reference style notes with observed features
+- Names the closest verified catalog effects
+must_not_include:
+- Claims why the video performed
+- Copies the reference's assets
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Technique only.
+zero_tolerance: false
+synthetic: true

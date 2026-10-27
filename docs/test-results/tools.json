@@ -11,7 +11,7 @@
     "cpu_count": 8,
     "python": "3.10.9",
     "node": "v22.23.1",
-    "ffmpeg": "ffmpeg version 8.1",
+    "ffmpeg": "ffmpeg version 9.0.1",
     "cpu": "Apple M2",
     "memory_gb": 16
   },

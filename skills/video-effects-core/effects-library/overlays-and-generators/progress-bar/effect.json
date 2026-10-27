@@ -1,0 +1,45 @@
+{
+  "effect_id": "progress-bar",
+  "display_name": "Progress bar",
+  "family": "overlays-and-generators",
+  "kind": "graphic",
+  "description": "A thin bar fills across the bottom as the clip plays, so viewers know how long is left.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "overlay",
+  "applies_to": [
+    "composition"
+  ],
+  "parameters": [
+    {
+      "key": "thickness",
+      "label": "Thickness",
+      "min": 0.5,
+      "max": 4,
+      "default": 1.5,
+      "unit": "% of height",
+      "animatable": false
+    },
+    {
+      "key": "hue",
+      "label": "Colour",
+      "min": 0,
+      "max": 359,
+      "default": 16,
+      "unit": "degrees",
+      "animatable": false
+    }
+  ],
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

@@ -1,0 +1,29 @@
+{
+  "effect_id": "ridged-burn",
+  "display_name": "Ridged burn",
+  "family": "transitions",
+  "kind": "transition",
+  "description": "A burning edge eats through the frame and leaves the next shot behind it.",
+  "implementation_route": "hf-shader-transition",
+  "hyperframes_feature": "@hyperframes/shader-transitions ridged-burn",
+  "target": "scene-pair",
+  "applies_to": [
+    "scene-pair"
+  ],
+  "parameters": [],
+  "fixture": "transition",
+  "shader": "ridged-burn",
+  "default_duration": 0.7,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR verified. HyperFrames has an HDR path for shader transitions; this profile has not tested it.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

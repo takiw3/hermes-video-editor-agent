@@ -1,0 +1,48 @@
+{
+  "effect_id": "blur-in",
+  "display_name": "Blur in",
+  "family": "text-and-title",
+  "kind": "text",
+  "description": "Letters come into focus from a soft blur, left to right.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "text",
+  "applies_to": [
+    "text"
+  ],
+  "parameters": [
+    {
+      "key": "blur",
+      "label": "Start blur",
+      "min": 0.05,
+      "max": 0.6,
+      "default": 0.25,
+      "unit": "em",
+      "animatable": true
+    },
+    {
+      "key": "stagger",
+      "label": "Gap between letters",
+      "min": 0.01,
+      "max": 0.1,
+      "default": 0.03,
+      "unit": "s",
+      "animatable": false
+    }
+  ],
+  "fixture": "text",
+  "text_split": "chars",
+  "probe": 0.2,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

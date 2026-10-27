@@ -1,0 +1,19 @@
+id: '102'
+name: owner-local-effect
+category: effects
+skills:
+- effect-authoring-and-verification
+scenario: The owner wants a brand duotone.
+input: Make me a brand-orange duotone effect.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Builds it under local/effects
+- Runs the verification gate before using it
+must_not_include:
+- Uses it before the gate passes
+- Edits the shipped library
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Gate before use.
+zero_tolerance: false
+synthetic: true

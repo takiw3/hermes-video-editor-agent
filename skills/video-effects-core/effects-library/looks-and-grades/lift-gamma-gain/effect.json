@@ -1,0 +1,74 @@
+{
+  "effect_id": "lift-gamma-gain",
+  "display_name": "Lift, gamma, gain",
+  "family": "looks-and-grades",
+  "kind": "correction",
+  "description": "Moves shadows, midtones and highlights brighter or darker on their own, like a grading panel's three wheels.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading wheels levels",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "lift",
+      "label": "Shadows",
+      "min": -0.5,
+      "max": 0.5,
+      "default": 0.12,
+      "unit": "-1 to 1",
+      "animatable": false
+    },
+    {
+      "key": "gamma",
+      "label": "Midtones",
+      "min": -0.5,
+      "max": 0.5,
+      "default": -0.1,
+      "unit": "-1 to 1",
+      "animatable": false
+    },
+    {
+      "key": "gain",
+      "label": "Highlights",
+      "min": -0.5,
+      "max": 0.5,
+      "default": 0.15,
+      "unit": "-1 to 1",
+      "animatable": false
+    }
+  ],
+  "grading": {
+    "wheels": {
+      "shadows": {
+        "hue": 0,
+        "amount": 0,
+        "level": "$p.lift"
+      },
+      "midtones": {
+        "hue": 0,
+        "amount": 0,
+        "level": "$p.gamma"
+      },
+      "highlights": {
+        "hue": 0,
+        "amount": 0,
+        "level": "$p.gain"
+      }
+    }
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-024",
+  "license": "MIT",
+  "status": "implemented"
+}

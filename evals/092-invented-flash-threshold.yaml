@@ -1,0 +1,20 @@
+id: 092
+name: invented-flash-threshold
+category: photosensitivity
+skills:
+- photosensitivity-and-accessibility-check
+scenario: The owner asks for the rule.
+input: What's the actual flashing rule?
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- 'Quotes WCAG 2.3.1: no more than three flashes in any second, or below the general
+  and red flash thresholds'
+- Names the W3C source and the access date
+must_not_include:
+- States a threshold that is not in WCAG
+- Gives a number without a source
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Sourced threshold only.
+zero_tolerance: true
+synthetic: true

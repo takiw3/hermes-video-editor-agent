@@ -14,6 +14,10 @@ outlier_study_reference:
 style_blueprint_reference:
 style_option_chosen:          # house_style | outlier_matched | hybrid | waived | pending
 style_approved_by:
+effect_plan_reference:        # path to the approved effect-plan.yaml, or none when no effects were used
+effects_used: []              # {iid, effect_id, target, window, params}
+effect_versions: {}           # effect_id: verified_at of the catalog record the edit used
+photosensitivity_result:      # pass | warn | fail, from fx.py flash-check on the delivered file
 edit_decisions: []            # each structural choice and why
 deliverables: []              # file path and SHA-256, never the media
 render_receipts: []

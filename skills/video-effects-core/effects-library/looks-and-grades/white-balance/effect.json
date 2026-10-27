@@ -1,0 +1,43 @@
+{
+  "effect_id": "white-balance",
+  "display_name": "White balance",
+  "family": "looks-and-grades",
+  "kind": "correction",
+  "description": "Warmer or cooler overall, to fix a colour cast or set a mood.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading adjust.temperature",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "White balance",
+      "min": -1,
+      "max": 1,
+      "default": 0.3,
+      "unit": "-1 cool to 1 warm",
+      "animatable": false
+    }
+  ],
+  "grading": {
+    "adjust": {
+      "temperature": "$p.amount"
+    }
+  },
+  "animate_vars": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-042",
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

@@ -1,0 +1,53 @@
+{
+  "effect_id": "blur-fill-reframe",
+  "display_name": "Blur fill",
+  "family": "creator-composites",
+  "kind": "composite",
+  "description": "Fits a shot inside the frame and fills the empty space with a blurred, enlarged copy. Put a second copy of the same clip in the fill layer.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "composite",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "fit",
+      "label": "Main size",
+      "min": 0.4,
+      "max": 0.9,
+      "default": 0.62,
+      "unit": "of frame",
+      "animatable": true
+    },
+    {
+      "key": "blur",
+      "label": "Fill blur",
+      "min": 1,
+      "max": 8,
+      "default": 4,
+      "unit": "% of height",
+      "animatable": false
+    }
+  ],
+  "fixture": "two-clips",
+  "writes": [
+    "transform"
+  ],
+  "probe": null,
+  "markup_in_target": false,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

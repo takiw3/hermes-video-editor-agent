@@ -27,13 +27,15 @@ GITHUB = "github.com/takiw3/hermes-video-editor-agent"
 EXPECTED_OWNED = [
     "distribution.yaml", "profile.yaml", "SOUL.md", "config.yaml", "LICENSE",
     "THIRD_PARTY_NOTICES.md", "templates", "skills/video-editor-core",
-    "skills/integrations/editor-hyperframes", "skills/hyperframes-video",
+    "skills/integrations/editor-hyperframes", "skills/hyperframes-video", "skills/video-effects-core",
 ]
 REPO_ONLY = ["README.md", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", "docs", "tests",
              "evals", "examples", "scripts", "vendor", ".github", ".gitignore", ".git"]
 CORE_SKILLS = 25
 VENDORED_SKILLS = 16          # 15 published plus the internal captions-overlay
+EFFECT_SKILLS = 17            # skills/video-effects-core; effects-library/ beside them is data, not a skill
 HF = "skills/integrations/editor-hyperframes/scripts/hf.py"
+VERSION = "1.1.0"  # the release under test; the manifest must say the same
 
 # Command forms the profile's deny rules must block at the Hermes approval
 # floor, and sanctioned forms they must leave alone.
@@ -42,7 +44,7 @@ MUST_DENY = [
     "npx hyperframes render", "npx --yes hyperframes@latest init demo", "npx hyperframes skills update general-video",
     "bunx hyperframes render", "npm install -g hyperframes", "npm i hyperframes", "hyperframes render --output x.mp4",
     "cd projects/a/v1 && hyperframes publish",
-    "node local/video-editor/video-engine/toolchain-0.8.138/node_modules/hyperframes/bin/hyperframes.mjs render",
+    "node local/video-editor/video-engine/toolchain-0.8.183/node_modules/hyperframes/bin/hyperframes.mjs render",
     "node $HERMES_HOME/skills/hyperframes-video/skills/hyperframes/scripts/plugin-cli.mjs cloud render",
     f"{L} setup --install-cli --yes", f"{L} setup --workspace /tmp/x", f"{L} setup --allow-host cdn.example.com",
     f"{L} setup --add-registry-item lower-third --project v1", f"{L} add lower-third",
@@ -80,7 +82,7 @@ def main() -> int:
              "env_requires", "distribution_owned"}
     r.check("manifest uses only fields the tested Hermes schema parses", set(m) <= known, str(set(m) - known))
     r.check("name is video-editor", m.get("name") == PROFILE)
-    r.check("version is 1.0.0", str(m.get("version")) == "1.0.0")
+    r.check(f"version is {VERSION}", str(m.get("version")) == VERSION)
     r.check("license is MIT", m.get("license") == "MIT")
     r.check("author is set", m.get("author") == "Taki Wong / TakiGPT AI Inc.")
     r.check("no environment variable is required", not m.get("env_requires"))
@@ -112,7 +114,7 @@ def main() -> int:
     print("\n== 3. profile info ==")
     info = run_hermes(sb, ["profile", "info", PROFILE]).stdout
     r.check("profile info reports the name", "video-editor" in info, info[:200])
-    r.check("profile info reports version 1.0.0", "1.0.0" in info)
+    r.check(f"profile info reports version {VERSION}", VERSION in info)
     r.check("profile info reports the source", str(REPO) in info)
     r.check("profile info reports the Hermes requirement", m["hermes_requires"] in info)
 
@@ -124,7 +126,7 @@ def main() -> int:
     r.check("installed profile.yaml carries no backend-assigned role", "role" not in prof)
     r.check("SOUL.md installed and identical", sha256_file(P / "SOUL.md") == sha256_file(REPO / "SOUL.md"))
     listing = run_hermes(sb, ["profile", "list"]).stdout
-    r.check("profile list shows the profile and its distribution", "video-editor@1.0.0" in listing, listing[-300:])
+    r.check("profile list shows the profile and its distribution", f"video-editor@{VERSION}" in listing, listing[-300:])
 
     print("\n== 5-7. skills load in the installed profile ==")
     if os.environ.get("HERMES_SRC"):
@@ -154,6 +156,11 @@ def main() -> int:
             r.check(f"{VENDORED_SKILLS} vendored HyperFrames skills are indexed",
                     len(data["cats"].get("hyperframes-video", [])) == VENDORED_SKILLS,
                     str(len(data["cats"].get("hyperframes-video", []))))
+            r.check(f"{EFFECT_SKILLS} effects skills are indexed",
+                    len(data["cats"].get("video-effects-core", [])) == EFFECT_SKILLS,
+                    str(len(data["cats"].get("video-effects-core", []))))
+            r.check("the effects library is not indexed as a skill",
+                    not any("effects-library" in n for n in names), str([n for n in names if "library" in n]))
             r.check("the internal upstream skill captions-overlay is indexed", "captions-overlay" in names)
             r.check("every skill loads through skill_view", not data["bad"], str(data["bad"]))
             r.check("a cross-skill reference file loads through skill_view", data["ref"] is True)
@@ -370,6 +377,8 @@ def main() -> int:
         test_ws / "projects" / "demo" / "v2" / "index.html": "<!-- sentinel project version 2 -->\n",
         test_ws / "footage" / "take.txt": "sentinel stand-in for footage\n",
         test_ws / "references" / "ref.txt": "sentinel stand-in for a reference\n",
+        P / "local" / "effects" / "looks-and-grades" / "brand-duotone" / "effect.json": '{"effect_id": "brand-duotone"}\n',
+        P / "local" / "effect-recipes" / "cinematic-portrait.yaml": "recipe_id: R-SENTINEL\n",
         P / "skills" / "my-own" / "my-skill" / "SKILL.md": "---\nname: my-skill\ndescription: user skill\n---\nuser\n",
         P / "skills" / "integrations" / "my-integration" / "SKILL.md": "---\nname: my-integration\ndescription: user integration\n---\nuser\n",
     }
@@ -401,7 +410,21 @@ def main() -> int:
             sha256_file(P / "skills/video-editor-core/render-and-export/SKILL.md")
             == sha256_file(REPO / "skills/video-editor-core/render-and-export/SKILL.md"))
     r.check("owned launcher restored", sha256_file(P / HF) == sha256_file(REPO / HF))
-    r.check("a skill retired from the distribution is removed on update", not stale.exists())
+    # Hermes changed how update treats owned skill folders: 0.21.x replaces an
+    # owned directory wholesale, so a skill the distribution no longer ships is
+    # removed; 0.22.x merges per skill, so it stays. Record what this version
+    # did and hold it to the documented behaviour (docs/upgrade-notes in README).
+    version = (hermes_version() or "")
+    m = re.search(r"v?(\d+)\.(\d+)\.(\d+)", version)
+    merges = bool(m) and (int(m.group(1)), int(m.group(2))) >= (0, 22)
+    if merges:
+        r.check("retired skill on update (0.22 and later): kept, as documented", stale.exists(),
+                "Hermes 0.22 merges owned skill folders per skill")
+    else:
+        r.check("retired skill on update (before 0.22): removed, as documented", not stale.exists())
+    r.check("owner effects and recipes in local/ survive update",
+            (P / "local/effects/looks-and-grades/brand-duotone/effect.json").is_file()
+            and (P / "local/effect-recipes/cinematic-portrait.yaml").is_file())
 
     print("\n== 21. vendor checksums ==")
     v = subprocess.run([sys.executable, str(REPO / "scripts/hyperframes_vendor.py"), "verify"],

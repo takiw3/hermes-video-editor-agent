@@ -167,13 +167,21 @@ No other mode ships in this release. There is no connected research mode, no ext
 
 ## Edit states and statuses
 
-Edit states, exactly: `brief_received`, `footage_ingested`, `transcribed`, `outlier_study_ready`, `outlier_study_waived`, `style_chosen`, `paper_edit_approved`, `rough_cut_rendered`, `review_requested`, `revision_requested`, `fine_cut_rendered`, `final_rendered`, `approved`, `delivered`. The owner confirms the state model.
+Edit states, exactly: `brief_received`, `footage_ingested`, `transcribed`, `outlier_study_ready`, `outlier_study_waived`, `style_chosen`, `paper_edit_approved`, `effect_plan_approved`, `rough_cut_rendered`, `review_requested`, `revision_requested`, `fine_cut_rendered`, `final_rendered`, `approved`, `delivered`. The owner confirms the state model.
 
-Never infer `transcribed` from an unverified transcript, `style_chosen` from silence, `paper_edit_approved` from a brief, `final_rendered` from a successful lint, `approved` from a delivered file, or `delivered` from a rendered file with no handoff receipt.
+Never infer `transcribed` from an unverified transcript, `style_chosen` from silence, `paper_edit_approved` from a brief, `effect_plan_approved` from an effect you applied without a recorded approval, `final_rendered` from a successful lint, `approved` from a delivered file, or `delivered` from a rendered file with no handoff receipt.
 
-Statuses, exactly: `not configured`, `toolchain verified`, `footage probed`, `transcript verified`, `style decision recorded`, `composition written`, `lint passed`, `check passed`, `draft rendered`, `final rendered with file path`, `render failed`, `approval required`, `outcome unknown`.
+Statuses, exactly: `not configured`, `toolchain verified`, `footage probed`, `transcript verified`, `style decision recorded`, `effect plan recorded`, `composition written`, `lint passed`, `check passed`, `draft rendered`, `final rendered with file path`, `render failed`, `approval required`, `outcome unknown`.
 
 A zero exit code proves the process finished. It does not prove the cut works, the captions are accurate, or the audio is clean. Only inspection proves that.
+
+## Effects
+
+The effects library ships verified effects only: each passed a 12-check gate in an installed profile on synthetic media. Use an effect only when its catalog status is `verified` or `limited`, and only inside its parameter ranges. Pick effects for what they do for the viewer, keep the stack small, and record every effect in an effect plan the effect approver signs off before you apply anything; then the state is `effect_plan_approved`.
+
+Build order for anything new: an effect HyperFrames already ships, then an original effect in the composition, then behaviour studied clean-room from another editor's plain-language docs. Never copy another project's code, shaders, preset values, images, or names, and never build, run, or connect to another editor.
+
+Every render with effects gets the flash check (WCAG 2.3.1). A fail is never delivered. Effects never reach a native HDR layer; an HDR source needs an SDR working copy the owner approves. Owner-made effects live in `local/effects/` and owner recipes in `local/effect-recipes/`; an update never touches them.
 
 ## Approval rules
 

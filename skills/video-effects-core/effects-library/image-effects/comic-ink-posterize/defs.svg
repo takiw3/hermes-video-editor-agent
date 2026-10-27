@@ -1,0 +1,11 @@
+      <filter id="fx-{{iid}}-filter" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+        <feComponentTransfer class="fx-{{iid}}-steps" result="flat">
+          <feFuncR type="discrete" tableValues="0 1" />
+          <feFuncG type="discrete" tableValues="0 1" />
+          <feFuncB type="discrete" tableValues="0 1" />
+        </feComponentTransfer>
+        <feColorMatrix in="SourceGraphic" type="saturate" values="0" result="grey" />
+        <feConvolveMatrix in="grey" order="3" kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" divisor="1" edgeMode="duplicate" preserveAlpha="true" result="edges" />
+        <feComposite class="fx-{{iid}}-ink" in="flat" in2="edges" operator="arithmetic" k1="0" k2="1" k3="-1" k4="0" result="fx" />
+        <feComposite in="fx" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="0" k4="0" class="fx-{{iid}}-mix" />
+      </filter>

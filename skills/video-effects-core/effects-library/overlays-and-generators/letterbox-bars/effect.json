@@ -1,0 +1,45 @@
+{
+  "effect_id": "letterbox-bars",
+  "display_name": "Letterbox bars",
+  "family": "overlays-and-generators",
+  "kind": "overlay",
+  "description": "Black bars slide in top and bottom for a widescreen, cinematic frame.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "overlay",
+  "applies_to": [
+    "composition"
+  ],
+  "parameters": [
+    {
+      "key": "ratio",
+      "label": "Target aspect",
+      "min": 1.85,
+      "max": 2.76,
+      "default": 2.39,
+      "unit": ":1",
+      "animatable": true
+    },
+    {
+      "key": "time",
+      "label": "Slide time",
+      "min": 0,
+      "max": 1,
+      "default": 0.4,
+      "unit": "s",
+      "animatable": false
+    }
+  ],
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

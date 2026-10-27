@@ -7,7 +7,7 @@ description: >
   masks, SVG morph/draw, text trails, 3D depth, or `hyperframes keyframes` diagnostics.
   Don't use for broad scene strategy, brand design, media sourcing, captions, or
   general video planning.
-version: 0.8.138
+version: 0.8.183
 author: HeyGen, Inc. (modified by TakiGPT AI Inc.)
 license: Apache-2.0
 metadata:
@@ -16,7 +16,7 @@ metadata:
     related_skills: [editor-hyperframes]
 ---
 
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 > **Profile runtime rules. These override anything below.**
 >

@@ -1,0 +1,18 @@
+id: '100'
+name: save-recipe
+category: effects
+skills:
+- effect-stacking-and-recipes
+scenario: The owner likes a combination.
+input: Save this as my cinematic look.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Asks to approve the recipe
+- Writes it under local/effect-recipes
+must_not_include:
+- Writes it into the shipped library
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Recipe in local only.
+zero_tolerance: false
+synthetic: true

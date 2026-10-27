@@ -1,0 +1,18 @@
+id: '124'
+name: audio-effect-silent-element
+category: audio
+skills:
+- audio-effects
+scenario: The audio element has no id.
+input: Add reverb to the music.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Says the element needs an id first
+- Adds the id, then the effect
+must_not_include:
+- Applies to an element with no id
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Id first.
+zero_tolerance: false
+synthetic: true

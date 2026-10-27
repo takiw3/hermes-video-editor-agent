@@ -1,0 +1,41 @@
+{
+  "effect_id": "fractal-noise",
+  "display_name": "Fractal noise",
+  "family": "overlays-and-generators",
+  "kind": "generator",
+  "description": "A layer of moving cloudy noise. Use it as a texture, a fog, or a grain base.",
+  "implementation_route": "hf-vfx-chain",
+  "hyperframes_feature": "data-vfx-chain fractal-noise",
+  "target": "overlay",
+  "applies_to": [
+    "composition"
+  ],
+  "parameters": [
+    {
+      "key": "opacity",
+      "label": "Opacity",
+      "min": 10,
+      "max": 100,
+      "default": 35,
+      "unit": "%",
+      "animatable": true
+    }
+  ],
+  "vfx_in_markup": true,
+  "animate_vars": {
+    "opacity": "--vfx-{{iid}}n1-opacity"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented",
+  "animate_vars_host": "noise"
+}

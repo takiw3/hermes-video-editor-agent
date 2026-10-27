@@ -1,0 +1,57 @@
+{
+  "effect_id": "kuwahara-paint",
+  "display_name": "Painterly",
+  "family": "image-effects",
+  "kind": "media-effect",
+  "description": "Flattens detail into brush-like patches, like a painting.",
+  "implementation_route": "hf-media-treatment",
+  "hyperframes_feature": "data-color-grading effects.kuwahara",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Amount",
+      "min": 0.3,
+      "max": 1,
+      "default": 1,
+      "unit": "0-1",
+      "animatable": true
+    },
+    {
+      "key": "kuwaharaRadius",
+      "label": "Brush size",
+      "min": 0.05,
+      "max": 0.5,
+      "default": 0.143,
+      "unit": "0-1",
+      "animatable": false
+    }
+  ],
+  "grading": {
+    "effects": {
+      "kuwahara": "$p.amount",
+      "kuwaharaRadius": "$p.kuwaharaRadius",
+      "kuwaharaSharpness": 0.312,
+      "kuwaharaSaturation": 0.5
+    }
+  },
+  "animate_vars": {
+    "amount": "--hf-color-grading-kuwahara"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

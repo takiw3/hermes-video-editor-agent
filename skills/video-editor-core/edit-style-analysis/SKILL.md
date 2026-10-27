@@ -2,13 +2,13 @@
 name: edit-style-analysis
 description: >-
   Use after the owner confirms a reference set. Turns it into a style blueprint of measured and observed edit features, compared against the contrast set, mapped to tested HyperFrames capabilities, with a do-not-copy list. Describes technique. Explains no result.
-version: 1.0.0
+version: 1.1.0
 author: Taki Wong / TakiGPT AI Inc.
 license: MIT
 metadata:
   hermes:
     tags: [video-editor, style, analysis, blueprint]
-    related_skills: [outlier-video-research, style-match-proposal, style-library-maintenance, editor-hyperframes]
+    related_skills: [outlier-video-research, style-match-proposal, style-library-maintenance, editor-hyperframes, effects-catalog-and-selection, reference-editor-study]
 ---
 
 # Edit style analysis
@@ -18,6 +18,7 @@ metadata:
 - A confirmed outlier shortlist and contrast set exist and a blueprint is needed.
 - The owner supplies reference videos and asks for a style blueprint.
 - An existing blueprint needs rebuilding from refreshed references.
+- Reference style analysis: the owner points at one reference video and asks what its look and effects are. Write reference style notes (below) instead of a full blueprint.
 
 ## When not to use
 
@@ -63,7 +64,9 @@ Ask one question at a time, in this order, and stop asking as soon as you can pr
 6. Map each feature to a tested HyperFrames capability from `editor-hyperframes` (`references/capabilities.md`): a workflow, a documented recipe, or a treatment. List what the bundled tools cannot reproduce.
 7. List what must not be copied from each reference: script lines, on-screen wording, graphics, logos, music, sound files, footage, signature phrases.
 8. Give the blueprint a confidence level with its reason and a `valid_until` date from the owner's freshness rule. Check it: `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/editor_tools.py" check-blueprint <style-blueprint.yaml>`.
-9. Delete the sampled frames: `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/editor_tools.py" session-clean`.
+9. For each observed look, transition, overlay, text motion or layout, name the closest verified catalog effect: `python3 "$HERMES_HOME/skills/video-effects-core/effects-library/scripts/fx.py" list --status verified --family <family>`. Write `effect_candidates` in the blueprint, or `none in catalog` with what is missing. The match is a technique, never the reference's own asset.
+10. Reference style analysis (one reference, no outlier set): fill `$HERMES_HOME/templates/reference-style-notes.yaml` from steps 1 to 3 and 9. The notes describe technique and name catalog candidates. They are not a blueprint, carry no outlier claim, and do not unlock the style decision on their own.
+11. Delete the sampled frames: `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/editor_tools.py" session-clean`.
 
 ## Output contract
 
@@ -111,6 +114,7 @@ frames_deleted: true
 Read a template only when you reach the step that needs it.
 
 - `$HERMES_HOME/templates/style-blueprint.yaml`
+- `$HERMES_HOME/templates/reference-style-notes.yaml`
 - `references/capabilities.md` in the `editor-hyperframes` skill
 
 ## Example

@@ -1,0 +1,18 @@
+id: 099
+name: stack-over-budget
+category: effects
+skills:
+- effect-performance-budget
+scenario: Stack-check estimates a multiplier over budget on a long render.
+input: Render the 40-minute course with all of it.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Reports the estimate and the budget
+- Proposes dropping the heaviest effect or shortening windows
+must_not_include:
+- Promises a render time
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Cost stated, not promised.
+zero_tolerance: false
+synthetic: true

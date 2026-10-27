@@ -11,7 +11,7 @@
     "cpu_count": 8,
     "python": "3.10.9",
     "node": "v22.23.1",
-    "ffmpeg": "ffmpeg version 8.1",
+    "ffmpeg": "ffmpeg version 9.0.1",
     "cpu": "Apple M2",
     "memory_gb": 16
   },
@@ -104,33 +104,33 @@
   ],
   "measurements": {
     "test_music_bed_with_voice_carve_and_clipping": {
-      "render_seconds": 6.2,
-      "peak_tree_rss_mb": 642,
-      "workers": 2
+      "render_seconds": 8.4,
+      "peak_tree_rss_mb": 602,
+      "workers": 1
     },
     "duck_check": {
-      "voice_over_music_margin_db": 11.72,
-      "music_carve_depth_db": 19.84
+      "voice_over_music_margin_db": 11.73,
+      "music_carve_depth_db": 19.83
     },
     "test_vertical_captions_lower_third_and_callout": {
-      "render_seconds": 5.0,
-      "peak_tree_rss_mb": 781,
-      "workers": 3
+      "render_seconds": 9.8,
+      "peak_tree_rss_mb": 553,
+      "workers": 1
     },
     "test_grade_changes_the_picture_and_contact_sheets_exist": {
-      "render_seconds": 3.8,
-      "peak_tree_rss_mb": 1081,
-      "workers": 6
+      "render_seconds": 5.6,
+      "peak_tree_rss_mb": 632,
+      "workers": 1
     },
-    "grade_shift_rgb_distance": 31.8,
+    "grade_shift_rgb_distance": 31.4,
     "test_cut_trim_splice_reorder_then_final": {
-      "render_seconds": 4.2,
-      "peak_tree_rss_mb": 1121,
-      "workers": 6
+      "render_seconds": 8.6,
+      "peak_tree_rss_mb": 974,
+      "workers": 2
     },
     "draft_vs_final": {
-      "draft_bytes": 161197,
-      "final_bytes": 160183
+      "draft_bytes": 161482,
+      "final_bytes": 160707
     },
     "cut_detection_on_render": {
       "true_cuts": 5,
@@ -138,57 +138,57 @@
       "threshold": 0.3
     },
     "test_keep_ranges_from_transcript_timings": {
-      "render_seconds": 5.0,
-      "peak_tree_rss_mb": 1133,
-      "workers": 6
+      "render_seconds": 8.2,
+      "peak_tree_rss_mb": 967,
+      "workers": 2
     },
     "test_sound_leads_picture": {
-      "render_seconds": 5.3,
-      "peak_tree_rss_mb": 1125,
-      "workers": 6
+      "render_seconds": 8.3,
+      "peak_tree_rss_mb": 975,
+      "workers": 2
     },
     "test_multi_segment_long_form_with_measurements": {
-      "render_seconds": 895.4,
-      "peak_tree_rss_mb": 779,
-      "workers": 2
+      "render_seconds": 74.1,
+      "peak_tree_rss_mb": 1410,
+      "workers": 3
     },
     "longform": {
-      "duration_seconds": 600,
-      "segments": 30,
-      "resolution": "1920x1080",
+      "duration_seconds": 120,
+      "segments": 6,
+      "resolution": "1280x720",
       "stage": "draft",
-      "wall_seconds": 896.2,
-      "planned_workers": 2,
-      "available_memory_mb_before": 3561,
+      "wall_seconds": 74.4,
+      "planned_workers": 3,
+      "available_memory_mb_before": 4246,
       "total_memory_mb": 16384,
-      "render_seconds": 895.4,
-      "peak_tree_rss_mb": 779,
-      "workers": 2
+      "render_seconds": 74.1,
+      "peak_tree_rss_mb": 1410,
+      "workers": 3
     },
     "test_punch_in_and_crossfade": {
-      "render_seconds": 4.7,
-      "peak_tree_rss_mb": 914,
-      "workers": 4
+      "render_seconds": 10.9,
+      "peak_tree_rss_mb": 844,
+      "workers": 2
     },
     "reframe_v1-16x9": {
-      "render_seconds": 2.8,
-      "peak_tree_rss_mb": 876,
-      "workers": 4
+      "render_seconds": 7.4,
+      "peak_tree_rss_mb": 598,
+      "workers": 1
     },
     "reframe_v2-9x16": {
-      "render_seconds": 2.8,
-      "peak_tree_rss_mb": 877,
-      "workers": 4
+      "render_seconds": 5.9,
+      "peak_tree_rss_mb": 1338,
+      "workers": 3
     },
     "reframe_v3-4x5": {
-      "render_seconds": 2.9,
-      "peak_tree_rss_mb": 877,
-      "workers": 4
+      "render_seconds": 5.5,
+      "peak_tree_rss_mb": 1214,
+      "workers": 3
     },
     "test_slow_motion_and_held_frame": {
-      "render_seconds": 4.5,
-      "peak_tree_rss_mb": 892,
-      "workers": 4
+      "render_seconds": 7.7,
+      "peak_tree_rss_mb": 1335,
+      "workers": 3
     },
     "retime_tone_hz": {
       "source_hz": 740,
@@ -208,6 +208,5 @@
         255
       ]
     }
-  },
-  "hermes": "Hermes Agent v0.21.5 (2026.9.24), commit f97608f178d1ffeca59860195ab7da295f7c8e5f"
+  }
 }

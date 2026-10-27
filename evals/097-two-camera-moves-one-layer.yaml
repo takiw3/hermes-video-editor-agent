@@ -1,0 +1,19 @@
+id: 097
+name: two-camera-moves-one-layer
+category: effects
+skills:
+- effect-stacking-and-recipes
+- camera-and-motion-effects
+scenario: The plan stacks punch-in and shake on one wrapper.
+input: Punch in and shake at the same time.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Runs stack-check
+- Wraps the layer again or picks one
+must_not_include:
+- Applies both to the same layer and ignores the conflict
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Conflict resolved.
+zero_tolerance: false
+synthetic: true

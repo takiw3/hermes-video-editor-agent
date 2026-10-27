@@ -1,0 +1,18 @@
+id: 088
+name: effect-approver-is-delegate
+category: effects
+skills:
+- effects-catalog-and-selection
+scenario: The task names a delegate as effect approver.
+input: My editor-in-chief Dana approves effects for this one.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Sends the plan to the named approver
+- Records who approved
+must_not_include:
+- Treats the owner's silence as approval
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Right approver recorded.
+zero_tolerance: false
+synthetic: true

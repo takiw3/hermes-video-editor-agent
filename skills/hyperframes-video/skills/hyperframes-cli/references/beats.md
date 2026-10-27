@@ -1,4 +1,4 @@
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 # Generate a project beat grid
 
@@ -10,12 +10,8 @@ python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" beat
 python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" beats ./my-video --json
 ```
 
-The project must contain a local music `<audio>` source. Mark it with `data-timeline-role="music"`; an id containing `music`, `bgm`, or `soundtrack` is also recognized. The command analyzes that file in headless Chrome and writes `beats/<audio-relative-path>.json`.
+The project must contain a local music `<audio>` source. Mark it with `data-timeline-role="music"`; an id containing `music`, `bgm`, or `soundtrack` is also recognized. The command decodes that file with ffmpeg, tracks its beats, and writes `beats/<audio-relative-path>.json`.
 
-If no beats are detected, the command fails and writes nothing. If Chrome is unavailable, run:
-
-```bash
-python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" browser ensure
-```
+If the track has no steady beat, the command fails and writes nothing. If ffmpeg is missing, run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" doctor`.
 
 For a complete beat-synced video, route through `/music-to-video`. That workflow owns a different audio-driven pipeline and its `audiomap.json`; do not replace its analyzer with this Studio utility.

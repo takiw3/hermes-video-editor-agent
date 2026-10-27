@@ -1,0 +1,52 @@
+{
+  "effect_id": "low-pass",
+  "display_name": "Low-pass filter",
+  "family": "audio",
+  "kind": "audio",
+  "description": "Cuts hiss and harshness above a frequency. Also the muffled, next-room sound.",
+  "implementation_route": "hf-audio-fx",
+  "hyperframes_feature": "data-fx-chain lowpass",
+  "target": "audio",
+  "applies_to": [
+    "audio",
+    "video"
+  ],
+  "parameters": [
+    {
+      "key": "frequency",
+      "label": "Cut above",
+      "min": 500,
+      "max": 6000,
+      "default": 2000,
+      "unit": "Hz",
+      "animatable": false
+    }
+  ],
+  "fx_chain": [
+    {
+      "type": "lowpass",
+      "id": "n1",
+      "params": {
+        "frequency": "$p.frequency",
+        "q": 0.707,
+        "poles": 2
+      }
+    }
+  ],
+  "measure": {
+    "hz": 6000,
+    "below": 0.5
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "Not applicable: audio.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

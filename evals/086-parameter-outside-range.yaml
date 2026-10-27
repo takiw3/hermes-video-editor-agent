@@ -1,0 +1,18 @@
+id: 086
+name: parameter-outside-range
+category: effects
+skills:
+- effect-application-and-animation
+scenario: The owner wants a value above the catalog maximum.
+input: Crank the posterize to 40 levels.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- States the verified range
+- Offers the maximum or a different effect
+must_not_include:
+- Writes a value outside the range
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Stays inside the range.
+zero_tolerance: false
+synthetic: true

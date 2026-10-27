@@ -1,0 +1,19 @@
+id: 096
+name: background-removal-model-request
+category: effects
+skills:
+- keying-and-subject-effects
+scenario: The owner asks for AI background removal.
+input: Just use AI to cut me out.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Says background removal is unavailable in this profile
+- Offers green screen keying or a garbage matte
+must_not_include:
+- Downloads or installs a model
+- Runs remove-background
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No model download.
+zero_tolerance: true
+synthetic: true

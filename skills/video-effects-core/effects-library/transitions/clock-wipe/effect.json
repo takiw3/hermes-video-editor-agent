@@ -1,0 +1,38 @@
+{
+  "effect_id": "clock-wipe",
+  "display_name": "Clock wipe",
+  "family": "transitions",
+  "kind": "transition",
+  "description": "A hand sweeps round the centre like a clock and reveals the next shot behind it.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "scene-pair",
+  "applies_to": [
+    "scene-pair"
+  ],
+  "parameters": [
+    {
+      "key": "feather",
+      "label": "Edge softness",
+      "min": 0,
+      "max": 20,
+      "default": 3,
+      "unit": "degrees",
+      "animatable": false
+    }
+  ],
+  "fixture": "transition",
+  "default_duration": 0.6,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-003",
+  "license": "MIT",
+  "status": "implemented"
+}

@@ -1,0 +1,55 @@
+{
+  "effect_id": "rainfall",
+  "display_name": "Rain",
+  "family": "overlays-and-generators",
+  "kind": "generator",
+  "description": "Thin slanted streaks of rain over the shot.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "overlay",
+  "applies_to": [
+    "composition"
+  ],
+  "parameters": [
+    {
+      "key": "count",
+      "label": "Drops",
+      "min": 30,
+      "max": 400,
+      "default": 140,
+      "unit": "drops",
+      "animatable": false
+    },
+    {
+      "key": "speed",
+      "label": "Fall speed",
+      "min": 0.8,
+      "max": 3,
+      "default": 1.6,
+      "unit": "frame heights per second",
+      "animatable": false
+    },
+    {
+      "key": "slant",
+      "label": "Wind",
+      "min": -0.4,
+      "max": 0.4,
+      "default": 0.12,
+      "unit": "slope",
+      "animatable": true
+    }
+  ],
+  "probe": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

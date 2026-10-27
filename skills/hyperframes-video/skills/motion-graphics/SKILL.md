@@ -1,7 +1,7 @@
 ---
 name: motion-graphics
 description: >
-  A short, design-led motion graphic where motion is the message — kinetic
+  Use when creating a short, design-led motion graphic where motion is the message — kinetic
   typography, stat count-up, chart/data-viz hit, logo sting / brand lockup,
   lower-third / callout / social overlay, animated map (highlight regions,
   connect places, zoom to a location), animated tweet / news-article /
@@ -9,7 +9,7 @@ description: >
   real image's geometry into a chart. Usually under 10s (up to ~30s), no
   narration or live-action subject; renders to MP4 or transparent overlay.
   Longer / narrated / multi-scene → /general-video. Unclear → /hyperframes.
-version: 0.8.138
+version: 0.8.183
 author: HeyGen, Inc. (modified by TakiGPT AI Inc.)
 license: Apache-2.0
 metadata:
@@ -18,7 +18,7 @@ metadata:
     related_skills: [editor-hyperframes]
 ---
 
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, no-freshness-step, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, no-freshness-step, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 > **Profile runtime rules. These override anything below.**
 >
@@ -51,7 +51,7 @@ A short design-led motion graphic. **Asset-first**: decide the asset strategy an
 | source ◇ | Bash — media-use resolve (**skip if `asset_needs` is empty**)         | `assets/` + `assets/index.md`                                    | `phases/source/guide.md`      |
 | design   | subagent — shot design around resolved assets                         | `shot-plan.json` (final: block(s) + layout + motion + positions) | `agents/director.md` (Part 2) |
 | build    | subagent — reuse-first composition                                    | `compositions/index.html`                                        | `agents/builder.md`           |
-| verify   | Bash — `lint`, `check`, proof snapshots; repair on failure            | `snapshots/contact-sheet.jpg`                                    | Step 5                        |
+| verify   | Bash — `lint`, `check`, proof snapshots; repair on failure            | `.hyperframes/artifacts/snapshots/<id>/contact-sheet.jpg`        | Step 5                        |
 | approve  | Open the preview; ask render or changes; wait for the answer          | explicit render approval                                         | Step 6                        |
 | render   | Bash — `hyperframes render` (MP4, or `--format webm/mov` for overlay) | `renders/video.mp4` or transparent overlay                       | Step 6                        |
 

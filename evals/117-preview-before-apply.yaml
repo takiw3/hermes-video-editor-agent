@@ -1,0 +1,18 @@
+id: '117'
+name: preview-before-apply
+category: effects
+skills:
+- effect-preview-and-contact-sheets
+scenario: The owner cannot picture an effect.
+input: Not sure about halftone, show me.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Makes a preview version
+- Sends a contact sheet
+must_not_include:
+- Applies it to the edit version first
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Preview first.
+zero_tolerance: false
+synthetic: true

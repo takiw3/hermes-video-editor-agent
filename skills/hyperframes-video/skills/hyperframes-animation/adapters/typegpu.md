@@ -1,4 +1,4 @@
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 ---
 name: hyperframes-typegpu
@@ -6,6 +6,19 @@ description: TypeGPU and raw WebGPU adapter patterns for HyperFrames. Use when c
 ---
 
 # TypeGPU / WebGPU for HyperFrames
+
+## Contents
+
+- [Render-environment prerequisite (WebGPU + html-in-canvas)](#render-environment-prerequisite-webgpu--html-in-canvas)
+- [Contract](#contract)
+- [Basic Pattern](#basic-pattern)
+- [Timeline Registration](#timeline-registration)
+- [Video-Backed Effects (Liquid Glass, Distortion)](#video-backed-effects-liquid-glass-distortion)
+- [Frosted Blur via Downsample Pass](#frosted-blur-via-downsample-pass)
+- [Transparent vs Opaque Canvas](#transparent-vs-opaque-canvas)
+- [WGSL Full-Screen Triangle](#wgsl-full-screen-triangle)
+- [Rounded-Rect SDF (Liquid Glass Pill)](#rounded-rect-sdf-liquid-glass-pill)
+- [Deterministic Rendering](#deterministic-rendering)
 
 HyperFrames supports TypeGPU and raw WebGPU through its `typegpu` runtime adapter. The adapter does not own your pipeline. It publishes HyperFrames time and dispatches a seek event so your composition can render the exact GPU frame.
 
@@ -19,7 +32,7 @@ The render engine auto-passes `--enable-unsafe-webgpu` and `--enable-features=Ca
 - Render from HyperFrames time, not `performance.now()`.
 - Listen for the `hf-seek` event and re-render at exactly that time.
 - Guard against environments where WebGPU is unavailable — the adapter does not check for you.
-- If the composition cannot render without WebGPU, add `data-requires-webgpu` to its composition root. Local capture commands then report an actionable error instead of capturing a no-GPU fallback screen when auto-detection selects software rendering.
+- If the composition cannot render without WebGPU, add `data-requires-webgpu` to its composition root. Local capture commands then report an actionable error instead of capturing a no-GPU fallback screen when auto-detection selects software rendering. To render it on a host without a GPU, set `PRODUCER_ALLOW_SOFTWARE_WEBGPU=true`: it renders on SwiftShader, several times slower.
 - After submitting GPU work, register queue completion synchronously with `e.detail.waitUntil(device.queue.onSubmittedWorkDone())`. HyperFrames awaits registered work before screenshots and frame capture.
 
 The adapter sets `window.__hfTypegpuTime` and dispatches an `hf-seek` event with `{ time, waitUntil }` on each seek. While Studio is paused, HyperFrames may dispatch the same time again to keep the WebGPU swapchain presented. Re-render that exact time; do not advance simulation state.

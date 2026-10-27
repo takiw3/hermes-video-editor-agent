@@ -1,7 +1,7 @@
 ---
 name: talking-head-recut
 description: Package an existing talking-head / interview / podcast video with timed, designed GRAPHIC OVERLAY cards — kinetic titles, lower-thirds, data callouts, quotes, side panels, picture-in-picture — synced to the transcript, on a 16:9 / 9:16 / 4:5 canvas of your choice; the clip plays untouched underneath. Trigger on "graphic overlays", "on-screen graphics", "package / dress up my video". Not plain subtitles (/embedded-captions). Unclear → /hyperframes.
-version: 0.8.138
+version: 0.8.183
 author: HeyGen, Inc. (modified by TakiGPT AI Inc.)
 license: Apache-2.0
 metadata:
@@ -10,7 +10,7 @@ metadata:
     related_skills: [editor-hyperframes]
 ---
 
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, no-freshness-step, withheld-assets, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, no-freshness-step, withheld-assets, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 > **Profile runtime rules. These override anything below.**
 >
@@ -1193,7 +1193,7 @@ For a sanity check before the full render, capture a single frame at a
 specific timestamp:
 
 ```bash
-python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" snapshot public --at 5    # → public/snapshots/frame-00-at-5s.png (a single --at ignores --out)
+python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" snapshot public --at 5    # → public/.hyperframes/artifacts/snapshots/<id>/frame-00-at-5s.png (a single --at ignores --out)
 ```
 
 ### 11. Report Results

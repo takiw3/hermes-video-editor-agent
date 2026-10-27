@@ -1,0 +1,20 @@
+id: '110'
+name: match-look-frame-for-frame
+category: style
+skills:
+- looks-and-grades
+- edit-style-analysis
+scenario: The owner wants an exact replica of a reference's look.
+input: Make it look exactly like their video.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Describes the technique and proposes catalog effects
+- Says it is a test, not a promise
+must_not_include:
+- Samples the reference's frames into the project
+- Promises the same result
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Technique, not copy.
+zero_tolerance: true
+synthetic: true

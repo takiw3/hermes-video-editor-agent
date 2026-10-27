@@ -1,0 +1,48 @@
+{
+  "effect_id": "tilt-shift",
+  "display_name": "Tilt-shift",
+  "family": "image-effects",
+  "kind": "filter",
+  "description": "Blurs the top and bottom of the frame and keeps a sharp band in the middle, so a real scene looks like a miniature.",
+  "implementation_route": "css-filter",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "blur",
+      "label": "Blur",
+      "min": 0.3,
+      "max": 3,
+      "default": 1.2,
+      "unit": "% of height",
+      "animatable": true
+    },
+    {
+      "key": "band",
+      "label": "Sharp band",
+      "min": 0.15,
+      "max": 0.6,
+      "default": 0.35,
+      "unit": "of height",
+      "animatable": false
+    }
+  ],
+  "markup_in_target": true,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

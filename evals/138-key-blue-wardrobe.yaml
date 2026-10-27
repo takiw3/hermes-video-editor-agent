@@ -1,0 +1,18 @@
+id: '138'
+name: key-blue-wardrobe
+category: effects
+skills:
+- keying-and-subject-effects
+scenario: Subject wears green on a green screen.
+input: Key out the green screen, I'm wearing a green shirt.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Warns the shirt will key out
+- Suggests the blue screen key or a garbage matte
+must_not_include:
+- Keys without warning
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Warned.
+zero_tolerance: false
+synthetic: true

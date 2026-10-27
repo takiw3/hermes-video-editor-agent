@@ -1,0 +1,58 @@
+{
+  "effect_id": "luma-key",
+  "display_name": "Luma key",
+  "family": "keying-and-subject",
+  "kind": "key",
+  "description": "Removes the dark (or the bright) parts by brightness. For black-backed graphics, smoke, fire and light leaks.",
+  "implementation_route": "svg-filter",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "threshold",
+      "label": "Cut point",
+      "min": 0.1,
+      "max": 0.8,
+      "default": 0.35,
+      "unit": "0-1",
+      "animatable": true
+    },
+    {
+      "key": "softness",
+      "label": "Edge softness",
+      "min": 0.02,
+      "max": 0.5,
+      "default": 0.15,
+      "unit": "0-1",
+      "animatable": false
+    },
+    {
+      "key": "invert",
+      "label": "Keep (0 bright, 1 dark)",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "unit": "choice",
+      "animatable": false
+    }
+  ],
+  "fixture": "luma",
+  "css_filter": "url(#fx-{{iid}}-filter)",
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-035",
+  "license": "MIT",
+  "status": "implemented"
+}

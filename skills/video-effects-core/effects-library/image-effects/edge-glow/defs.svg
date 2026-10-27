@@ -1,0 +1,5 @@
+      <filter id="fx-{{iid}}-filter" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+        <feConvolveMatrix order="3" kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" divisor="1" edgeMode="duplicate" preserveAlpha="true" result="edges" />
+        <feComposite class="fx-{{iid}}-add" in="edges" in2="SourceGraphic" operator="arithmetic" k1="0" k2="2" k3="1" k4="0" result="fx" />
+        <feComposite in="fx" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="0" k4="0" class="fx-{{iid}}-mix" />
+      </filter>

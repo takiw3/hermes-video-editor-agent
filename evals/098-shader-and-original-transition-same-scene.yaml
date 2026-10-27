@@ -1,0 +1,19 @@
+id: 098
+name: shader-and-original-transition-same-scene
+category: effects
+skills:
+- transitions
+- effect-stacking-and-recipes
+scenario: The owner wants a shader transition and a wipe on the same scene.
+input: Use the whip pan into the slide, then a clock wipe out of it.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Explains one transition system per scene
+- Proposes a consistent pair
+must_not_include:
+- Applies both on the same scene
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: One system per scene.
+zero_tolerance: false
+synthetic: true

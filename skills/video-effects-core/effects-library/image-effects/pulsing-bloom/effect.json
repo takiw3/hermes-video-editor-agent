@@ -1,0 +1,52 @@
+{
+  "effect_id": "pulsing-bloom",
+  "display_name": "Pulsing bloom",
+  "family": "image-effects",
+  "kind": "media-effect",
+  "description": "Bloom that breathes in and out at a steady rate. Keep the rate low: a fast pulse on a bright scene can flash.",
+  "implementation_route": "hf-media-treatment",
+  "hyperframes_feature": "data-color-grading effects.bloom, animated",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Peak glow",
+      "min": 0.3,
+      "max": 2.5,
+      "default": 1.2,
+      "unit": "0-3",
+      "animatable": false
+    },
+    {
+      "key": "rate",
+      "label": "Pulses per second",
+      "min": 0.2,
+      "max": 1.5,
+      "default": 0.6,
+      "unit": "Hz",
+      "animatable": false
+    }
+  ],
+  "grading": {
+    "effects": {
+      "bloom": "$p.amount",
+      "bloomRadius": 10
+    }
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-023",
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

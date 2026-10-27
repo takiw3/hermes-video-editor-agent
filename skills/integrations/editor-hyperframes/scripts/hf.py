@@ -128,7 +128,7 @@ STYLE_FILE = "style-decision.yaml"
 RESEARCH_DEFAULT = "owner-supplied only"
 # Planning figure used until this machine has a measured render on record.
 # Upstream states each render worker starts a Chrome process of roughly 256 MB
-# (packages/cli/src/commands/render.ts, tag v0.8.138); the plan doubles it.
+# (packages/cli/src/commands/render.ts, re-read at tag v0.8.183); the plan doubles it.
 WORKER_MB_ASSUMED = 512
 
 
@@ -1689,9 +1689,9 @@ def cmd_shim(argv: list[str]) -> int:
 
 DOWNLOADS = {
     "cli": {
-        "item": "HyperFrames CLI and its dependencies ({pkg}@{ver}), plus GSAP 3.14.2: 172 locked packages",
+        "item": "HyperFrames CLI and its dependencies ({pkg}@{ver}), plus GSAP 3.14.2 and @hyperframes/shader-transitions: 178 locked packages, 130 installed on macOS arm64",
         "source": "https://registry.npmjs.org (npm ci from the shipped package-lock.json, integrity-checked)",
-        "size": "about 235 MB on disk",
+        "size": "about 155 MB on disk (153 MB measured on macOS arm64)",
         "license": "Apache-2.0 for HyperFrames (Copyright 2026 HeyGen, Inc.); GSAP under the GSAP Standard License (not an OSI license); each other dependency under its own license, listed in the lockfile",
     },
     "browser": {

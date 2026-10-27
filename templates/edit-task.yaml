@@ -26,6 +26,9 @@ reference_videos: []          # links or owner-held files; studied, never used
 outlier_shortlist_reference:
 style_preference:             # house_style | outlier_matched | hybrid | none stated
 style_approver:               # the owner, or the delegate the owner named
+effect_preferences:           # looks or effects the owner likes or never wants, in their words
+effects_requested: []         # catalog effect ids or plain descriptions; mapped by effects-catalog-and-selection
+effect_approver:              # who approves the effect plan; the owner unless they named a delegate
 claims_approved:
 rights_status:
 consent_status:

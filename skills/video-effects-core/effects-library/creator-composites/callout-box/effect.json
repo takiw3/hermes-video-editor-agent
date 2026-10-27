@@ -1,0 +1,80 @@
+{
+  "effect_id": "callout-box",
+  "display_name": "Callout box",
+  "family": "creator-composites",
+  "kind": "composite",
+  "description": "A rectangle draws itself around a region and a tag pops up next to it. Point at a button or a number.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "hue",
+      "label": "Colour",
+      "min": 0,
+      "max": 359,
+      "default": 16,
+      "unit": "degrees",
+      "animatable": true
+    },
+    {
+      "key": "x",
+      "label": "Left",
+      "min": 0,
+      "max": 0.8,
+      "default": 0.52,
+      "unit": "of width",
+      "animatable": false
+    },
+    {
+      "key": "y",
+      "label": "Top",
+      "min": 0,
+      "max": 0.8,
+      "default": 0.12,
+      "unit": "of height",
+      "animatable": false
+    },
+    {
+      "key": "w",
+      "label": "Width",
+      "min": 0.1,
+      "max": 0.6,
+      "default": 0.38,
+      "unit": "of width",
+      "animatable": false
+    },
+    {
+      "key": "h",
+      "label": "Height",
+      "min": 0.1,
+      "max": 0.6,
+      "default": 0.38,
+      "unit": "of height",
+      "animatable": false
+    }
+  ],
+  "writes": [
+    "transform"
+  ],
+  "probe": 0.8,
+  "markup_in_target": false,
+  "verify_extremes": "primary",
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

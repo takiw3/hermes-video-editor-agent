@@ -1,4 +1,4 @@
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli, launcher-scripts. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli, launcher-scripts. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 # Audio engine — voiceover, music, SFX, captions, transcription
 
@@ -14,7 +14,7 @@ python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" scri
 - **Request** `{ provider?, voice?, lang?, speed?, tts_model?, style?, lines: [{ id, text, style?, sfx?: [names] }], bgm: { mode?, query?, prompt? } }`: `id` joins each line back to your model; `bgm.mode` = `retrieve | generate | none` (omit for auto). `--only tts,bgm,sfx` runs a subset and merges into an existing `--out`.
 - **Gemini narration** is opt-in with `provider: "gemini"` and an API key or service-account credentials. `tts_model` defaults to `gemini-3.8-flash-tts`; 3.8 Flash-Lite, 3.1 Flash Preview, and 2.5 Pro/Flash Preview TTS are also supported. `style` directs delivery; a line's style overrides the request's style. CLI overrides: `--tts-model`, `--style`. See `audio/references/tts.md` for a complete request. The existing automatic provider order is unchanged.
 - **Output** `audio_meta.json` (id-keyed): `voices[].{path,duration_s,words[]}` (word timestamps for captions), `sfx[]`, `bgm`, `total_duration_s`.
-- **HeyGen free-usage path**: HeyGen CLI auth unlocks TTS plus music/SFX retrieval. Local/provider-specific generators are explicit alternatives where installed; run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" media-use resolve --doctor` before assuming retrieval or TTS will work.
+- **HeyGen free-usage path**: HeyGen CLI auth unlocks TTS plus music retrieval; SFX come from Openverse with no account (`audio/references/sfx.md`). Local/provider-specific generators are explicit alternatives where installed; run `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" media-use resolve --doctor` before assuming retrieval or TTS will work.
 - If BGM took the generate path (`bgm_pending: true`), run `audio/scripts/wait-bgm.mjs` before final render.
 
 Single-shot helpers: `audio/scripts/heygen-tts.mjs` (one voice file). Transcription / background removal / captions use the `hyperframes` CLI (`transcribe`, `remove-background`), see the per-topic guides in `audio/references/` (`tts.md`, `bgm.md`, `sfx.md`, `transcribe.md`, `remove-background.md`, `captions/`).

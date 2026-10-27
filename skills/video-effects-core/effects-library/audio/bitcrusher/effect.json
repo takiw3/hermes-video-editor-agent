@@ -1,0 +1,58 @@
+{
+  "effect_id": "bitcrusher",
+  "display_name": "Bitcrusher",
+  "family": "audio",
+  "kind": "audio",
+  "description": "Lo-fi grit from fewer bits and a cruder sample rate. Game and retro sounds.",
+  "implementation_route": "hf-audio-fx",
+  "hyperframes_feature": "data-fx-chain bitcrush",
+  "target": "audio",
+  "applies_to": [
+    "audio",
+    "video"
+  ],
+  "parameters": [
+    {
+      "key": "bits",
+      "label": "Bits",
+      "min": 2,
+      "max": 10,
+      "default": 4,
+      "unit": "bits",
+      "animatable": false
+    },
+    {
+      "key": "samples",
+      "label": "Downsample",
+      "min": 1,
+      "max": 8,
+      "default": 2,
+      "unit": "x",
+      "animatable": false
+    }
+  ],
+  "fx_chain": [
+    {
+      "type": "bitcrush",
+      "id": "n1",
+      "params": {
+        "bits": "$p.bits",
+        "samples": "$p.samples",
+        "mix": 1
+      }
+    }
+  ],
+  "measure": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "Not applicable: audio.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

@@ -1,0 +1,284 @@
+{
+  "effect_id": "progress-bar",
+  "result": "pass",
+  "limited": [],
+  "verified_at": "2026-10-27T19:20:21Z",
+  "gate_version": "1.1.0",
+  "profile_home": "temporary installed profile",
+  "engine": "hyperframes@0.8.183",
+  "machine": {
+    "system": "Darwin",
+    "release": "25.6.0",
+    "machine": "arm64"
+  },
+  "fixture": {
+    "size": [
+      320,
+      180
+    ],
+    "fps": 30,
+    "seconds": 2.0,
+    "kind": "clip"
+  },
+  "parameters": {
+    "default": {
+      "thickness": 1.5,
+      "hue": 16
+    },
+    "min": {
+      "thickness": 0.5,
+      "hue": 0
+    },
+    "max": {
+      "thickness": 4,
+      "hue": 359
+    }
+  },
+  "checks": [
+    {
+      "n": 1,
+      "check": "lint and check pass",
+      "result": "pass",
+      "detail": {
+        "lint": {
+          "exit": 0,
+          "tail": "\u25c6  Linting default/index.html\n\n\u25c7  0 errors, 0 warnings\n"
+        },
+        "check": {
+          "exit": 0,
+          "tail": "-Claude/f820ef2d-6ace-457e-85e2-956cc390597c/scratchpad/vhome/video-work/projects/fx-verify-progress-bar-20261027-151845/default/.hyperframes/artifacts/checks/dbc57607-f1df-4a66-b63a-a62cb235726e.json\nRevision: none (unversioned)\n[hyperframes] browserGpuMode probe \u2192 hardware (WebGL renderer vendor=\"Google Inc. (Apple)\" renderer=\"ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)\")\n"
+        }
+      }
+    },
+    {
+      "n": 2,
+      "check": "renders at default, min and max",
+      "result": "pass",
+      "detail": {
+        "frames": {
+          "default": 60,
+          "min": 60,
+          "max": 60
+        },
+        "fidelity_vs_screenshot_capture": {
+          "0.2": 0.0,
+          "0.5": 0.0,
+          "1.0": 0.0,
+          "1.5": 0.0
+        },
+        "tolerance": 1.5,
+        "capture_mode": {
+          "default": "drawelement, hardware gpu",
+          "fidelity": "screenshot, hardware gpu"
+        },
+        "note": "the default render must match the same composition rendered with fast capture off"
+      }
+    },
+    {
+      "n": 3,
+      "check": "each render differs from the no-effect baseline above tolerance",
+      "result": "pass",
+      "detail": {
+        "mean_abs_diff_0_255": {
+          "default": 0.644,
+          "max": 1.893,
+          "min": 0.257
+        },
+        "tolerance": 1.0,
+        "changed_pixel_share": {
+          "default": 0.0111,
+          "max": 0.0222
+        },
+        "sparse_share_tolerance": 0.005,
+        "probe_s": 1.0,
+        "note": "min may sit at the effect's identity value, so only default and max must differ; a sparse effect passes when at least 0.5% of pixels change by more than 24 levels"
+      }
+    },
+    {
+      "n": 4,
+      "check": "the same frame rendered twice is identical",
+      "result": "pass",
+      "detail": {
+        "frames_compared": 60,
+        "frames_differing": [],
+        "tolerance": 0.0
+      }
+    },
+    {
+      "n": 5,
+      "check": "a frame rendered alone matches the same frame in sequence",
+      "result": "pass",
+      "detail": {
+        "t": 1.0,
+        "mean_abs_diff": 0.0,
+        "tolerance": 0.0,
+        "method": "frame at 1.0 s from a 1 fps render (one seek from 0) against the 30 fps sequence"
+      }
+    },
+    {
+      "n": 6,
+      "check": "animated parameters render as expected at three times",
+      "result": "not-applicable",
+      "detail": "no animatable parameter"
+    },
+    {
+      "n": 7,
+      "check": "no network request during preview or render",
+      "result": "pass",
+      "detail": {
+        "renders": "every render ran with outbound network denied by the OS (loopback allowed)",
+        "sandbox": "sandbox-exec",
+        "remote_urls_in_project": []
+      }
+    },
+    {
+      "n": 8,
+      "check": "photosensitivity check recorded",
+      "result": "pass",
+      "detail": {
+        "result": "pass",
+        "default": "pass",
+        "max": "pass",
+        "animated_sweep": null,
+        "baseline_result": "pass",
+        "rule": "fails when the no-effect baseline flashes (the fixture is wrong) or when the default setting flashes; a flash only at max makes the effect limited",
+        "renders": {
+          "base": {
+            "result": "pass",
+            "general": {
+              "flashes": 0.0,
+              "area_fraction": 0.125,
+              "at": 0.0,
+              "field": [
+                4,
+                6
+              ],
+              "busiest_cell_transitions": 2
+            },
+            "red": {
+              "flashes": 0.0,
+              "area_fraction": 0.0,
+              "at": null,
+              "field": null,
+              "busiest_cell_transitions": 0
+            }
+          },
+          "default": {
+            "result": "pass",
+            "general": {
+              "flashes": 0.0,
+              "area_fraction": 0.125,
+              "at": 0.0,
+              "field": [
+                4,
+                6
+              ],
+              "busiest_cell_transitions": 2
+            },
+            "red": {
+              "flashes": 0.0,
+              "area_fraction": 0.0,
+              "at": null,
+              "field": null,
+              "busiest_cell_transitions": 0
+            }
+          },
+          "max": {
+            "result": "pass",
+            "general": {
+              "flashes": 0.0,
+              "area_fraction": 0.125,
+              "at": 0.0,
+              "field": [
+                4,
+                6
+              ],
+              "busiest_cell_transitions": 2
+            },
+            "red": {
+              "flashes": 0.0,
+              "area_fraction": 0.0,
+              "at": null,
+              "field": null,
+              "busiest_cell_transitions": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "n": 9,
+      "check": "render-cost multiplier measured",
+      "result": "pass",
+      "detail": {
+        "multiplier": 1.0,
+        "capture_s": {
+          "baseline": 4.3,
+          "effect": 4.5,
+          "effect_repeat": 3.5
+        },
+        "capture_mode": {
+          "base": "drawelement, hardware gpu",
+          "default": "drawelement, hardware gpu"
+        },
+        "method": "capture seconds with the effect (lower of two runs) over capture seconds without it, same composition, 320x180, 60 frames"
+      }
+    },
+    {
+      "n": 10,
+      "check": "reference still and contact sheet from synthetic media",
+      "result": "pass",
+      "detail": {
+        "reference": "reference.jpg",
+        "contact_sheet": "contact-sheet.jpg",
+        "sheet_order": [
+          "no effect",
+          "min",
+          "default",
+          "max"
+        ],
+        "media": "FFmpeg lavfi testsrc2, mandelbrot, and a drawn green-screen clip"
+      }
+    },
+    {
+      "n": 11,
+      "check": "license and provenance complete",
+      "result": "pass",
+      "detail": {
+        "missing": [],
+        "license": "MIT",
+        "provenance": "original"
+      }
+    },
+    {
+      "n": 12,
+      "check": "copy-detection check passes",
+      "result": "pass",
+      "detail": {
+        "shared_shingles_per_file": {
+          "effect.json": 0,
+          "markup.html": 0,
+          "update.js": 0
+        },
+        "limit": 3,
+        "fingerprints_commit": "2756209a9276"
+      }
+    }
+  ],
+  "errors": [],
+  "photosensitivity": {
+    "result": "pass",
+    "default": "pass",
+    "max": "pass",
+    "animated_sweep": null,
+    "criteria": {
+      "source": "WCAG 2.2 SC 2.3.1 Three Flashes or Below Threshold; definitions of general flash, red flash, relative luminance",
+      "urls": [
+        "https://www.w3.org/TR/WCAG22/",
+        "https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html"
+      ],
+      "accessed": "2026-10-21"
+    }
+  },
+  "render_cost_multiplier": 1.0
+}

@@ -1,0 +1,51 @@
+{
+  "effect_id": "pitch-shift",
+  "display_name": "Pitch shift",
+  "family": "audio",
+  "kind": "audio",
+  "description": "Moves the pitch up or down without changing the length. Not for disguising a real person's voice.",
+  "implementation_route": "hf-audio-fx",
+  "hyperframes_feature": "data-fx-chain pitchshift",
+  "target": "audio",
+  "applies_to": [
+    "audio",
+    "video"
+  ],
+  "parameters": [
+    {
+      "key": "semitones",
+      "label": "Semitones",
+      "min": -12,
+      "max": 12,
+      "default": 5,
+      "unit": "st",
+      "animatable": false
+    }
+  ],
+  "fx_chain": [
+    {
+      "type": "pitchshift",
+      "id": "n1",
+      "params": {
+        "semitones": "$p.semitones",
+        "mix": 1
+      }
+    }
+  ],
+  "measure": {
+    "hz": 140,
+    "below": 0.5
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "Not applicable: audio.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

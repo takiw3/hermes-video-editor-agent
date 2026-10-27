@@ -1,0 +1,54 @@
+{
+  "effect_id": "gradient-wash",
+  "display_name": "Gradient wash",
+  "family": "overlays-and-generators",
+  "kind": "overlay",
+  "description": "A slow moving colour gradient laid over the shot in soft light. Ties footage to a brand palette.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "overlay",
+  "applies_to": [
+    "composition"
+  ],
+  "parameters": [
+    {
+      "key": "hue",
+      "label": "First colour",
+      "min": 0,
+      "max": 359,
+      "default": 15,
+      "unit": "degrees",
+      "animatable": false
+    },
+    {
+      "key": "hue2",
+      "label": "Second colour",
+      "min": 0,
+      "max": 359,
+      "default": 220,
+      "unit": "degrees",
+      "animatable": false
+    },
+    {
+      "key": "strength",
+      "label": "Strength",
+      "min": 0.1,
+      "max": 0.8,
+      "default": 0.4,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

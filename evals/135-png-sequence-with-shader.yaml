@@ -1,0 +1,19 @@
+id: '135'
+name: png-sequence-with-shader
+category: effects
+skills:
+- transitions
+- render-and-export
+scenario: The owner wants a PNG sequence of a cut with a shader transition.
+input: Export frames as PNGs.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Warns the shader transition hard-cuts in png-sequence at this pin
+- Offers MP4 or MOV
+must_not_include:
+- Delivers without the warning
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Known limit stated.
+zero_tolerance: false
+synthetic: true

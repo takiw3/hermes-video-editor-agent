@@ -1,0 +1,43 @@
+{
+  "effect_id": "saturation",
+  "display_name": "Saturation",
+  "family": "looks-and-grades",
+  "kind": "correction",
+  "description": "More or less colour everywhere. -1 is black and white.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading adjust.saturation",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Saturation",
+      "min": -1,
+      "max": 1,
+      "default": 0.4,
+      "unit": "-1 to 1",
+      "animatable": false
+    }
+  ],
+  "grading": {
+    "adjust": {
+      "saturation": "$p.amount"
+    }
+  },
+  "animate_vars": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-038",
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

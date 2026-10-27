@@ -44,6 +44,13 @@ python3 scripts/update_test_status.py
 
 Every custom skill keeps the same sections: when to use, when not to use, inputs, missing information, source handling, procedure, output contract, checks before completion, permission boundaries, blocked and failure behavior, templates, and a synthetic example. The description starts with "Use".
 
+## Effects
+
+- A new effect is a folder under `skills/video-effects-core/effects-library/<family>/<effect_id>/` with an `effect.json` and only the templates it needs. Its script must be a pure function of time and parameters: no `Math.random`, no clock, no network.
+- Build in this order: an effect HyperFrames already ships, then an original effect, then behavior studied clean-room. Never copy code, shaders, preset values, images, or names from another project, and never paste from another editor's source into an issue or pull request. A clean-room effect names its study entry in `reference_id`.
+- Run the gate: `python3 scripts/verify_effects.py <effect_id>` (it needs Hermes, Node.js 22, FFmpeg, and a headless Chrome in `VE_TEST_BROWSER`). Then `python3 scripts/build_catalog.py` and commit the record, the stills, and the regenerated catalog together. Never edit a verification record by hand.
+- `python3 scripts/copy_check.py check` must pass. It runs in CI.
+
 ## Versioning
 
 Semantic versioning. Update `CHANGELOG.md` and the manifest version with any change to a distributed file.

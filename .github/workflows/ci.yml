@@ -43,6 +43,15 @@ jobs:
       - name: Eval fixtures
         run: python3 scripts/run_evals.py
 
+      # Salted shingle and image hashes of the studied editor, no text. Fails on
+      # a copied file, a matching image, or the project's name outside the
+      # files allowed to name it.
+      - name: Copy detection against the clean-room study fingerprints
+        run: python3 scripts/copy_check.py check
+
+      - name: Effects catalog, docs, and README counts are generated from the records
+        run: python3 scripts/build_catalog.py --check
+
   tests:
     name: Tools, launcher gates, and install checks
     runs-on: ubuntu-latest
@@ -76,6 +85,12 @@ jobs:
       # browser, no render. These test the launcher's own gates.
       - name: Launcher gates
         run: python3 tests/run.py tests.test_gates
+
+      # Catalog integrity, apply and remove round trips, stacking and plan
+      # checks, the WCAG flash check against known strobes, and the copy
+      # check. Rendering every effect is the verification gate, run locally.
+      - name: Effects library
+        run: python3 tests/run.py tests.test_effects
 
       # Needs the Hermes CLI for most steps. When it is absent every
       # Hermes-dependent step reports "not run"; nothing is counted as passed.

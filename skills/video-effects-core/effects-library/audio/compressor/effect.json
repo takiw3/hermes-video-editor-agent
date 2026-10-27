@@ -1,0 +1,71 @@
+{
+  "effect_id": "compressor",
+  "display_name": "Compressor",
+  "family": "audio",
+  "kind": "audio",
+  "description": "Evens out loud and quiet parts so the voice sits steady.",
+  "implementation_route": "hf-audio-fx",
+  "hyperframes_feature": "data-fx-chain compressor",
+  "target": "audio",
+  "applies_to": [
+    "audio",
+    "video"
+  ],
+  "parameters": [
+    {
+      "key": "threshold",
+      "label": "Threshold",
+      "min": -40,
+      "max": -10,
+      "default": -24,
+      "unit": "dB",
+      "animatable": false
+    },
+    {
+      "key": "ratio",
+      "label": "Ratio",
+      "min": 2,
+      "max": 20,
+      "default": 6,
+      "unit": ":1",
+      "animatable": false
+    },
+    {
+      "key": "makeup",
+      "label": "Make-up gain",
+      "min": 0,
+      "max": 12,
+      "default": 6,
+      "unit": "dB",
+      "animatable": false
+    }
+  ],
+  "fx_chain": [
+    {
+      "type": "compressor",
+      "id": "n1",
+      "params": {
+        "threshold": "$p.threshold",
+        "ratio": "$p.ratio",
+        "attack": 20,
+        "release": 250,
+        "knee": 2.83,
+        "makeup": "$p.makeup",
+        "mix": 1
+      }
+    }
+  ],
+  "measure": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "Not applicable: audio.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

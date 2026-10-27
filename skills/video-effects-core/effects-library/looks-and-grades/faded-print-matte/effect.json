@@ -1,0 +1,66 @@
+{
+  "effect_id": "faded-print-matte",
+  "display_name": "Faded print",
+  "family": "looks-and-grades",
+  "kind": "look",
+  "description": "Lifted blacks and softened highlights, a little warm, like an old print.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading (this profile's values)",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "intensity",
+      "label": "Strength",
+      "min": 0.25,
+      "max": 1,
+      "default": 0.85,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "grading": {
+    "adjust": {
+      "saturation": -0.22,
+      "temperature": 0.1
+    },
+    "curves": {
+      "master": [
+        [
+          0,
+          0.09
+        ],
+        [
+          0.5,
+          0.52
+        ],
+        [
+          1,
+          0.92
+        ]
+      ]
+    },
+    "details": {
+      "vignette": 0.2
+    },
+    "intensity": "$p.intensity"
+  },
+  "animate_vars": {
+    "intensity": "--hf-color-grading-intensity"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-100",
+  "license": "MIT",
+  "status": "implemented"
+}

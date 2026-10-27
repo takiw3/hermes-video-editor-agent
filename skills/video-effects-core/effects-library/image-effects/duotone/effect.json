@@ -1,0 +1,57 @@
+{
+  "effect_id": "duotone",
+  "display_name": "Duotone",
+  "family": "image-effects",
+  "kind": "filter",
+  "description": "Maps the picture onto two colours: one for shadows, one for highlights.",
+  "implementation_route": "svg-filter",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "shadow_hue",
+      "label": "Shadow colour",
+      "min": 0,
+      "max": 359,
+      "default": 225,
+      "unit": "degrees",
+      "animatable": false
+    },
+    {
+      "key": "highlight_hue",
+      "label": "Highlight colour",
+      "min": 0,
+      "max": 359,
+      "default": 35,
+      "unit": "degrees",
+      "animatable": false
+    },
+    {
+      "key": "mix",
+      "label": "Mix",
+      "min": 0.3,
+      "max": 1,
+      "default": 1,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "css_filter": "url(#fx-{{iid}}-filter)",
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

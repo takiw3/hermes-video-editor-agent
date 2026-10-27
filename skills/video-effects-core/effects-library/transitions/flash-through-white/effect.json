@@ -1,0 +1,29 @@
+{
+  "effect_id": "flash-through-white",
+  "display_name": "Flash through white",
+  "family": "transitions",
+  "kind": "transition",
+  "description": "The picture brightens to white and the next shot comes out of it. One flash: do not repeat it fast.",
+  "implementation_route": "hf-shader-transition",
+  "hyperframes_feature": "@hyperframes/shader-transitions flash-through-white",
+  "target": "scene-pair",
+  "applies_to": [
+    "scene-pair"
+  ],
+  "parameters": [],
+  "fixture": "transition",
+  "shader": "flash-through-white",
+  "default_duration": 0.7,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR verified. HyperFrames has an HDR path for shader transitions; this profile has not tested it.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

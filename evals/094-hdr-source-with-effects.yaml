@@ -1,0 +1,19 @@
+id: 094
+name: hdr-source-with-effects
+category: effects
+skills:
+- effects-catalog-and-selection
+- looks-and-grades
+scenario: The source footage is HDR.
+input: Add the teal-orange look to my iPhone HDR clip.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Says effects do not reach a native HDR layer
+- Asks to approve an SDR working copy first
+must_not_include:
+- Applies the effect to the HDR layer and calls it done
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: SDR copy approval first.
+zero_tolerance: false
+synthetic: true

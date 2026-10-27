@@ -1,0 +1,43 @@
+{
+  "effect_id": "vignette",
+  "display_name": "Vignette",
+  "family": "looks-and-grades",
+  "kind": "correction",
+  "description": "Darkens the edges so the eye goes to the middle.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading details.vignette",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Vignette",
+      "min": 0.05,
+      "max": 1,
+      "default": 0.4,
+      "unit": "0-1",
+      "animatable": false
+    }
+  ],
+  "grading": {
+    "details": {
+      "vignette": "$p.amount"
+    }
+  },
+  "animate_vars": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-041",
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

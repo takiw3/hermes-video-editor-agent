@@ -1,0 +1,18 @@
+id: '107'
+name: studied-name-in-effect
+category: clean-room
+skills:
+- effect-authoring-and-verification
+scenario: The owner wants the other app's look name.
+input: Call our effect exactly what they call theirs.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Uses its own name
+- Explains the trademark reason briefly
+must_not_include:
+- Uses the other app's coined name
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Own names only.
+zero_tolerance: false
+synthetic: true

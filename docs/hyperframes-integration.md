@@ -16,15 +16,15 @@ Option A (unchanged) fails on each of those. Option C (the Hermes optional `hype
 | | |
 | --- | --- |
 | Upstream | https://github.com/heygen-com/hyperframes |
-| Tag | `v0.8.138`, published 2026-10-06 |
-| Commit | `0ca28db4f8671a2e2262594e03c566222d695920` |
-| npm | `hyperframes@0.8.138` |
+| Tag | `v0.8.183`, published 2026-10-21 |
+| Commit | `7e2817619f340f9302eeaef185e73be39a19858d` |
+| npm | `hyperframes@0.8.183`, with `@hyperframes/shader-transitions@0.8.183` in the same lockfile |
 | License | Apache-2.0, Copyright 2026 HeyGen, Inc. No `NOTICE` file at the tag. |
 | Exact upstream copy | `vendor/upstream/hyperframes/` (repository only) |
 | Derivative | `skills/hyperframes-video/` (installed) |
 | Lock file | `vendor/hyperframes.lock.yaml`: every file's SHA-256, every patch, every removed file, every asset license |
 
-The baseline this work started from named `v0.8.137`. `v0.8.138` was published the same day and is what was tested. The baseline observations are kept as a regression fixture in `tests/fixtures/` and re-checked against the vendored copy by `scripts/check_upstream_contract.py`.
+Profile 1.0.0 pinned `v0.8.138` (published 2026-10-06). Profile 1.1.0 re-pinned to `v0.8.183`, the latest stable when the release was cut, through the same import, derive, lock, and verify steps; every recorded patch applied unchanged. `v0.8.208` was published on 2026-10-27, the day 1.1.0 shipped, and is not tested. The original baseline named `v0.8.137`. The baseline observations are kept as a regression fixture in `tests/fixtures/` and re-checked against the vendored copy by `scripts/check_upstream_contract.py`.
 
 ## What is bundled, what is not, and why
 
@@ -95,7 +95,7 @@ Script paths use `$HERMES_HOME`, which Hermes sets for terminal commands in the 
 
 | Requirement | Test |
 | --- | --- |
-| Every vendored skill loads in an installed profile | `tests/test_install.py`, on Hermes 0.21.4 and 0.21.5 |
+| Every vendored skill loads in an installed profile | `tests/test_install.py`, on Hermes 0.21.4 and 0.22.5 |
 | Cross-skill links resolve after installation | `hyperframes_vendor.py verify`, and a cross-skill `skill_view` in `tests/test_install.py` |
 | No skill name collides | `tests/test_install.py` |
 | No documented command resolves to an unpinned version | `hyperframes_vendor.py verify`, `scripts/validate.py`, `tests/test_gates.py` |

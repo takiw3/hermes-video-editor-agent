@@ -29,6 +29,11 @@ short-form-editing long-form-editing long-to-short-clipping caption-design-and-t
 b-roll-and-visual-coverage audio-cleanup-and-mix color-and-media-treatment reframe-and-multi-format-export
 render-and-export edit-quality-review revision-and-version-management asset-rights-and-consent-check
 edit-performance-feedback cross-team-edit-handoffs weekly-edit-review""".split()
+EFFECT_SKILLS = """effects-catalog-and-selection effect-preview-and-contact-sheets effect-application-and-animation
+effect-stacking-and-recipes looks-and-grades image-effects transitions camera-and-motion-effects keying-and-subject-effects
+overlays-and-generators text-and-title-effects creator-composite-effects audio-effects effect-performance-budget
+photosensitivity-and-accessibility-check effect-authoring-and-verification reference-editor-study""".split()
+EFFECTS = "skills/video-effects-core"
 VENDORED_SKILLS = """hyperframes hyperframes-core hyperframes-animation hyperframes-keyframes hyperframes-creative
 hyperframes-cli hyperframes-audio hyperframes-registry hyperframes-studio media-use talking-head-recut
 embedded-captions motion-graphics faceless-explainer general-video captions-overlay""".split()
@@ -38,11 +43,14 @@ TEMPLATES = """editor-profile.md brand-and-visual-identity.md footage-inventory.
 outlier-study.yaml style-blueprint.yaml style-match-proposal.md style-decision.yaml paper-edit.md
 edit-decision-list.yaml caption-style.yaml overlay-plan.yaml audio-plan.yaml export-preset.yaml render-receipt.yaml
 quality-checklist.md revision-request.yaml asset-rights-register.yaml approval-request.yaml edit-task.yaml
-edit-result.yaml review-request.yaml report-template.md""".split()
+edit-result.yaml review-request.yaml report-template.md reference-style-notes.yaml effect-plan.yaml effect-recipe.yaml
+effect-verification-record.yaml""".split()
 DOCS = """architecture.md hyperframes-setup.md hyperframes-integration.md outlier-research-and-style-matching.md
 research-sources-and-platform-terms.md permissions-and-security.md editor-onboarding.md
 short-form-and-long-form-workflows.md render-performance-and-limits.md media-rights-and-consent.md
-team-integration.md privacy-and-retention.md updating-vendored-code.md evaluations.md""".split()
+team-integration.md privacy-and-retention.md updating-vendored-code.md evaluations.md effects/catalog.md
+effects/reference-study.md effects/clean-room-process.md effects/verification.md effects/performance.md
+concat-safety-review.md photosensitivity-and-accessibility.md""".split()
 FACTS = f"{WRAPPER}/references/platform-facts.yaml"
 REQUIRED_FILES = [
     "distribution.yaml", "SOUL.md", "config.yaml", "profile.yaml", "README.md", "LICENSE",
@@ -55,7 +63,10 @@ REQUIRED_FILES = [
     f"{WRAPPER}/references/workspace-and-gates.md", f"{WRAPPER}/references/upstream-facts.md", FACTS,
     "tests/fixtures/compat-baseline-2026-10-06.yaml",
     "docs/test-results/tools.json", "docs/test-results/gates.json", "docs/test-results/renders.json",
-    "docs/test-results/install-hermes-0.21.5.json", "docs/test-results/install-hermes-0.21.4.json",
+    "docs/test-results/install-hermes-0.21.4.json", "docs/test-results/install-hermes-0.22.5.json", "docs/test-results/effects.json", "docs/test-results/effects.tests.json",
+    f"{EFFECTS}/effects-library/catalog.yaml", f"{EFFECTS}/effects-library/runtime/fx-runtime.js",
+    f"{EFFECTS}/effects-library/scripts/fx.py", "scripts/copy_check.py", "scripts/build_catalog.py",
+    "scripts/verify_effects.py", "tests/fixtures/concat-fingerprints.json", "tests/test_effects.py",
 ] + [f"templates/{t}" for t in TEMPLATES] + [f"docs/{d}" for d in DOCS]
 SKILL_SECTIONS = ["## When to use", "## When not to use", "## Inputs", "## Missing information",
                   "## Source handling", "## Procedure", "## Output contract", "## Checks before completion",
@@ -100,7 +111,8 @@ KNOWN_HF_ENV = {"HYPERFRAMES_SKIP_SKILLS", "HYPERFRAMES_NO_UPDATE_CHECK", "HYPER
 KNOWN_DATA_ATTRS = {"data-start", "data-duration", "data-media-start", "data-track-index", "data-playback-rate",
                     "data-has-audio", "data-automation", "data-composition-id", "data-composition-src",
                     "data-composition-variables", "data-variable-values", "data-color-grading", "data-width",
-                    "data-height", "data-var-src", "data-var-text", "data-volume"}
+                    "data-height", "data-var-src", "data-var-text", "data-volume", "data-vfx-chain", "data-fx-chain",
+                    "data-no-capture"}
 # Statements this profile must never make. Each is checked in runtime files,
 # examples, and docs, and skipped where the sentence is a negation or a rule
 # quoting the forbidden request.
@@ -242,7 +254,8 @@ def validate_tree() -> None:
         if f.suffix.lower() == ".mp3":
             check(r.startswith(MP3_ALLOWED_UNDER), f"audio outside the licensed upstream sfx set: {r}")
         if f.suffix.lower() in {".png", ".jpg", ".jpeg", ".gif", ".webp"}:
-            check(is_vendored(r), f"image outside the vendored material (a sampled frame or render?): {r}")
+            still = r.startswith(f"{EFFECTS}/effects-library/") and f.name in {"reference.jpg", "contact-sheet.jpg"}
+            check(is_vendored(r) or still, f"image outside the vendored material and the effect stills (a sampled frame or render?): {r}")
     check(not (REPO / "references").exists() and not (REPO / "footage").exists(), "no footage or reference folder at the repository root")
 
     for f in files:
@@ -262,7 +275,7 @@ def validate_tree() -> None:
 
     # manifest
     m = yaml.safe_load((REPO / "distribution.yaml").read_text(encoding="utf-8"))
-    check(m.get("name") == PROFILE and str(m.get("version")) == "1.0.0" and m.get("license") == "MIT",
+    check(m.get("name") == PROFILE and str(m.get("version")) == "1.1.0" and m.get("license") == "MIT",
           "manifest name, version, license")
     check(not m.get("env_requires"), "manifest requires no environment variable")
     check("skills" not in m["distribution_owned"], "manifest never owns the whole skills directory")
@@ -291,12 +304,18 @@ def validate_tree() -> None:
         check(names.get(n, "").startswith("skills/video-editor-core/"), f"core skill present: {n}")
     for n in VENDORED_SKILLS:
         check(names.get(n, "").startswith("skills/hyperframes-video/skills/"), f"vendored skill present: {n}")
+    for n in EFFECT_SKILLS:
+        check(names.get(n, "").startswith(f"{EFFECTS}/"), f"effects skill present: {n}")
+    check(not (REPO / EFFECTS / "effects-library/SKILL.md").exists(), "the effects library is data, not a skill")
+    check(names.get("edit-style-analysis", "").startswith("skills/video-editor-core/") and "reference-style-analysis" not in names,
+          "reference style analysis extends edit-style-analysis; no duplicate skill")
     for n in NOT_BUNDLED:
         check(n not in names, f"skill excluded on evidence is not shipped: {n}")
-    total = len(CORE_SKILLS) + len(VENDORED_SKILLS) + 1
+    total = len(CORE_SKILLS) + len(VENDORED_SKILLS) + len(EFFECT_SKILLS) + 1
     check(len(names) == total, f"exactly {total} skills ship", str(len(names)))
 
-    custom = [REPO / "skills/video-editor-core" / n / "SKILL.md" for n in CORE_SKILLS] + [REPO / WRAPPER / "SKILL.md"]
+    custom = ([REPO / "skills/video-editor-core" / n / "SKILL.md" for n in CORE_SKILLS] + [REPO / WRAPPER / "SKILL.md"]
+              + [REPO / EFFECTS / n / "SKILL.md" for n in EFFECT_SKILLS])
     for skill_md in custom:
         if not skill_md.is_file():
             continue
@@ -326,7 +345,7 @@ def validate_tree() -> None:
             check(skill in names, f"skill_view target is bundled: {skill} in {r}")
 
     # runtime instruction files
-    runtime = [f for f in files if rel(f).startswith(("skills/video-editor-core/", "skills/integrations/", "templates/"))
+    runtime = [f for f in files if rel(f).startswith(("skills/video-editor-core/", "skills/integrations/", "templates/", f"{EFFECTS}/"))
                or rel(f) in {"SOUL.md", "config.yaml", "profile.yaml"}]
     for f in runtime:
         r = rel(f)
@@ -453,7 +472,7 @@ def validate_tree() -> None:
     # capability claims are backed by recorded, passing, pixel-checked renders
     results_dir = REPO / "docs/test-results"
     recorded: dict[str, str] = {}
-    for name in ("tools.json", "gates.json", "renders.json", "install-hermes-0.21.5.json", "install-hermes-0.21.4.json"):
+    for name in ("tools.json", "gates.json", "renders.json", "install-hermes-0.22.5.json", "install-hermes-0.21.4.json", "effects.tests.json"):
         path = results_dir / name
         if path.is_file():
             data = json.loads(path.read_text(encoding="utf-8"))
@@ -573,7 +592,8 @@ def validate_tree() -> None:
     check("MIT License" in lic and "Copyright (c) 2026 TakiGPT AI Inc." in lic, "MIT license and copyright line")
     tpn = (REPO / "THIRD_PARTY_NOTICES.md").read_text(encoding="utf-8")
     for needle in ("Apache License", "Copyright 2026 HeyGen, Inc.", "GSAP Standard License", "OFL-1.1",
-                   "Pixabay", "CC-BY-4.0", "vtake", "captions-overlay", "0ca28db4f8671a2e2262594e03c566222d695920"):
+                   "Pixabay", "CC-BY-4.0", "vtake", "captions-overlay", "7e2817619f340f9302eeaef185e73be39a19858d",
+                   "@hyperframes/shader-transitions", "html2canvas", "2756209a92766a4e4726999a51648349a272c159"):
         check(needle in tpn, f"THIRD_PARTY_NOTICES covers: {needle}")
     check("MIT" not in (REPO / "skills/hyperframes-video/LICENSE").read_text()[:400], "vendored material is not relicensed as MIT")
     check("retain the community link" not in readme.lower() and "must keep the community" not in readme.lower(),
@@ -591,6 +611,69 @@ def validate_tree() -> None:
         args = [sys.executable, str(REPO / "scripts" / script)] + (["verify"] if script == "hyperframes_vendor.py" else [])
         proc = subprocess.run(args, capture_output=True, text=True)
         check(proc.returncode == 0, label, proc.stdout.strip().splitlines()[-1] if proc.stdout.strip() else proc.stderr[-200:])
+
+
+def validate_effects() -> None:
+    """Effects library: catalog current, verified claims backed by records,
+    README count equal to the verified count, copy check, sync conflicts."""
+    lib = REPO / EFFECTS / "effects-library"
+    specs = sorted(lib.glob("*/*/effect.json"))
+    ids = [json.loads(p.read_text(encoding="utf-8"))["effect_id"] for p in specs]
+    check(len(ids) == len(set(ids)), "effect ids are unique", str(len(ids)))
+    for p in specs:
+        s = json.loads(p.read_text(encoding="utf-8"))
+        r = rel(p)
+        check(s["effect_id"] == p.parent.name and s["family"] == p.parent.parent.name, f"effect folder matches id and family: {r}")
+        for key in ("effect_id", "display_name", "family", "kind", "description", "implementation_route", "parameters",
+                    "applies_to", "needs_model", "needs_key_footage", "hdr_behavior", "deterministic", "seek_safe",
+                    "photosensitivity", "face_safe", "provenance", "license", "status"):
+            check(key in s and s[key] not in (None, ""), f"catalog field {key} present: {r}")
+        check(s.get("needs_model") is False, f"no effect needs a model: {r}")
+        for prm in s.get("parameters", []):
+            check(prm["min"] <= prm["default"] <= prm["max"], f"parameter range holds its default: {r} {prm['key']}")
+        if s.get("provenance") == "clean-room":
+            check(bool(re.fullmatch(r"RS-\d{3}", s.get("reference_id") or "")), f"clean-room effect names its study entry: {r}")
+        rec = p.parent / "verification.json"
+        if rec.is_file():
+            data = json.loads(rec.read_text(encoding="utf-8"))
+            if data.get("result") == "pass":
+                nums = {c["n"] for c in data.get("checks", [])}
+                check(set(range(1, 13)) <= nums and all(c["result"] in {"pass", "not-applicable"} for c in data["checks"]),
+                      f"a passing record has all 12 checks passed or not applicable: {r}")
+                check((p.parent / "reference.jpg").is_file() or s["family"] == "audio", f"verified picture effect has its reference still: {r}")
+    for js in lib.glob("*/*/update.js"):
+        text = js.read_text(encoding="utf-8")
+        if re.search(r"perspective\(|rotate[XY]\(|rotate3d\(|preserve-3d", text):
+            spec = json.loads((js.parent / "effect.json").read_text(encoding="utf-8"))
+            check(spec.get("needs_screenshot_capture") is True,
+                  f"a 3D-transform effect routes renders to screenshot capture (fast capture freezes video in 3D layers): {rel(js)}")
+        for banned in ("Math.random", "Date.now", "new Date", "performance.now", "fetch(", "XMLHttpRequest", "import("):
+            check(banned not in text, f"effect script is deterministic and offline ({banned}): {rel(js)}")
+    proc = subprocess.run([sys.executable, str(REPO / "scripts/build_catalog.py"), "--check"], capture_output=True, text=True)
+    check(proc.returncode == 0, "catalog, catalog doc and README counts are current", proc.stdout.strip()[-200:])
+    cat = json.loads("\n".join(l for l in (lib / "catalog.yaml").read_text(encoding="utf-8").splitlines() if not l.startswith("#")))
+    counts = cat["counts"]
+    readme = (REPO / "README.md").read_text(encoding="utf-8")
+    check(f"| **Picture effects** | **{counts['visual_verified']}** |" in readme, "README verified count equals the catalog's verified count")
+    status = "full release" if counts["visual_verified"] >= 101 else "limited release"
+    check(status in readme and (status == "full release" or str(counts["visual_verified"]) in readme),
+          "README states full or limited release with the exact count")
+    proc = subprocess.run([sys.executable, str(REPO / "scripts/copy_check.py"), "check"], capture_output=True, text=True)
+    check(proc.returncode == 0, "copy check against the studied project's fingerprints", proc.stdout.strip()[-200:])
+    # sync-conflict duplicates from a cloud-synced folder: "name 2", "name 2.ext"
+    dupes = []
+    for path in REPO.rglob("*"):
+        if ".git" in path.parts or "node_modules" in path.parts:
+            continue
+        if re.search(r" \d+(\.[^/]*)?$", path.name):
+            empty_dir = path.is_dir() and not any(path.iterdir())
+            dupes.append((rel(path), empty_dir))
+    for r, empty_dir in dupes:
+        if empty_dir:
+            print(f"  WARN  empty sync-conflict folder (not tracked by Git; delete it with the owner's OK): {r}")
+        else:
+            check(False, f"sync-conflict duplicate in the tree: {r}")
+    check(True, "sync-conflict duplicate scan complete")
 
 
 def validate_history() -> None:
@@ -620,6 +703,7 @@ def validate_history() -> None:
 def main() -> int:
     if "--only-history" not in sys.argv:
         validate_tree()
+        validate_effects()
     if "--history" in sys.argv:
         validate_history()
     for e in errors:

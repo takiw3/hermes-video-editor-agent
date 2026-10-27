@@ -1,0 +1,49 @@
+{
+  "effect_id": "colour-isolate",
+  "display_name": "Colour isolate",
+  "family": "keying-and-subject",
+  "kind": "key",
+  "description": "Keeps one colour family and turns everything else black and white. The red-coat look.",
+  "implementation_route": "svg-filter",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "channel",
+      "label": "Keep (0 reds, 1 greens, 2 blues)",
+      "min": 0,
+      "max": 2,
+      "default": 0,
+      "unit": "choice",
+      "animatable": false
+    },
+    {
+      "key": "strength",
+      "label": "Selectivity",
+      "min": 1,
+      "max": 8,
+      "default": 4,
+      "unit": "x",
+      "animatable": true
+    }
+  ],
+  "fixture": "clip",
+  "css_filter": "url(#fx-{{iid}}-filter)",
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

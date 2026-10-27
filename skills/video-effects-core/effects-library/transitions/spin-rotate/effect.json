@@ -1,0 +1,38 @@
+{
+  "effect_id": "spin-rotate",
+  "display_name": "Spin",
+  "family": "transitions",
+  "kind": "transition",
+  "description": "The current shot spins away and the next spins into place.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "scene-pair",
+  "applies_to": [
+    "scene-pair"
+  ],
+  "parameters": [
+    {
+      "key": "angle",
+      "label": "Turn",
+      "min": 30,
+      "max": 360,
+      "default": 120,
+      "unit": "degrees",
+      "animatable": false
+    }
+  ],
+  "fixture": "transition",
+  "default_duration": 0.6,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": false,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-019",
+  "license": "MIT",
+  "status": "implemented"
+}

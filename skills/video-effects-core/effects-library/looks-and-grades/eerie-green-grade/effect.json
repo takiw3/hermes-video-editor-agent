@@ -1,0 +1,51 @@
+{
+  "effect_id": "eerie-green-grade",
+  "display_name": "Eerie green",
+  "family": "looks-and-grades",
+  "kind": "look",
+  "description": "Sickly green cast, lower colour and dark edges. Horror and suspense.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading (this profile's values)",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "intensity",
+      "label": "Strength",
+      "min": 0.25,
+      "max": 1,
+      "default": 0.85,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "grading": {
+    "adjust": {
+      "tint": -0.38,
+      "saturation": -0.3,
+      "contrast": 0.15
+    },
+    "details": {
+      "vignette": 0.42
+    },
+    "intensity": "$p.intensity"
+  },
+  "animate_vars": {
+    "intensity": "--hf-color-grading-intensity"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-091",
+  "license": "MIT",
+  "status": "implemented"
+}

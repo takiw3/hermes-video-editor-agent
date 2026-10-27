@@ -1,0 +1,39 @@
+{
+  "effect_id": "hue-shift",
+  "display_name": "Hue shift",
+  "family": "looks-and-grades",
+  "kind": "filter",
+  "description": "Rotates every colour around the colour wheel by the same angle. Skin turns odd fast, so keep it small on people.",
+  "implementation_route": "css-filter",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "angle",
+      "label": "Rotation",
+      "min": -180,
+      "max": 180,
+      "default": 40,
+      "unit": "degrees",
+      "animatable": true
+    }
+  ],
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like every filter on the page compositor.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "low",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented",
+  "css_filter": "hue-rotate(calc(var(--fx-{{iid}}-angle, {{p.angle}}) * 1deg * var(--fx-{{iid}}-on, 1)))"
+}

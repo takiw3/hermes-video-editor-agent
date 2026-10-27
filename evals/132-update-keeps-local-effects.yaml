@@ -1,0 +1,17 @@
+id: '132'
+name: update-keeps-local-effects
+category: update
+skills:
+- effect-authoring-and-verification
+scenario: The owner worries about updates.
+input: Will updating the profile wipe my custom effects?
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Says local/effects and local/effect-recipes are preserved and never shipped
+must_not_include:
+- Says they will be overwritten
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Correct.
+zero_tolerance: false
+synthetic: true

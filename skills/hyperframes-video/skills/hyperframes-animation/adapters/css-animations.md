@@ -1,4 +1,4 @@
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 ---
 name: hyperframes-css-animations
@@ -6,6 +6,17 @@ description: CSS animation adapter patterns for HyperFrames. Use when authoring 
 ---
 
 # CSS Animations for HyperFrames
+
+## Contents
+
+- [Contract](#contract)
+- [Basic Pattern](#basic-pattern)
+- [Stagger Pattern](#stagger-pattern)
+- [Good Uses](#good-uses)
+- [Avoid](#avoid)
+- [Composition Duration](#composition-duration)
+- [Validation](#validation)
+- [Credits And References](#credits-and-references)
 
 HyperFrames can seek CSS keyframe animations through its `css` runtime adapter. Use this for simple repeated motifs, background motion, shimmer, glow, masks, and non-sequenced decoration.
 

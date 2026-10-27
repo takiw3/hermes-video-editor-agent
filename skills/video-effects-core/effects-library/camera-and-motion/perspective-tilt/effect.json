@@ -1,0 +1,60 @@
+{
+  "effect_id": "perspective-tilt",
+  "display_name": "3D tilt",
+  "family": "camera-and-motion",
+  "kind": "camera",
+  "description": "Tips the shot back in 3D, like a card on a table. Good for screen recordings.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "tilt_x",
+      "label": "Tip back",
+      "min": -20,
+      "max": 20,
+      "default": 8,
+      "unit": "degrees",
+      "animatable": true
+    },
+    {
+      "key": "tilt_y",
+      "label": "Turn",
+      "min": -25,
+      "max": 25,
+      "default": -12,
+      "unit": "degrees",
+      "animatable": false
+    },
+    {
+      "key": "depth",
+      "label": "Perspective",
+      "min": 600,
+      "max": 3000,
+      "default": 1400,
+      "unit": "px at 1080p",
+      "animatable": false
+    }
+  ],
+  "writes": [
+    "transform"
+  ],
+  "needs_screenshot_capture": true,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

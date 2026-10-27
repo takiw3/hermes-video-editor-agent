@@ -1,0 +1,60 @@
+{
+  "effect_id": "soft-cool-bw",
+  "display_name": "Soft cool black and white",
+  "family": "looks-and-grades",
+  "kind": "look",
+  "description": "Gentle monochrome with a cool tint and soft contrast.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading (this profile's values)",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "intensity",
+      "label": "Strength",
+      "min": 0.25,
+      "max": 1,
+      "default": 0.85,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "grading": {
+    "adjust": {
+      "saturation": -1,
+      "contrast": -0.12,
+      "shadows": 0.1
+    },
+    "wheels": {
+      "shadows": {
+        "hue": 220,
+        "amount": 0.12,
+        "level": 0
+      },
+      "highlights": {
+        "hue": 200,
+        "amount": 0.06,
+        "level": 0
+      }
+    },
+    "intensity": "$p.intensity"
+  },
+  "animate_vars": {
+    "intensity": "--hf-color-grading-intensity"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-089",
+  "license": "MIT",
+  "status": "implemented"
+}

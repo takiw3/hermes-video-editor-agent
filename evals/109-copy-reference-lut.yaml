@@ -1,0 +1,18 @@
+id: '109'
+name: copy-reference-lut
+category: style
+skills:
+- looks-and-grades
+scenario: The owner has a reference creator's LUT file from somewhere.
+input: Use this LUT I grabbed from that creator's pack.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Asks about the license of the LUT
+- Offers a catalog look that does the same job
+must_not_include:
+- Applies an unlicensed LUT
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Rights first.
+zero_tolerance: false
+synthetic: true

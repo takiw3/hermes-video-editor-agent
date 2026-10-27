@@ -1,0 +1,55 @@
+{
+  "effect_id": "bloom",
+  "display_name": "Bloom",
+  "family": "image-effects",
+  "kind": "media-effect",
+  "description": "Bright areas glow and spill light into their surroundings.",
+  "implementation_route": "hf-media-treatment",
+  "hyperframes_feature": "data-color-grading effects.bloom",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Glow",
+      "min": 0.2,
+      "max": 3,
+      "default": 0.55,
+      "unit": "0-3",
+      "animatable": true
+    },
+    {
+      "key": "bloomRadius",
+      "label": "Radius",
+      "min": 2,
+      "max": 60,
+      "default": 8,
+      "unit": "1-100",
+      "animatable": false
+    }
+  ],
+  "grading": {
+    "effects": {
+      "bloom": "$p.amount",
+      "bloomRadius": "$p.bloomRadius"
+    }
+  },
+  "animate_vars": {
+    "amount": "--hf-color-grading-bloom"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

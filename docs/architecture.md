@@ -36,6 +36,14 @@ The launcher puts one process between the agent and the CLI. Everything the prof
 
 The vendored skills sit at `skills/hyperframes-video/skills/<name>/`, one folder deeper than a flat category. Upstream helper scripts find the CLI by looking for `plugin.json` two folders above each `SKILL.md` (`skills/embedded-captions/scripts/hf-cli.cjs` at the pinned tag). Keeping upstream's plugin layout makes those scripts resolve the pinned release. Hermes discovers skills recursively, and the install tests confirm all 16 load at that depth.
 
+## The effects layer (1.1.0)
+
+`skills/video-effects-core/` adds 17 skills and an effects library beside them. The library is data, not a skill: one folder per effect with `effect.json` (the catalog entry), the templates it writes into a composition (`style.css`, `defs.svg`, `markup.html`, `update.js`), its `verification.json`, and its reference stills. `catalog.yaml` is generated from those folders by `scripts/build_catalog.py`.
+
+`fx.py` applies an effect by writing marked blocks into `index.html` from `fx-instances.json`, which lists what is applied. `fx-runtime.js` drives every original effect from one GSAP clock, as a pure function of composition time, so a frame seeked alone matches the same frame in sequence. Effects that wrap HyperFrames features write HyperFrames' own attributes instead: `data-color-grading`, `data-vfx-chain`, `data-fx-chain`, or a `HyperShader.init` call. Removing an effect restores the composition byte for byte.
+
+An effect counts only after the 12-check gate passes in an installed temporary profile. See [effects/verification.md](effects/verification.md).
+
 ## State and where it lives
 
 | State | Location | Owned by the distribution |
@@ -43,6 +51,8 @@ The vendored skills sit at `skills/hyperframes-video/skills/<name>/`, one folder
 | Identity, config, skills, templates, notices | the profile root | yes, replaced on update |
 | Editor profile, brand identity, style library | `local/` in the profile | no, preserved |
 | Toolchain, approvals, browser record | `local/video-editor/video-engine/` | no, preserved |
+| Owner effects and effect recipes | `local/effects/`, `local/effect-recipes/` | no, preserved |
+| Applied effects for one project version | `fx-instances.json` beside its `index.html`, in the workspace | no, preserved |
 | Footage, working copies, references, projects, renders | the owner-approved workspace | no, outside the profile |
 | Credentials, memory, sessions | Hermes user paths | no, preserved |
 

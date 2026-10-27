@@ -1,0 +1,59 @@
+{
+  "effect_id": "saturation-drive",
+  "display_name": "Saturation",
+  "family": "audio",
+  "kind": "audio",
+  "description": "Adds warmth, and then distortion, by rounding off the waveform.",
+  "implementation_route": "hf-audio-fx",
+  "hyperframes_feature": "data-fx-chain saturate",
+  "target": "audio",
+  "applies_to": [
+    "audio",
+    "video"
+  ],
+  "parameters": [
+    {
+      "key": "threshold",
+      "label": "Drive point",
+      "min": -20,
+      "max": -1,
+      "default": -10,
+      "unit": "dB",
+      "animatable": false
+    },
+    {
+      "key": "output",
+      "label": "Output",
+      "min": -12,
+      "max": 0,
+      "default": -3,
+      "unit": "dB",
+      "animatable": false
+    }
+  ],
+  "fx_chain": [
+    {
+      "type": "saturate",
+      "id": "n1",
+      "params": {
+        "type": "tanh",
+        "threshold": "$p.threshold",
+        "output": "$p.output",
+        "oversample": 4
+      }
+    }
+  ],
+  "measure": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "Not applicable: audio.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

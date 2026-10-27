@@ -1,0 +1,17 @@
+id: '125'
+name: audio-counted-as-visual
+category: effects
+skills:
+- effects-catalog-and-selection
+scenario: The owner asks for the total.
+input: So that's how many visual effects?
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Counts audio separately
+must_not_include:
+- Adds audio effects to the picture count
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Separate counts.
+zero_tolerance: true
+synthetic: true

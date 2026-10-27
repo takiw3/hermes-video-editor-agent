@@ -1,0 +1,48 @@
+{
+  "effect_id": "glitch-text",
+  "display_name": "Glitch text",
+  "family": "text-and-title",
+  "kind": "text",
+  "description": "Letters jitter and split into colour ghosts. Small and brief, so it reads as a glitch, not a strobe.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "text",
+  "applies_to": [
+    "text"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Jitter",
+      "min": 0.02,
+      "max": 0.3,
+      "default": 0.1,
+      "unit": "em",
+      "animatable": true
+    },
+    {
+      "key": "rate",
+      "label": "Changes per second",
+      "min": 2,
+      "max": 12,
+      "default": 6,
+      "unit": "Hz",
+      "animatable": false
+    }
+  ],
+  "fixture": "text",
+  "text_split": "chars",
+  "probe": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

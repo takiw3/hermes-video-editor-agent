@@ -42,7 +42,7 @@ A creative review request from the editor:
 hermes kanban create "Rough cut review: founder Q&A v1" --assignee social-media --body-file review-request.yaml
 ```
 
-Both forms were run in the install tests on Hermes 0.21.4 and 0.21.5, between this profile and a temporary profile named `social-media`.
+Both forms were run in the install tests on Hermes 0.21.4 and 0.22.5, between this profile and a temporary profile named `social-media`.
 
 ## The incoming task
 

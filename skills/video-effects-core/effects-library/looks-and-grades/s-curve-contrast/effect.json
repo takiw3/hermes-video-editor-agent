@@ -1,0 +1,59 @@
+{
+  "effect_id": "s-curve-contrast",
+  "display_name": "S-curve contrast",
+  "family": "looks-and-grades",
+  "kind": "look",
+  "description": "A classic S curve: richer shadows and brighter highlights, midtones kept.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading (this profile's values)",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "intensity",
+      "label": "Strength",
+      "min": 0.25,
+      "max": 1,
+      "default": 0.85,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "grading": {
+    "curves": {
+      "master": [
+        [
+          0.22,
+          0.15
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.78,
+          0.86
+        ]
+      ]
+    },
+    "intensity": "$p.intensity"
+  },
+  "animate_vars": {
+    "intensity": "--hf-color-grading-intensity"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-053",
+  "license": "MIT",
+  "status": "implemented"
+}

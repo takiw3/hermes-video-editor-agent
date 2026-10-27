@@ -78,10 +78,12 @@ The editor flags a deliverable that contains generated voice, generated imagery,
 | https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban | Cross-profile tasks |
 | https://hermes-agent.nousresearch.com/docs/user-guide/features/skills, https://hermes-agent.nousresearch.com/docs/developer-guide/creating-skills | Skill format |
 | https://hermes-agent.nousresearch.com/docs/reference/optional-skills-catalog, https://hermes-agent.nousresearch.com/docs/user-guide/skills/optional/creative/creative-hyperframes | The Hermes optional `hyperframes` skill: its setup installs `hyperframes@>=0.4.2` globally and locates itself with `find ~/.hermes/skills` |
-| https://github.com/NousResearch/hermes-agent/releases/latest | Latest stable: v0.21.5, tag `v2026.9.24`, commit `f97608f178d1ffeca59860195ab7da295f7c8e5f` |
+| https://github.com/NousResearch/hermes-agent/releases/latest | Read 2026-10-27: latest stable v0.22.5, commit `bf0203a794a07aac3ff764972ab9087baa4e4f4e`. (1.0.0 read v0.21.5, tag `v2026.9.24`.) |
 | Tagged Hermes source: `hermes_cli/profile_distribution.py`, `hermes_cli/profiles.py`, `hermes_cli/config_defaults.py`, `tools/approval_floors.py`, `tools/terminal_scope.py`, `agent/skill_utils.py`, `tools/skills_tool.py`, `hermes_cli/kanban.py` | Manifest parsing, copy rules, skill discovery, deny rules, `terminal.home_mode`, Kanban commands and attachments |
-| https://github.com/heygen-com/hyperframes/releases/latest | Latest stable: v0.8.138, commit `0ca28db4f8671a2e2262594e03c566222d695920` |
+| https://github.com/heygen-com/hyperframes/releases/latest, https://registry.npmjs.org/hyperframes | Read 2026-10-21: latest stable v0.8.183, commit `7e2817619f340f9302eeaef185e73be39a19858d` (pinned). Read 2026-10-27: v0.8.208 published that day, not tested. |
 | Tagged HyperFrames source: `skills/`, `.claude/skills/`, `plugin.json`, `skills-manifest.json`, `LICENSE`, `CREDITS.md`, `packages/cli/src/` | Vendoring, patches, CLI switches, render flags, registry fetch path, model and browser sources |
 | https://gsap.com/standard-license | GSAP license terms |
+| https://www.w3.org/TR/WCAG22/, https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html | Read 2026-10-21: SC 2.3.1, general and red flash thresholds, relative luminance; WCAG 2.2 is a W3C Recommendation of 12 December 2024 |
+| https://github.com/jub0t/concat at commit `2756209a92766a4e4726999a51648349a272c159` | Read 2026-10-21 as text only, by the study role, for the clean-room effect study and the safety review |
 
 The Hermes and HyperFrames facts were read from the tagged source checkouts, which are the source of truth where a web page and the code differ. `https://hyperframes.heygen.com` returned no readable text to an automated read and is not relied on.

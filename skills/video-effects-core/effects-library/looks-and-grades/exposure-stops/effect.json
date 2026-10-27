@@ -1,0 +1,45 @@
+{
+  "effect_id": "exposure-stops",
+  "display_name": "Exposure",
+  "family": "looks-and-grades",
+  "kind": "correction",
+  "description": "Brightens or darkens the whole picture, like opening or closing the lens.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading adjust.exposure",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Exposure",
+      "min": -1.5,
+      "max": 1.5,
+      "default": 0.5,
+      "unit": "stops-ish",
+      "animatable": true
+    }
+  ],
+  "grading": {
+    "adjust": {
+      "exposure": "$p.amount"
+    }
+  },
+  "animate_vars": {
+    "amount": "--hf-color-grading-exposure"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-032",
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

@@ -1,0 +1,51 @@
+{
+  "effect_id": "engraving",
+  "display_name": "Engraving",
+  "family": "image-effects",
+  "kind": "media-effect",
+  "description": "Redraws the picture as engraved lines, like a banknote portrait.",
+  "implementation_route": "hf-media-treatment",
+  "hyperframes_feature": "data-color-grading effects.engraving",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Amount",
+      "min": 0.3,
+      "max": 1,
+      "default": 1,
+      "unit": "0-1",
+      "animatable": false
+    }
+  ],
+  "grading": {
+    "effects": {
+      "engraving": "$p.amount",
+      "engravingSpacing": 0.412,
+      "engravingMinThickness": 0.2,
+      "engravingMaxThickness": 0.457,
+      "engravingAngle": 0.25,
+      "engravingContrast": 0.467,
+      "engravingSharpness": 0.59,
+      "engravingWave": 0.2,
+      "engravingWaveFrequency": 0.222
+    }
+  },
+  "animate_vars": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

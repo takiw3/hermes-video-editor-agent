@@ -1,10 +1,10 @@
 {
   "npm_package": "hyperframes",
-  "npm_version": "0.8.138",
-  "npm_integrity": "sha512-1xeNRkGeCobo9wbNht4BH1Y3FdSswHuo5R8UgCB8ea5eGqdRyQ7GkK8B6MGAbrhu9o7+jV7qUa2kRxjQ9KSGmg==",
+  "npm_version": "0.8.183",
+  "npm_integrity": "sha512-uRIV8jZyckP95+skfYkEqE7TFx/UXmxIUd//UjvL57VZn6vU+QUxI3vbkWID8lyis+qk+2OKTnV534AcDfaKQQ==",
   "node_minimum_major": 22,
   "upstream_repository": "https://github.com/heygen-com/hyperframes",
-  "upstream_tag": "v0.8.138",
-  "upstream_commit": "0ca28db4f8671a2e2262594e03c566222d695920",
-  "package_lock_sha256": "370d07321fd1bd1454b55ae3168f45079f26a4d263086f6500f7926ce0a38aa9"
+  "upstream_tag": "v0.8.183",
+  "upstream_commit": "7e2817619f340f9302eeaef185e73be39a19858d",
+  "package_lock_sha256": "b9b99538ce2b01ef404db996560a7bbf5edf7bc8d612753d222600bfb3c623c6"
 }

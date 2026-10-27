@@ -6,6 +6,12 @@
 # tagged source. `held_at_pin` records what was found. `checkable: true` means
 # scripts/check_upstream_contract.py re-checks it against the vendored upstream
 # copy on every run, so a change is noticed during an update, not after it.
+#
+# 2026-10-21 (profile 1.1.0): re-pinned to HyperFrames v0.8.183. The checkable
+# observations re-ran against the new vendored copy. The others were re-read in
+# the v0.8.183 source: 21 still holds (onnxruntime-node is a dev dependency of
+# the CLI and is not in the lockfile), 24 still holds (registry/remote.ts reads
+# upstream main), 27 still holds (themes/ has three CSS files and CONTRACT.md).
 baseline:
   hermes: {version: 0.21.5, tag: v2026.9.24, commit: f97608f178d1ffeca59860195ab7da295f7c8e5f}
   hyperframes: {version: 0.8.137, published: "2026-10-06"}
@@ -13,7 +19,7 @@ tested:
   hermes:
     - {version: 0.21.4, build: "2026.9.21", upstream_commit: 16fe260aab45a524df94c8f635352fd9e6e66fe5}
     - {version: 0.21.5, tag: v2026.9.24, commit: f97608f178d1ffeca59860195ab7da295f7c8e5f}
-  hyperframes: {version: 0.8.138, tag: v0.8.138, commit: 0ca28db4f8671a2e2262594e03c566222d695920}
+  hyperframes: {version: 0.8.183, tag: v0.8.183, commit: 7e2817619f340f9302eeaef185e73be39a19858d}
 observations:
   - {id: 1, checkable: true, held_at_pin: true, claim: "Published SKILL.md frontmatter contains only name and description."}
   - {id: 2, checkable: true, held_at_pin: true, claim: "Skills link to each other with relative paths that resolve only as sibling folders."}

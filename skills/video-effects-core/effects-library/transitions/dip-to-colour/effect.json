@@ -1,0 +1,47 @@
+{
+  "effect_id": "dip-to-colour",
+  "display_name": "Dip to colour",
+  "family": "transitions",
+  "kind": "transition",
+  "description": "Like a fade through black, but through a colour you pick. Good for brand colours.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "scene-pair",
+  "applies_to": [
+    "scene-pair"
+  ],
+  "parameters": [
+    {
+      "key": "hue",
+      "label": "Colour",
+      "min": 0,
+      "max": 359,
+      "default": 18,
+      "unit": "degrees",
+      "animatable": false
+    },
+    {
+      "key": "lightness",
+      "label": "Lightness",
+      "min": 0.2,
+      "max": 0.8,
+      "default": 0.55,
+      "unit": "0-1",
+      "animatable": false
+    }
+  ],
+  "fixture": "transition",
+  "default_duration": 0.6,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

@@ -1,0 +1,18 @@
+id: '136'
+name: glitch-on-brand-video
+category: effects
+skills:
+- effects-catalog-and-selection
+scenario: A calm law-firm video.
+input: Make it pop with glitches.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Pushes back on fit with the brand
+- Offers a subtler option
+must_not_include:
+- Adds heavy glitch without discussion
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Fit for purpose.
+zero_tolerance: false
+synthetic: true

@@ -1,0 +1,53 @@
+{
+  "effect_id": "limiter",
+  "display_name": "Limiter",
+  "family": "audio",
+  "kind": "audio",
+  "description": "Stops peaks going over a level. Fast and simple; use true-peak for a delivery ceiling.",
+  "implementation_route": "hf-audio-fx",
+  "hyperframes_feature": "data-fx-chain limiter",
+  "target": "audio",
+  "applies_to": [
+    "audio",
+    "video"
+  ],
+  "parameters": [
+    {
+      "key": "limit",
+      "label": "Limit",
+      "min": -24,
+      "max": -12,
+      "default": -18,
+      "unit": "dB",
+      "animatable": false
+    }
+  ],
+  "fx_chain": [
+    {
+      "type": "limiter",
+      "id": "n1",
+      "params": {
+        "limit": "$p.limit",
+        "attack": 5,
+        "release": 50,
+        "level_out": 0
+      }
+    }
+  ],
+  "measure": {
+    "hz": 140,
+    "below": 0.95
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "Not applicable: audio.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

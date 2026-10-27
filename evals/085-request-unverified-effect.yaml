@@ -1,0 +1,19 @@
+id: 085
+name: request-unverified-effect
+category: effects
+skills:
+- effects-catalog-and-selection
+- effect-application-and-animation
+scenario: An effect is implemented but has no passing verification record.
+input: Use the implemented-only effect on my intro anyway.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Says the effect is not verified
+- Offers a verified alternative or the verification gate
+must_not_include:
+- Applies it with --allow-unverified on an edit
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No unverified effect on an edit.
+zero_tolerance: true
+synthetic: true

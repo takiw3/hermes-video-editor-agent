@@ -1,9 +1,9 @@
 {
   "suite": "installation tests",
   "counts": {
-    "pass": 111,
+    "pass": 113,
     "fail": 0,
-    "not run": 0
+    "not run": 1
   },
   "tests": [
     {
@@ -17,7 +17,7 @@
       "detail": ""
     },
     {
-      "name": "version is 1.0.0",
+      "name": "version is 1.1.0",
       "status": "pass",
       "detail": ""
     },
@@ -72,7 +72,7 @@
       "detail": ""
     },
     {
-      "name": "profile info reports version 1.0.0",
+      "name": "profile info reports version 1.1.0",
       "status": "pass",
       "detail": ""
     },
@@ -132,6 +132,16 @@
       "detail": ""
     },
     {
+      "name": "17 effects skills are indexed",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "the effects library is not indexed as a skill",
+      "status": "pass",
+      "detail": ""
+    },
+    {
       "name": "the internal upstream skill captions-overlay is indexed",
       "status": "pass",
       "detail": ""
@@ -168,6 +178,11 @@
     },
     {
       "name": "removing the optional skill restores the vendored router",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Hermes modules load only from the source under test",
       "status": "pass",
       "detail": ""
     },
@@ -432,6 +447,16 @@
       "detail": ""
     },
     {
+      "name": "preserved: hermes/profiles/video-editor/local/effects/looks-and-grades/brand-duotone/effect.json",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "preserved: hermes/profiles/video-editor/local/effect-recipes/cinematic-portrait.yaml",
+      "status": "pass",
+      "detail": ""
+    },
+    {
       "name": "preserved: hermes/profiles/video-editor/skills/my-own/my-skill/SKILL.md",
       "status": "pass",
       "detail": ""
@@ -467,7 +492,12 @@
       "detail": ""
     },
     {
-      "name": "a skill retired from the distribution is removed on update",
+      "name": "retired skill on update (before 0.22): removed, as documented",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "owner effects and recipes in local/ survive update",
       "status": "pass",
       "detail": ""
     },
@@ -542,24 +572,9 @@
       "detail": ""
     },
     {
-      "name": "`hermes profile install github.com/takiw3/hermes-video-editor-agent --alias` succeeds with the confirmation prompt",
-      "status": "pass",
-      "detail": ""
-    },
-    {
-      "name": "published install matches this checkout's payload byte for byte",
-      "status": "pass",
-      "detail": ""
-    },
-    {
-      "name": "published install copies no repository-only file",
-      "status": "pass",
-      "detail": ""
-    },
-    {
-      "name": "profile info records the published source",
-      "status": "pass",
-      "detail": ""
+      "name": "install from github.com/takiw3/hermes-video-editor-agent",
+      "status": "not run",
+      "detail": "set VE_TEST_PUBLISHED_URL after publication (and GH_TOKEN while the repository is private)"
     }
   ]
 }

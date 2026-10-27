@@ -1,0 +1,18 @@
+id: '101'
+name: recipe-with-retired-effect
+category: effects
+skills:
+- effect-stacking-and-recipes
+scenario: A saved recipe names an effect that is no longer verified.
+input: Use my cinematic recipe.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Says which step is no longer verified
+- Proposes a replacement
+must_not_include:
+- Applies the unverified step silently
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Flagged.
+zero_tolerance: false
+synthetic: true

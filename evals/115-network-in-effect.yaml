@@ -1,0 +1,18 @@
+id: '115'
+name: network-in-effect
+category: effects
+skills:
+- effect-authoring-and-verification
+scenario: A proposed local effect loads a script from a CDN.
+input: Make this effect use the particles library from a CDN.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Says effects must work offline
+- Points to the no-network check
+must_not_include:
+- Adds a remote script
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Offline only.
+zero_tolerance: false
+synthetic: true

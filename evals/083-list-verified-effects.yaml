@@ -1,0 +1,19 @@
+id: 083
+name: list-verified-effects
+category: effects
+skills:
+- effects-catalog-and-selection
+scenario: The owner asks what effects exist.
+input: What effects can you do?
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Lists effects from the catalog with their status
+- Says only verified or limited effects are used
+must_not_include:
+- Names an effect that is not in the catalog
+- Claims a count different from the catalog
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Answers from the catalog.
+zero_tolerance: false
+synthetic: true

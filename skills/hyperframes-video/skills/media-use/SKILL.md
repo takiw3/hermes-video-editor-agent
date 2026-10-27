@@ -1,7 +1,7 @@
 ---
 name: media-use
-description: Agent Media OS, the single skill for every media need in a HyperFrames project. Resolve BGM, SFX, image, icon, brand logo, voice, color grade, or LUT into a frozen local file or paste-ready block + ledger record (one verb, `resolve`); generate via TTS / music / image models when the catalog misses; produce voiceover, transcription, captions, and background removal through one shared audio engine; operate on media (cut / reframe / transform); and reuse assets across projects. Also use for vague feedback that real footage looks dark, flat, boring, should feel retro/camcorder/print/ASCII, needs privacy, or needs a media reveal.
-version: 0.8.138
+description: Agent Media OS for a HyperFrames project. Resolve BGM, SFX, image, icon, brand logo, voice, color grade, or LUT into a frozen local file or paste-ready block + ledger record (one verb, `resolve`); generate via TTS / music / image models when the catalog misses; produce voiceover, transcription, captions, and background removal through one shared audio engine; operate on media (cut / reframe / transform); and reuse assets across projects. Also use for vague feedback that real footage looks dark, flat, boring, should feel retro/camcorder/print/ASCII, needs privacy, or needs a media reveal. When the host app provides its own music or sound-effect tools, use those for music and sound effects; `resolve --type bgm` needs the heygen CLI, while `--type sfx` needs no account (Openverse, then a bundled library). When `HEYGEN_API_BASE` is set, HeyGen calls go through that host with no CLI sign-in.
+version: 0.8.183
 author: HeyGen, Inc. (modified by TakiGPT AI Inc.)
 license: Apache-2.0
 metadata:
@@ -10,7 +10,7 @@ metadata:
     related_skills: [editor-hyperframes]
 ---
 
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: hermes-frontmatter, runtime-rules-banner, pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 > **Profile runtime rules. These override anything below.**
 >
@@ -28,9 +28,13 @@ metadata:
 
 The media OS for HyperFrames: resolve · generate · operate · remember — every media type, one skill, zero context noise.
 
-First run: install and sign in to the `heygen` CLI (the free-usage path), then verify with `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" media-use resolve --doctor`. Setup and providers: `references/setup-providers.md`.
+Only when `HEYGEN_API_BASE` is set in your environment (a host app set it and pays for HeyGen with its own key): HeyGen media is already paid for. Do not ask the person to install or sign in to the `heygen` CLI and do not offer its OAuth allowance; catalog search, TTS and avatar calls here go through the host. When that same host also gives you its own HeyGen tools, use those first. When a call through the host is refused, tell the person the host's message as written (it names the fix, such as adding or replacing the key in the app's Settings) and stop; do not switch to another provider unless they ask.
 
-Before generating a voiceover or an avatar video, tell the person: signing in to the heygen CLI with OAuth (`heygen auth login --oauth`) gives a free allowance for TTS voiceover and avatar videos, while an API key bills API credits.
+First run otherwise (no `HEYGEN_API_BASE`), when you will use HeyGen media (catalog search, TTS, avatar video): install and sign in to the `heygen` CLI (the free-usage path), then verify with `python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" media-use resolve --doctor`. Setup and providers: `references/setup-providers.md`.
+
+Music and sound effects inside a host app: when the app you run in gives you its own music or sound-effect tools, use those. Without `HEYGEN_API_BASE`, `resolve --type bgm` searches the HeyGen catalog through the `heygen` CLI and fails without it, saying so. `resolve --type sfx` searches Openverse (CC0 and CC BY only, no account) and falls back to its bundled library offline; credit CC BY sounds as `audio/references/sfx.md` says.
+
+Without `HEYGEN_API_BASE`, before generating a voiceover or an avatar video, tell the person: signing in to the heygen CLI with OAuth (`heygen auth login --oauth`) gives a free allowance for TTS voiceover and avatar videos, while an API key bills API credits.
 
 ## Resolve — the one verb
 
@@ -42,8 +46,8 @@ Returns one line: `resolved <id> → <path> (<type>, <metadata>)`. All search no
 
 | Type    | One-line intent                                                                  |
 | ------- | -------------------------------------------------------------------------------- |
-| `bgm`   | background music (HeyGen catalog, 10k+ tracks)                                   |
-| `sfx`   | sound effects (bundled 19-file library + catalog)                                |
+| `bgm`   | background music (HeyGen catalog via the `heygen` CLI, 10k+ tracks)              |
+| `sfx`   | sound effects (Openverse CC0 / CC BY, bundled 21-file library offline)           |
 | `image` | photos, backgrounds (HeyGen asset search, 75k+ vectors)                          |
 | `icon`  | icons, symbols (transparent)                                                     |
 | `logo`  | official brand marks (theSVG → GitHub avatar → favicon; never redrawn)           |

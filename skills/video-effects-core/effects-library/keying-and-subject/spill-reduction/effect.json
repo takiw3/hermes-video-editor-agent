@@ -1,0 +1,40 @@
+{
+  "effect_id": "spill-reduction",
+  "display_name": "Spill reduction",
+  "family": "keying-and-subject",
+  "kind": "key",
+  "description": "Pulls green cast off skin and edges after a green screen key, or off any shot lit by a green wall.",
+  "implementation_route": "svg-filter",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Amount",
+      "min": 0.1,
+      "max": 1,
+      "default": 0.6,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "fixture": "key",
+  "css_filter": "url(#fx-{{iid}}-filter)",
+  "needs_model": false,
+  "needs_key_footage": true,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

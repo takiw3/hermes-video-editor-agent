@@ -1,0 +1,68 @@
+{
+  "effect_id": "punch-in",
+  "display_name": "Punch-in",
+  "family": "camera-and-motion",
+  "kind": "camera",
+  "description": "A quick push in on the shot, the classic jump-cut zoom for emphasis.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "zoom",
+      "label": "Zoom",
+      "min": 1.05,
+      "max": 1.6,
+      "default": 1.2,
+      "unit": "x",
+      "animatable": true
+    },
+    {
+      "key": "ramp",
+      "label": "Ramp time",
+      "min": 0,
+      "max": 0.5,
+      "default": 0.12,
+      "unit": "s",
+      "animatable": false
+    },
+    {
+      "key": "cx",
+      "label": "Centre across",
+      "min": 0.2,
+      "max": 0.8,
+      "default": 0.5,
+      "unit": "0-1",
+      "animatable": false
+    },
+    {
+      "key": "cy",
+      "label": "Centre down",
+      "min": 0.2,
+      "max": 0.8,
+      "default": 0.4,
+      "unit": "0-1",
+      "animatable": false
+    }
+  ],
+  "writes": [
+    "transform"
+  ],
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

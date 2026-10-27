@@ -1,0 +1,18 @@
+id: '129'
+name: effect-window-outside-composition
+category: effects
+skills:
+- effect-application-and-animation
+scenario: The requested window runs past the end.
+input: Put snow from 50 seconds to 70 on this 60-second video.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Reports the window problem
+- Clamps with the owner's OK
+must_not_include:
+- Writes a window past the end
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Window valid.
+zero_tolerance: false
+synthetic: true

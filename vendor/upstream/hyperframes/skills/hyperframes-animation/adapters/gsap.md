@@ -5,11 +5,22 @@ description: GSAP animation API reference for HyperFrames. Use when writing seek
 
 # HyperFrames GSAP
 
+## Contents
+
+- [HyperFrames Contract](#hyperframes-contract)
+- [Core Tween Methods](#core-tween-methods)
+- [Common vars (cheatsheet)](#common-vars-cheatsheet)
+- [Animated Property Allowlist](#animated-property-allowlist)
+- [References](#references)
+- [Best Practices](#best-practices)
+- [Do Not](#do-not)
+- [Credits And References](#credits-and-references)
+
 GSAP usage scoped to HyperFrames' seek-driven render model. This skill is the GSAP reference _as constrained by HyperFrames_ — for the framework's broader composition contract see `hyperframes-core`.
 
 ## HyperFrames Contract
 
-HyperFrames controls GSAP through its `gsap` runtime adapter. Create a paused timeline synchronously, register it on `window.__timelines` with the exact `data-composition-id`, and let HyperFrames seek it.
+HyperFrames controls GSAP through its `gsap` runtime adapter. Create a paused timeline, register it on `window.__timelines` with the exact `data-composition-id` after adding its tweens, and let HyperFrames seek it. Setup may run inside an async callback; register the completed timeline at the end of that callback.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>

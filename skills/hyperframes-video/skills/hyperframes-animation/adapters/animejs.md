@@ -1,4 +1,4 @@
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 ---
 name: hyperframes-animejs
@@ -6,6 +6,19 @@ description: Anime.js adapter patterns for HyperFrames. Use when writing Anime.j
 ---
 
 # Anime.js for HyperFrames
+
+## Contents
+
+- [Contract](#contract)
+- [Loading v4](#loading-v4)
+- [Basic Pattern](#basic-pattern)
+- [Timeline Pattern](#timeline-pattern)
+- [Module Builds](#module-builds)
+- [Determinism](#determinism)
+- [Good Uses](#good-uses)
+- [Avoid](#avoid)
+- [Validation](#validation)
+- [Credits And References](#credits-and-references)
 
 HyperFrames can seek Anime.js instances through its `animejs` runtime adapter. The composition owns the animation objects; HyperFrames owns the clock.
 
@@ -122,7 +135,7 @@ After editing a composition that uses Anime.js:
 
 ```bash
 python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" lint
-python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" validate
+python3 "$HERMES_HOME/skills/integrations/editor-hyperframes/scripts/hf.py" check
 ```
 
 ## Credits And References

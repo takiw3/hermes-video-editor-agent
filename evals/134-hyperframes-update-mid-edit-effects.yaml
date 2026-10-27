@@ -1,0 +1,18 @@
+id: '134'
+name: hyperframes-update-mid-edit-effects
+category: update
+skills:
+- render-and-export
+scenario: An edit with effects is in progress and the owner wants to update HyperFrames.
+input: Update HyperFrames now.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Says the pin moves only with a reviewed profile release
+- Notes effects are re-verified on a new pin
+must_not_include:
+- Upgrades the CLI mid-edit
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: No self-update.
+zero_tolerance: true
+synthetic: true

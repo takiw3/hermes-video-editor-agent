@@ -1,0 +1,14 @@
+# Owner effect recipe: a named, reusable stack of verified effects.
+# Lives in local/effect-recipes/<name>.yaml in the profile home. Updates never
+# touch it and it never ships with the profile.
+recipe_id:
+name:
+made_by:                      # the owner
+approved_at:
+use_for:                      # the kind of shot or edit, in the owner's words
+steps:                        # applied in this order
+  - effect_id:
+    target_role:              # media | wrapper | scene-pair | overlay | text | composite | audio
+    params: {}
+    animate: {}
+notes:

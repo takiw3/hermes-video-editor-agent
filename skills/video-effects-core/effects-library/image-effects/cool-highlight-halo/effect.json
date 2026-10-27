@@ -1,0 +1,57 @@
+{
+  "effect_id": "cool-highlight-halo",
+  "display_name": "Cool halo",
+  "family": "image-effects",
+  "kind": "filter",
+  "description": "A cool white-blue halo around bright edges. Clean and clinical.",
+  "implementation_route": "svg-filter",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "strength",
+      "label": "Glow",
+      "min": 0.2,
+      "max": 1.5,
+      "default": 0.6,
+      "unit": "x",
+      "animatable": true
+    },
+    {
+      "key": "radius",
+      "label": "Spread",
+      "min": 1,
+      "max": 6,
+      "default": 2.5,
+      "unit": "% of height",
+      "animatable": false
+    },
+    {
+      "key": "threshold",
+      "label": "Highlight point",
+      "min": 0.4,
+      "max": 0.9,
+      "default": 0.6,
+      "unit": "0-1",
+      "animatable": false
+    }
+  ],
+  "css_filter": "url(#fx-{{iid}}-filter)",
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-025",
+  "license": "MIT",
+  "status": "implemented"
+}

@@ -1,0 +1,155 @@
+{
+  "suite": "tests.test_effects",
+  "counts": {
+    "pass": 27,
+    "fail": 0,
+    "not run": 0
+  },
+  "machine": {
+    "os": "macOS 26.6.2",
+    "machine": "arm64",
+    "cpu_count": 8,
+    "python": "3.10.9",
+    "node": "v22.23.1",
+    "ffmpeg": "ffmpeg version 9.0.1",
+    "cpu": "Apple M2",
+    "memory_gb": 16
+  },
+  "tests": [
+    {
+      "name": "ApplyAndRemove: a project outside the workspace is refused",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ApplyAndRemove: apply then remove restores the composition exactly",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ApplyAndRemove: out of range values unverified effects and missing elements are refused",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ApplyAndRemove: static hyperframes attribute needs no runtime",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ApplyAndRemove: two filter effects on one layer share one filter chain",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ApplyAndRemove: two grades on one clip merge into one attribute",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Catalog: a verified status needs a passing twelve check record",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Catalog: clean room effects carry a study key and no studied name",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Catalog: effect ids are unique and match their folder",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Catalog: every effect has the catalog fields",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Catalog: every effect script defines its own id and reads no clock",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Catalog: generated catalog is current",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Catalog: routes families and parameter ranges are valid",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "CopyCheck: a copied shader is caught",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "CopyCheck: repository passes the copy check",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "CopyCheck: syntax only shingles do not count",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "CopyCheck: the profile and the repository use the same trivial rule",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "CopyCheck: the studied projects name is caught outside the allowed files",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "FlashCheck: criteria cite wcag with an access date",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "FlashCheck: five hertz full frame strobe fails",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "FlashCheck: red strobe fails the red rule",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "FlashCheck: small area strobe is under the area limit",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "FlashCheck: still picture passes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "FlashCheck: two hertz strobe warns but passes the limit",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "StackAndPlan: check plan rejects out of range values and unknown effects",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "StackAndPlan: check plan requires sdr approval for hdr sources",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "StackAndPlan: two camera moves on one layer are a conflict",
+      "status": "pass",
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+id: '116'
+name: random-in-effect
+category: effects
+skills:
+- effect-authoring-and-verification
+scenario: A proposed local effect uses Math.random.
+input: Make the sparkles random each time.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Explains effects must be a function of time
+- Uses ctx.rand for seeded variety
+must_not_include:
+- Uses Math.random or the clock
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Deterministic.
+zero_tolerance: false
+synthetic: true

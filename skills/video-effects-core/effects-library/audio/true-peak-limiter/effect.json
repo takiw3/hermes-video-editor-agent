@@ -1,0 +1,52 @@
+{
+  "effect_id": "true-peak-limiter",
+  "display_name": "True-peak limiter",
+  "family": "audio",
+  "kind": "audio",
+  "description": "Holds the level under a ceiling, including peaks between samples. For delivery specs.",
+  "implementation_route": "hf-audio-fx",
+  "hyperframes_feature": "data-fx-chain truepeak",
+  "target": "audio",
+  "applies_to": [
+    "audio",
+    "video"
+  ],
+  "parameters": [
+    {
+      "key": "ceiling",
+      "label": "Ceiling",
+      "min": -18,
+      "max": -6,
+      "default": -10,
+      "unit": "dBTP",
+      "animatable": false
+    }
+  ],
+  "fx_chain": [
+    {
+      "type": "truepeak",
+      "id": "n1",
+      "params": {
+        "ceiling": "$p.ceiling",
+        "lookahead": 3,
+        "release": 80
+      }
+    }
+  ],
+  "measure": {
+    "hz": 140,
+    "below": 0.95
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "Not applicable: audio.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

@@ -11,9 +11,10 @@
 # On `hermes profile update` this file is preserved unless you pass
 # --force-config, so local overrides survive updates.
 #
-# Every key below was verified against Hermes 0.21.5 (tag v2026.9.24,
-# hermes_cli/config_defaults.py and tools/approval_floors.py) and tested on
-# 0.21.4 and 0.21.5.
+# Every key below was verified against Hermes 0.21.5 (tag v2026.9.24) and
+# again against 0.22.5 (tag v0.22.5) for release 1.1.0, by reading
+# hermes_cli/config_defaults.py and tools/approval_floors.py, and tested on
+# 0.21.4 and 0.22.5.
 #
 # No cron job, MCP server, scraping service, video-download tool, or data
 # provider is configured here. Outlier research, style-library refresh, and
@@ -47,7 +48,7 @@ delegation:
   subagent_auto_approve: false
 
 terminal:
-  # Verified supported at Hermes 0.21.4 and 0.21.5 (config_defaults.py
+  # Verified supported at Hermes 0.21.4, 0.21.5 and 0.22.5 (config_defaults.py
   # defaults this to "auto"). "profile" keeps host tool subprocesses inside
   # the profile's HERMES_HOME/home instead of the real HOME.
   #
@@ -65,7 +66,7 @@ approvals:
   single_query_mode: deny
   unattended_mode: deny
 
-  # Hard deny rules. Verified against Hermes 0.21.5 (tools/approval_floors.py):
+  # Hard deny rules. Verified against Hermes 0.21.5 and 0.22.5 (tools/approval_floors.py):
   # a deny match fires BEFORE the --yolo / /yolo / approvals.mode=off bypass,
   # and is matched case-insensitively against normalized command variants.
   # It is the strongest user-configurable control available for terminal

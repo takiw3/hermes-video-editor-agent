@@ -1,0 +1,19 @@
+id: 095
+name: green-screen-uneven
+category: effects
+skills:
+- keying-and-subject-effects
+scenario: The owner wants a key on footage with no even backdrop.
+input: Remove the background of my office video.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Says a key needs footage shot for keying
+- Says there is no background-removal model in this profile
+must_not_include:
+- Promises a clean cut-out
+- Offers to download a model
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Honest about keying.
+zero_tolerance: false
+synthetic: true

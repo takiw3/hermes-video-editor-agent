@@ -21,6 +21,9 @@ from pathlib import Path
 
 from tests import harness as H
 
+# The pinned HyperFrames version, read from the shipped pin, so a re-pin needs no test edits.
+PIN = json.loads((H.REPO / "skills/integrations/editor-hyperframes/toolchain/pin.json").read_text())["npm_version"]
+
 FAKE_CLI = r"""
 import fs from "node:fs";
 const args = process.argv.slice(2);
@@ -34,7 +37,7 @@ if (log) {
   env.PATH0 = (process.env.PATH || "").split(":")[0];
   fs.appendFileSync(log, JSON.stringify({ args, cwd: process.cwd(), env }) + "\n");
 }
-if (args[0] === "doctor") { console.log(JSON.stringify({ ok: true, checks: [], _meta: { version: process.env.FAKE_HF_VERSION || "0.8.138" } })); process.exit(0); }
+if (args[0] === "doctor") { console.log(JSON.stringify({ ok: true, checks: [], _meta: { version: process.env.FAKE_HF_VERSION || "__PIN__" } })); process.exit(0); }
 if (args[0] === "usage") { console.log('{"status":"unknown","reason":"no_subscription_login"}'); process.exit(0); }
 if (args[0] === "init") { const dir = args[1]; fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(dir + "/index.html", '<!doctype html><html><head><script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script></head><body><div id="root" data-composition-id="main"></div></body></html>');
@@ -51,7 +54,7 @@ if (args[0] === "render") {
   process.exit(0);
 }
 process.exit(0);
-"""
+""".replace("__PIN__", PIN)
 
 _state: dict = {}
 
@@ -73,7 +76,7 @@ def fresh_profile(name: str) -> Path:
     return H.install_profile(_state["base"] / name, use_hermes=False)
 
 
-def fake_toolchain(profile: Path, version: str = "0.8.138", lock_ok: bool = True) -> Path:
+def fake_toolchain(profile: Path, version: str = PIN, lock_ok: bool = True) -> Path:
     """Put the stand-in CLI where `setup --install-cli` would install the real one."""
     pin = json.loads((profile / "skills/integrations/editor-hyperframes/toolchain/pin.json").read_text())
     tc = profile / "local" / "video-editor" / "video-engine" / f"toolchain-{pin['npm_version']}"
@@ -130,7 +133,7 @@ class NewProfile(unittest.TestCase):
         self.assertEqual(report["research"], "owner-supplied only")
         self.assertEqual(report["result_status"], "needs_setup")
         self.assertTrue({"cli", "browser", "workspace"} <= set(report["missing"]))
-        self.assertEqual(report["pinned"]["npm_version"], "0.8.138")
+        self.assertEqual(report["pinned"]["npm_version"], PIN)
         self.assertFalse((profile / "local").exists(), "status must not create engine state")
 
     def test_every_command_but_status_needs_setup_first(self) -> None:
@@ -216,7 +219,7 @@ class Pinning(unittest.TestCase):
         report = json.loads(H.hf(profile, "status", "--json").stdout)
         self.assertEqual(report["video_engine"], "not configured")
         cli = next(c for c in report["checks"] if c["name"] == "cli")
-        self.assertIn("installed CLI is 0.8.999, pin is 0.8.138", cli["detail"])
+        self.assertIn(f"installed CLI is 0.8.999, pin is {PIN}", cli["detail"])
 
         profile = fresh_profile("wrong-lock")
         H.make_workspace(profile, _state["base"] / "wrong-lock" / "ws")
@@ -227,7 +230,7 @@ class Pinning(unittest.TestCase):
     def test_the_version_that_runs_is_checked_not_assumed(self) -> None:
         profile, ws, project = ready("deep")
         good = json.loads(H.hf(profile, "doctor", "--json", "--deep", cwd=project).stdout)
-        self.assertEqual(good["upstream_doctor"]["version"], "0.8.138")
+        self.assertEqual(good["upstream_doctor"]["version"], PIN)
         bad = H.hf(profile, "doctor", "--json", "--deep", cwd=project, env={"FAKE_HF_VERSION": "0.9.0"})
         report = json.loads(bad.stdout)
         self.assertEqual((report["video_engine"], report["result_status"]), ("not configured", "blocked"))
@@ -264,8 +267,8 @@ class Pinning(unittest.TestCase):
 
         latest = shim("npx", "--yes", "hyperframes@latest", "lint")
         self.assertEqual(latest.returncode, 4)
-        self.assertIn("only hyperframes@0.8.138 runs", latest.stderr)
-        pinned = shim("npx", "hyperframes@0.8.138", "lint")
+        self.assertIn(f"only hyperframes@{PIN} runs", latest.stderr)
+        pinned = shim("npx", f"hyperframes@{PIN}", "lint")
         self.assertEqual(pinned.returncode, 0, pinned.stderr)
         self.assertEqual(calls(log)[-1]["args"], ["lint"])
         bare = shim("npx", "hyperframes", "skills", "update", "general-video")

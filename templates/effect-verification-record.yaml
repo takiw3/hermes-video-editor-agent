@@ -1,0 +1,44 @@
+# What the effect verification gate records. `fx.py verify <effect_id>` writes
+# the real record as verification.json beside the effect; this template lists
+# its fields and the 12 checks, so an author knows what will be asked.
+effect_id:
+result:                       # pass | fail
+limited: []                   # written limits, for example "flashes at its max setting"
+verified_at:
+gate_version:
+profile_home:                 # a temporary installed profile
+engine:                       # hyperframes@<pinned version>
+machine:
+  system:
+  release:
+  machine:
+fixture:
+  size: [320, 180]
+  fps: 30
+  seconds: 2.0
+  kind:
+parameters:
+  default: {}
+  min: {}
+  max: {}
+checks:                       # each with n, check, result (pass | fail | not-applicable), detail
+  - "1 lint and check pass"
+  - "2 renders at default and min and max"
+  - "3 each render differs from the no-effect baseline above tolerance"
+  - "4 the same frame rendered twice is identical"
+  - "5 a frame rendered alone matches the same frame in sequence"
+  - "6 animated parameters render as expected at three times"
+  - "7 no network request during preview or render"
+  - "8 photosensitivity check recorded"
+  - "9 render-cost multiplier measured"
+  - "10 reference still and contact sheet from synthetic media"
+  - "11 license and provenance complete"
+  - "12 copy-detection check passes"
+photosensitivity:
+  result:
+  default:
+  max:
+  animated_sweep:
+  criteria:
+render_cost_multiplier:
+errors: []

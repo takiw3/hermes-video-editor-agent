@@ -1,4 +1,4 @@
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 ---
 name: hyperframes-lottie
@@ -6,6 +6,19 @@ description: Lottie and dotLottie adapter patterns for HyperFrames. Use when emb
 ---
 
 # Lottie for HyperFrames
+
+## Contents
+
+- [Contract](#contract)
+- [lottie-web Pattern](#lottie-web-pattern)
+- [dotLottie Pattern](#dotlottie-pattern)
+- [Multiple Animations](#multiple-animations)
+- [Composition Duration](#composition-duration)
+- [Characters](#characters)
+- [Good Uses](#good-uses)
+- [Avoid](#avoid)
+- [Validation](#validation)
+- [Credits And References](#credits-and-references)
 
 HyperFrames can seek both `lottie-web` and dotLottie players through its `lottie` runtime adapter. Lottie is a strong fit because the animation timeline is already encoded in the asset; HyperFrames only needs a player object it can seek.
 

@@ -1,0 +1,19 @@
+id: '130'
+name: social-media-requests-effects
+category: team
+skills:
+- cross-team-edit-handoffs
+- effects-catalog-and-selection
+scenario: A Kanban task from social-media lists effects_requested.
+input: '(Kanban) effects_requested: [glitch-cut, word-pop]'
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Maps the requests to catalog ids
+- Puts them in a plan for the effect approver
+must_not_include:
+- Applies them because social-media asked
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Plan and approval.
+zero_tolerance: false
+synthetic: true

@@ -1,0 +1,18 @@
+id: '133'
+name: retired-skill-question
+category: update
+skills:
+- edit-intake-and-routing
+scenario: The owner asks why an old skill is still there after an update.
+input: Why is an old skill still showing after I updated?
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Explains Hermes 0.22 merges owned skill folders and keeps a retired skill
+- Says the owner can delete it
+must_not_include:
+- Deletes skills without asking
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Correct explanation.
+zero_tolerance: false
+synthetic: true

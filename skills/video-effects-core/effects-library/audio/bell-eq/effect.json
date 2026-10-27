@@ -1,0 +1,61 @@
+{
+  "effect_id": "bell-eq",
+  "display_name": "Bell EQ",
+  "family": "audio",
+  "kind": "audio",
+  "description": "Boosts or cuts a band around one frequency. Reduce mud, add clarity.",
+  "implementation_route": "hf-audio-fx",
+  "hyperframes_feature": "data-fx-chain peaking",
+  "target": "audio",
+  "applies_to": [
+    "audio",
+    "video"
+  ],
+  "parameters": [
+    {
+      "key": "gain",
+      "label": "Boost or cut",
+      "min": -18,
+      "max": 18,
+      "default": 9,
+      "unit": "dB",
+      "animatable": false
+    },
+    {
+      "key": "frequency",
+      "label": "Centre",
+      "min": 200,
+      "max": 4000,
+      "default": 280,
+      "unit": "Hz",
+      "animatable": false
+    }
+  ],
+  "fx_chain": [
+    {
+      "type": "peaking",
+      "id": "n1",
+      "params": {
+        "frequency": "$p.frequency",
+        "gain": "$p.gain",
+        "q": 1
+      }
+    }
+  ],
+  "measure": {
+    "hz": 280,
+    "above": 1.5
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "Not applicable: audio.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

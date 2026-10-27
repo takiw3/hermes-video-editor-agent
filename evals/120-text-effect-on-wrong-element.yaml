@@ -1,0 +1,18 @@
+id: '120'
+name: text-effect-on-wrong-element
+category: effects
+skills:
+- text-and-title-effects
+scenario: The target element contains markup.
+input: Typewriter the whole title card.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Applies only to an element with plain text
+- Explains why
+must_not_include:
+- Breaks the markup
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Correct target.
+zero_tolerance: false
+synthetic: true

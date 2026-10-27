@@ -1,0 +1,29 @@
+{
+  "effect_id": "domain-warp",
+  "display_name": "Domain warp",
+  "family": "transitions",
+  "kind": "transition",
+  "description": "The outgoing shot melts into the next through swirling, organic noise.",
+  "implementation_route": "hf-shader-transition",
+  "hyperframes_feature": "@hyperframes/shader-transitions domain-warp",
+  "target": "scene-pair",
+  "applies_to": [
+    "scene-pair"
+  ],
+  "parameters": [],
+  "fixture": "transition",
+  "shader": "domain-warp",
+  "default_duration": 0.7,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR verified. HyperFrames has an HDR path for shader transitions; this profile has not tested it.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": false,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

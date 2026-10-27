@@ -1,0 +1,26 @@
+# Effect plan for one edit. Written by effects-catalog-and-selection, checked
+# with `fx.py check-plan`, approved by the effect approver before any effect is
+# applied. The edit state becomes effect_plan_approved only on that approval.
+plan_id:
+project_id:
+version:
+effect_approver:              # the owner, or the delegate the owner named in the task
+approved_by:
+approved_at:
+photosensitivity_budget: pass # pass: no warn or fail allowed | warn: a person reviews each warn
+hdr_sources: false            # true when any source is HDR
+sdr_working_copy_approved_by: # required when hdr_sources is true; effects never reach a native HDR layer
+render_cost_budget: 4         # stacked capture-time multiplier the owner accepts
+effects:
+  - effect_id:                # a verified or limited catalog id
+    target:                   # '#element-id'; transitions use from and to
+    from:
+    to:
+    at:                       # composition seconds
+    duration:
+    params: {}                # only keys from the catalog entry, inside their ranges
+    animate: {}               # key: [[time, value], ...] for animatable parameters
+    why:                      # what it does for the viewer, in one line
+    faces_in_shot: false      # true when the effect sits on a person's face
+    key_footage_confirmed:    # true when a key effect has footage shot for keying
+not_in_catalog: []            # requests no verified effect covers, said plainly to the owner

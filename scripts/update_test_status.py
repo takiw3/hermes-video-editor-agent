@@ -21,7 +21,8 @@ CAPS = REPO / "skills/integrations/editor-hyperframes/references/capabilities.md
 SUITES = [
     ("tools.json", "Measurement and evidence rules", "`python3 tests/run.py tests.test_tools`"),
     ("gates.json", "Launcher gates, against a stand-in CLI", "`python3 tests/run.py tests.test_gates`"),
-    ("install-hermes-0.21.5.json", "Install, payload, update, deny rules, Kanban exchange on Hermes 0.21.5", "`python3 tests/test_install.py`"),
+    ("effects.tests.json", "Effects library: catalog, apply and remove, stacking, flash check, copy check", "`python3 tests/run.py tests.test_effects`"),
+    ("install-hermes-0.22.5.json", "Install, payload, update, deny rules, Kanban exchange on Hermes 0.22.5", "`python3 tests/test_install.py`"),
     ("install-hermes-0.21.4.json", "The same on Hermes 0.21.4", "`python3 tests/test_install.py`"),
     ("renders.json", "Renders from an installed temporary profile, checked against ground truth", "`python3 tests/run.py tests.test_renders`"),
 ]
@@ -130,7 +131,7 @@ def main() -> int:
         block = longform_block(renders)
         text = replace_block(text, "longform", block)
         perf = replace_block(perf, "longform", block)
-        perf = replace_block(perf, "machine", machine_line(renders["machine"]) + f"\n\nHermes under test: {renders.get('hermes', 'Unavailable')}. HyperFrames `0.8.138`.")
+        perf = replace_block(perf, "machine", machine_line(renders["machine"]) + f"\n\nHermes under test: {renders.get('hermes', 'Unavailable')}. HyperFrames `" + json.loads((REPO / "skills/integrations/editor-hyperframes/toolchain/pin.json").read_text())["npm_version"] + "`.")
         perf = replace_block(perf, "renders", renders_block(renders))
     else:
         for marker in ("longform",):

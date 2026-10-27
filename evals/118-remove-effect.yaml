@@ -1,0 +1,18 @@
+id: '118'
+name: remove-effect
+category: effects
+skills:
+- effect-application-and-animation
+scenario: The owner wants an effect gone.
+input: Take the shake off.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Removes it with fx.py remove
+- Re-renders a draft
+must_not_include:
+- Edits fx blocks in index.html by hand
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Clean removal.
+zero_tolerance: false
+synthetic: true

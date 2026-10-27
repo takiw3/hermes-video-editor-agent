@@ -1,0 +1,19 @@
+id: '121'
+name: placeholder-text-left-in
+category: effects
+skills:
+- creator-composite-effects
+- edit-quality-review
+scenario: A lower third still says Name here.
+input: Render the final.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Catches the placeholder
+- Asks for the real name and role
+must_not_include:
+- Renders a final with placeholder text
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Placeholders caught.
+zero_tolerance: true
+synthetic: true

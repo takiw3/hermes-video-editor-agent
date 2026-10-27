@@ -2,23 +2,26 @@
 #
 # Schema verified by reading hermes_cli/profile_distribution.py at tag
 # v2026.9.24 (commit f97608f178d1ffeca59860195ab7da295f7c8e5f, Hermes
-# 0.21.5) and at the 0.21.4 build installed on the test machine (upstream
-# commit 16fe260aab45a524df94c8f635352fd9e6e66fe5). Recognised keys: name,
-# version, description, hermes_requires, author, license, env_requires,
-# distribution_owned. `source` and `installed_at` are written by the
-# installer and are deliberately not authored here.
+# 0.21.5), at the 0.21.4 build installed on the test machine (upstream
+# commit 16fe260aab45a524df94c8f635352fd9e6e66fe5), and again at v0.22.5
+# (commit bf0203a794a07aac3ff764972ab9087baa4e4f4e) for release 1.1.0.
+# Recognised keys: name, version, description, hermes_requires, author,
+# license, env_requires, distribution_owned. `source` and `installed_at` are
+# written by the installer and are deliberately not authored here. `local/`
+# is in Hermes' user-owned exclude list at both versions.
 #
 # hermes_requires is the earliest version actually install-tested. See the
 # test status table in README.md. Earlier releases may work; none was tested.
 name: video-editor
-version: 1.0.0
+version: 1.1.0
 description: >-
   Post-production specialist profile for business owners: footage intake,
   transcripts and selects, outlier video research for edit style, style
   blueprints, paper edits, short-form and long-form edits, captions, motion
   graphics, b-roll placement, audio mix, color treatment, reframing, exports,
   local rendering through a pinned HyperFrames toolchain, quality review,
-  versions, and revisions. It studies outlier videos before it cuts and offers
+  versions, and revisions, plus a library of verified visual and audio effects
+  with a WCAG flash check. It studies outlier videos before it cuts and offers
   a style match as a test, never as a promise. Local by construction: it
   writes inside an owner-approved workspace, keeps source footage read-only,
   and never posts, uploads, downloads a platform video, or signs in anywhere.
@@ -39,8 +42,10 @@ license: MIT
 # memories/, sessions/, logs/, local/ (editor profile, style library, video
 # engine state, the installed toolchain, the downloaded browser and models),
 # the owner's video workspace, config overrides, and any skill namespace the
-# user creates outside the three skill paths below. The whole skills/
-# directory is never owned.
+# user creates outside the four skill paths below. The whole skills/
+# directory is never owned. Owner-made effects live in local/effects/ and
+# owner effect recipes in local/effect-recipes/: both are under local/, so an
+# update never touches them and they never ship.
 #
 # skills/hyperframes-video is the derived HeyGen HyperFrames bundle. It is
 # Apache-2.0, not MIT, and ships with its own LICENSE, CREDITS.md,
@@ -56,3 +61,4 @@ distribution_owned:
   - skills/video-editor-core
   - skills/integrations/editor-hyperframes
   - skills/hyperframes-video
+  - skills/video-effects-core

@@ -1,0 +1,46 @@
+{
+  "effect_id": "drifting-dust",
+  "display_name": "Drifting dust",
+  "family": "overlays-and-generators",
+  "kind": "generator",
+  "description": "Soft motes float slowly through the light, like dust in a sunbeam.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "overlay",
+  "applies_to": [
+    "composition"
+  ],
+  "parameters": [
+    {
+      "key": "count",
+      "label": "Motes",
+      "min": 10,
+      "max": 120,
+      "default": 40,
+      "unit": "motes",
+      "animatable": false
+    },
+    {
+      "key": "glow",
+      "label": "Glow",
+      "min": 0.2,
+      "max": 1,
+      "default": 0.6,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "probe": null,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-062",
+  "license": "MIT",
+  "status": "implemented"
+}

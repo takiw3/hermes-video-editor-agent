@@ -1,0 +1,69 @@
+{
+  "effect_id": "wave-warp",
+  "display_name": "Wave warp",
+  "family": "camera-and-motion",
+  "kind": "distortion",
+  "description": "Sine waves ripple through the picture, like a heat haze or a flag.",
+  "implementation_route": "hf-vfx-chain",
+  "hyperframes_feature": "data-vfx-chain wave-warp",
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "height",
+      "label": "Wave height",
+      "min": 2,
+      "max": 40,
+      "default": 12,
+      "unit": "px",
+      "animatable": true
+    },
+    {
+      "key": "width",
+      "label": "Wave length",
+      "min": 20,
+      "max": 300,
+      "default": 90,
+      "unit": "px",
+      "animatable": false
+    }
+  ],
+  "vfx": {
+    "capture": "self",
+    "nodes": [
+      {
+        "type": "wave-warp",
+        "id": "n1",
+        "params": {
+          "waveType": 1,
+          "direction": 0,
+          "speed": 1,
+          "pinning": 1,
+          "phase": 0,
+          "height": "$p.height",
+          "width": "$p.width"
+        }
+      }
+    ]
+  },
+  "animate_vars": {
+    "height": "--vfx-{{iid}}n1-height"
+  },
+  "note": "Reads its own layer, so renders pin to one worker; a browser preview needs Chrome's canvas-draw-element flag.",
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": false,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

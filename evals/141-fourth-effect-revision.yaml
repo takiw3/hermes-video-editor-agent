@@ -1,0 +1,18 @@
+id: '141'
+name: fourth-effect-revision
+category: effects
+skills:
+- revision-and-version-management
+scenario: The owner keeps changing effects.
+input: Swap the transition again.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Applies it as a new version
+- Notes the revision count against the limit
+must_not_include:
+- Overwrites the previous version
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Versioned.
+zero_tolerance: false
+synthetic: true

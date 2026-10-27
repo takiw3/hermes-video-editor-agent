@@ -1,0 +1,133 @@
+{
+  "effect_id": "high-pass",
+  "result": "pass",
+  "verified_at": "2026-10-27T15:11:54Z",
+  "gate_version": "1.1.0",
+  "engine": "hyperframes@0.8.183",
+  "machine": {
+    "system": "Darwin",
+    "release": "25.6.0",
+    "machine": "arm64"
+  },
+  "checks": [
+    {
+      "n": 1,
+      "check": "lint and check pass",
+      "result": "pass",
+      "detail": "audio fixtures: rendered through the launcher, which lints first"
+    },
+    {
+      "n": 2,
+      "check": "renders at default, min and max",
+      "result": "pass",
+      "detail": {
+        "base": 96000,
+        "default": 96000,
+        "min": 96000,
+        "max": 96000,
+        "repeat": 96000
+      }
+    },
+    {
+      "n": 3,
+      "check": "each render differs from the dry baseline above tolerance",
+      "result": "pass",
+      "detail": {
+        "mean_abs_sample_diff": {
+          "default": 4715.29,
+          "max": 4122.0
+        },
+        "tolerance": 8
+      }
+    },
+    {
+      "n": 4,
+      "check": "the same render twice is identical",
+      "result": "pass",
+      "detail": {
+        "samples_compared": 96000
+      }
+    },
+    {
+      "n": 5,
+      "check": "a frame rendered alone matches the same frame in sequence",
+      "result": "not-applicable",
+      "detail": "audio is rendered offline as one buffer; there is no per-frame seek"
+    },
+    {
+      "n": 6,
+      "check": "animated parameters render as expected at three times",
+      "result": "not-applicable",
+      "detail": "automation lanes are HyperFrames' own; not part of this entry"
+    },
+    {
+      "n": 7,
+      "check": "no network request during preview or render",
+      "result": "pass",
+      "detail": {
+        "renders": "outbound network denied by the OS"
+      }
+    },
+    {
+      "n": 8,
+      "check": "photosensitivity check recorded",
+      "result": "pass",
+      "detail": {
+        "result": "not-applicable (audio)"
+      }
+    },
+    {
+      "n": 9,
+      "check": "render-cost multiplier measured",
+      "result": "pass",
+      "detail": {
+        "multiplier": 1.21,
+        "method": "render wall seconds with the chain over without it"
+      }
+    },
+    {
+      "n": 10,
+      "check": "reference still and contact sheet from synthetic media",
+      "result": "not-applicable",
+      "detail": "audio effect: a spectrum note instead"
+    },
+    {
+      "n": 11,
+      "check": "license and provenance complete",
+      "result": "pass",
+      "detail": {
+        "missing": []
+      }
+    },
+    {
+      "n": 12,
+      "check": "copy-detection check passes",
+      "result": "pass",
+      "detail": {
+        "shared_shingles_per_file": {
+          "effect.json": 0
+        },
+        "limit": 3,
+        "fingerprints_commit": "2756209a9276"
+      }
+    },
+    {
+      "n": 13,
+      "check": "expected change at a measured frequency",
+      "result": "pass",
+      "detail": {
+        "hz": 60,
+        "energy_ratio": 0.0016532232699866384,
+        "expect": {
+          "hz": 60,
+          "below": 0.5
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "photosensitivity": {
+    "result": "not-applicable"
+  },
+  "render_cost_multiplier": 1.21
+}

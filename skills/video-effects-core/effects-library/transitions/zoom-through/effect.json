@@ -1,0 +1,38 @@
+{
+  "effect_id": "zoom-through",
+  "display_name": "Zoom through",
+  "family": "transitions",
+  "kind": "transition",
+  "description": "The camera seems to rush forward through the current shot into the next.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "scene-pair",
+  "applies_to": [
+    "scene-pair"
+  ],
+  "parameters": [
+    {
+      "key": "zoom",
+      "label": "Zoom amount",
+      "min": 0.2,
+      "max": 2,
+      "default": 0.8,
+      "unit": "x",
+      "animatable": false
+    }
+  ],
+  "fixture": "transition",
+  "default_duration": 0.6,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-022",
+  "license": "MIT",
+  "status": "implemented"
+}

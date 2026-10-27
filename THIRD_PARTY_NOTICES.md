@@ -8,12 +8,12 @@ The material below is not original to this repository and is not relicensed.
 
 - Location: `skills/hyperframes-video/` (derived, installed with the profile) and `vendor/upstream/hyperframes/` (exact upstream copy, repository only).
 - Source: https://github.com/heygen-com/hyperframes
-- Release: `v0.8.138`, commit `0ca28db4f8671a2e2262594e03c566222d695920`, published 2026-10-06.
+- Release: `v0.8.183`, commit `7e2817619f340f9302eeaef185e73be39a19858d`, published 2026-10-21. (1.0.0 of this profile pinned `v0.8.138`.)
 - License: Apache License, Version 2.0. Copyright 2026 HeyGen, Inc.
 - License text: `skills/hyperframes-video/LICENSE` and `vendor/upstream/hyperframes/LICENSE`. Both are the upstream file, unchanged.
 - NOTICE file: upstream ships none at the pinned tag. Upstream's `CREDITS.md` is reproduced unchanged at `skills/hyperframes-video/CREDITS.md`.
 
-`skills/hyperframes-video/` is a derivative work. TakiGPT AI Inc. modified 88 of the 606 vendored skill files so the skills run safely inside a Hermes profile. Each modified file carries a prominent notice stating that it was changed. The rules applied and the full list of modified files are in `skills/hyperframes-video/MODIFICATIONS.md` and in `vendor/hyperframes.lock.yaml`. Every other file is byte-identical to upstream.
+`skills/hyperframes-video/` is a derivative work. TakiGPT AI Inc. modified or stubbed 89 of the 624 vendored skill files so the skills run safely inside a Hermes profile. Each modified file carries a prominent notice stating that it was changed. The rules applied and the full list of modified files are in `skills/hyperframes-video/MODIFICATIONS.md` and in `vendor/hyperframes.lock.yaml`. Every other file is byte-identical to upstream.
 
 This project is not affiliated with, sponsored by, or endorsed by HeyGen. "HeyGen" and "HyperFrames" are used only to identify the upstream work.
 
@@ -80,12 +80,27 @@ Some upstream compositions reference Google Fonts or other CDN-hosted libraries.
 
 ## Installed by the owner during setup, not distributed here
 
-- **HyperFrames CLI** (`hyperframes@0.8.138`, Apache-2.0, HeyGen, Inc.) and its dependency tree: 172 packages, including GSAP, pinned with integrity hashes in `skills/integrations/editor-hyperframes/toolchain/package-lock.json`. Each package is under its own license, readable in the lockfile and in `node_modules` after install. The tree includes `sharp` (Apache-2.0) with platform builds of `libvips` (LGPL-3.0-or-later), `puppeteer-core` (Apache-2.0), and `esbuild` (MIT).
+- **HyperFrames CLI** (`hyperframes@0.8.183`, Apache-2.0, HeyGen, Inc.) and its dependency tree: 178 locked packages (130 installed on macOS arm64), including GSAP and `@hyperframes/shader-transitions@0.8.183` (Apache-2.0, HeyGen, Inc.; its browser build bundles `html2canvas`, MIT), pinned with integrity hashes in `skills/integrations/editor-hyperframes/toolchain/package-lock.json`. Each package is under its own license, readable in the lockfile and in `node_modules` after install. The tree includes `sharp` (Apache-2.0) with platform builds of `libvips` (LGPL-3.0-or-later), `puppeteer-core` (Apache-2.0), and `esbuild` (MIT).
 - **Headless Chrome** (`chrome-headless-shell`, build 152.0.7977.30 for the pinned CLI), from Chrome for Testing, under the Chromium project's open-source licenses.
 - **Parakeet TDT 0.6B v3** speech model by NVIDIA, optional, CC-BY-4.0, in the int8 ONNX export from `csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8`, run with sherpa-onnx (Apache-2.0).
 - **FFmpeg** and **Node.js**, installed by the owner independently, under their own licenses.
 
 A registry item, when the owner fetches one, comes from the upstream repository's `main` branch under that repository's license. Upstream `CREDITS.md` lists items that vendor or load third-party code (three.js, GSAP, opentype.js, Clipper, d3-delaunay) and a few assets whose origin upstream has not confirmed. The fetch records file hashes, and the item needs an entry in the project's rights register before use.
+
+## Copied into a project when an effect needs it, not distributed here
+
+When an effect is applied, `fx.py` copies two files into that project's `assets/vendor/` from the owner's installed toolchain or from the profile, and records each in the project's asset rights register:
+
+- `hyper-shader.js`: the browser build of `@hyperframes/shader-transitions@0.8.183` (Apache-2.0, Copyright 2026 HeyGen, Inc., bundling `html2canvas`, MIT), for shader transitions.
+- `fx-runtime.js` and per-effect scripts: this profile's own MIT code.
+
+## Studied, not used: Concat
+
+- Project: Concat, https://github.com/jub0t/concat, AGPL-3.0-or-later. Name and logo reserved by its owner under its trademark policy.
+- Commit read: `2756209a92766a4e4726999a51648349a272c159`, on 2026-10-21, as text only, then deleted.
+- What we took: plain-language descriptions of how its picture effects look, written fresh, in `docs/effects/reference-study.md`. No code, shader text, manifest text, preset values, images, or names from Concat are in this repository. `tests/fixtures/concat-fingerprints.json` holds salted hashes only, used by `scripts/copy_check.py` to detect copying.
+- Clean-room effects carry a `reference_id` (`RS-001` to `RS-102`) pointing at their study entry. See `docs/effects/clean-room-process.md` and `docs/concat-safety-review.md`.
+- Concat is mentioned only to attribute the study. This project is not affiliated with it.
 
 ## Development and CI
 

@@ -1,0 +1,9 @@
+      <filter id="fx-{{iid}}-filter" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+        <feColorMatrix class="fx-{{iid}}-spill" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" result="clean" />
+        <feColorMatrix class="fx-{{iid}}-key" in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" result="matte" />
+        <feComponentTransfer in="matte" class="fx-{{iid}}-edge" result="hard">
+          <feFuncA type="linear" slope="1" intercept="0" />
+        </feComponentTransfer>
+        <feComposite in="clean" in2="hard" operator="in" result="fx" />
+        <feComposite in="fx" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="0" k4="0" class="fx-{{iid}}-mix" />
+      </filter>

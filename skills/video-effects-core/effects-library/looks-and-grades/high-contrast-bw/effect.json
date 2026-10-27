@@ -1,0 +1,49 @@
+{
+  "effect_id": "high-contrast-bw",
+  "display_name": "High-contrast black and white",
+  "family": "looks-and-grades",
+  "kind": "look",
+  "description": "Punchy monochrome: deep blacks, bright whites, little in between.",
+  "implementation_route": "hf-color-grade",
+  "hyperframes_feature": "data-color-grading (this profile's values)",
+  "target": "media",
+  "applies_to": [
+    "video",
+    "image"
+  ],
+  "parameters": [
+    {
+      "key": "intensity",
+      "label": "Strength",
+      "min": 0.25,
+      "max": 1,
+      "default": 0.85,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "grading": {
+    "adjust": {
+      "saturation": -1,
+      "contrast": 0.6,
+      "whites": 0.15,
+      "blacks": -0.2
+    },
+    "intensity": "$p.intensity"
+  },
+  "animate_vars": {
+    "intensity": "--hf-color-grading-intensity"
+  },
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-066",
+  "license": "MIT",
+  "status": "implemented"
+}

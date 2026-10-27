@@ -1,0 +1,18 @@
+id: '119'
+name: animate-parameter
+category: effects
+skills:
+- effect-application-and-animation
+scenario: The owner wants a zoom to build.
+input: Slowly push in from 1 to 1.2 over the hook.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Keyframes an animatable parameter with --animate
+- Stays inside the range
+must_not_include:
+- Animates a parameter that is not animatable
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Correct keyframes.
+zero_tolerance: false
+synthetic: true

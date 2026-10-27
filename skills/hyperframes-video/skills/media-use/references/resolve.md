@@ -1,4 +1,4 @@
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 # Resolve — command, flags, reuse, adopt, inventory
 
@@ -13,7 +13,7 @@ Returns one line: `resolved <id> → <path> (<type>, <metadata>)`
 | Type    | What it finds                    | Provider / cascade                                           |
 | ------- | -------------------------------- | ------------------------------------------------------------ |
 | `bgm`   | Background music                 | HeyGen audio catalog (10k+ tracks)                           |
-| `sfx`   | Sound effects                    | Bundled 19-file library + HeyGen catalog                     |
+| `sfx`   | Sound effects                    | Openverse (CC0 / CC BY), then the bundled 21-file library    |
 | `image` | Photos, backgrounds              | HeyGen asset search (75k+ vectors)                           |
 | `icon`  | Icons, symbols                   | HeyGen asset search (type=icon)                              |
 | `logo`  | Official brand marks             | theSVG → GitHub org avatar → domain favicon                  |

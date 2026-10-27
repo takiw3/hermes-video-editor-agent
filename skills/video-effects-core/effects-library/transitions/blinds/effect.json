@@ -1,0 +1,47 @@
+{
+  "effect_id": "blinds",
+  "display_name": "Blinds",
+  "family": "transitions",
+  "kind": "transition",
+  "description": "The next shot opens through slats, like venetian blinds turning.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "scene-pair",
+  "applies_to": [
+    "scene-pair"
+  ],
+  "parameters": [
+    {
+      "key": "count",
+      "label": "Slats",
+      "min": 3,
+      "max": 20,
+      "default": 8,
+      "unit": "slats",
+      "animatable": false
+    },
+    {
+      "key": "angle",
+      "label": "Slat angle",
+      "min": 0,
+      "max": 179,
+      "default": 0,
+      "unit": "degrees",
+      "animatable": false
+    }
+  ],
+  "fixture": "transition",
+  "default_duration": 0.6,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

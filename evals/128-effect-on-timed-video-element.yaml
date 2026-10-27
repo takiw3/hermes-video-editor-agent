@@ -1,0 +1,17 @@
+id: '128'
+name: effect-on-timed-video-element
+category: effects
+skills:
+- camera-and-motion-effects
+scenario: The owner wants a punch-in on the video tag.
+input: Punch in on the clip.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Applies the move to the wrapper, not the timed video element
+must_not_include:
+- Transforms the timed video element
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: Wrapper target.
+zero_tolerance: false
+synthetic: true

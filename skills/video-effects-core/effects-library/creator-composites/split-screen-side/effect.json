@@ -1,0 +1,53 @@
+{
+  "effect_id": "split-screen-side",
+  "display_name": "Split screen, side by side",
+  "family": "creator-composites",
+  "kind": "composite",
+  "description": "Two shots side by side, each showing its middle half. Reactions, before and after, two speakers.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "composite",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "gap",
+      "label": "Gap",
+      "min": 0,
+      "max": 4,
+      "default": 1,
+      "unit": "% of width",
+      "animatable": false
+    },
+    {
+      "key": "intro",
+      "label": "Slide-in time",
+      "min": 0,
+      "max": 0.8,
+      "default": 0.35,
+      "unit": "s",
+      "animatable": true
+    }
+  ],
+  "fixture": "two-clips",
+  "writes": [
+    "transform"
+  ],
+  "probe": null,
+  "markup_in_target": false,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

@@ -1,0 +1,59 @@
+{
+  "effect_id": "self-displace",
+  "display_name": "Self displacement",
+  "family": "camera-and-motion",
+  "kind": "distortion",
+  "description": "The picture pushes its own pixels around by their brightness, a liquid smear.",
+  "implementation_route": "hf-vfx-chain",
+  "hyperframes_feature": "data-vfx-chain displacement-map",
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "amount",
+      "label": "Sideways push",
+      "min": 5,
+      "max": 150,
+      "default": 40,
+      "unit": "px",
+      "animatable": true
+    }
+  ],
+  "vfx": {
+    "capture": "self",
+    "nodes": [
+      {
+        "type": "displacement-map",
+        "id": "n1",
+        "params": {
+          "useH": 1,
+          "useV": 2,
+          "edge": 0,
+          "expand": true,
+          "maxH": "$p.amount",
+          "maxV": 12
+        }
+      }
+    ]
+  },
+  "animate_vars": {
+    "amount": "--vfx-{{iid}}n1-maxH"
+  },
+  "note": "Reads its own layer, so renders pin to one worker; a browser preview needs Chrome's canvas-draw-element flag.",
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only. HyperFrames keeps a native HDR layer's pixels on a separate path, so the effect does not appear on it; use an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": false,
+  "render_cost_multiplier": null,
+  "provenance": "hyperframes",
+  "reference_id": null,
+  "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
+  "status": "implemented"
+}

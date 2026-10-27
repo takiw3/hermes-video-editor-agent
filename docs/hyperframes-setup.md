@@ -67,7 +67,7 @@ The release tests ran `--workspace`, `--install-cli`, `--use-browser`, `--allow-
 
 | Item | Source | Size | License |
 | --- | --- | --- | --- |
-| HyperFrames CLI `hyperframes@0.8.138`, GSAP 3.14.2, and their dependencies (172 locked packages) | registry.npmjs.org, with `npm ci` from the shipped lockfile, integrity-checked, install scripts off | about 240 MB on disk | Apache-2.0 for HyperFrames (Copyright 2026 HeyGen, Inc.). GSAP Standard License for GSAP, which is not an OSI license. Every other package under its own license, listed in the lockfile. |
+| HyperFrames CLI `hyperframes@0.8.183`, GSAP 3.14.2, `@hyperframes/shader-transitions@0.8.183`, and their dependencies (178 locked packages, 130 installed on macOS arm64) | registry.npmjs.org, with `npm ci` from the shipped lockfile, integrity-checked, install scripts off | about 155 MB on disk | Apache-2.0 for HyperFrames (Copyright 2026 HeyGen, Inc.). GSAP Standard License for GSAP, which is not an OSI license. Every other package under its own license, listed in the lockfile. |
 | Headless Chrome (`chrome-headless-shell`, build 152.0.7977.30) | Chrome for Testing, fetched by the pinned CLI | about 190 MB on disk | Chromium open-source licenses |
 | Optional: Parakeet TDT 0.6B v3 speech model and the sherpa-onnx runtime | Hugging Face, `csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8`, fetched by the pinned CLI | about 670 MB of model files, plus the runtime | CC-BY-4.0 for the model (NVIDIA). Apache-2.0 for sherpa-onnx. |
 

@@ -1,0 +1,7 @@
+      <filter id="fx-{{iid}}-filter" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+        <feColorMatrix in="SourceGraphic" type="saturate" values="0" result="grey" />
+        <feColorMatrix class="fx-{{iid}}-mask" in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1 0 0 0 0" result="matte" />
+        <feComposite in="SourceGraphic" in2="matte" operator="in" result="kept" />
+        <feMerge result="fx"><feMergeNode in="grey" /><feMergeNode in="kept" /></feMerge>
+        <feComposite in="fx" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="0" k4="0" class="fx-{{iid}}-mix" />
+      </filter>

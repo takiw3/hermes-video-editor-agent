@@ -1,0 +1,1479 @@
+{
+  "recorded_at": "2026-10-27T19:23:50Z",
+  "hermes": "Hermes Agent v0.21.4 (2026.9.21) \u00b7 upstream 16fe260a",
+  "machine": {
+    "system": "Darwin",
+    "release": "25.6.0",
+    "machine": "arm64"
+  },
+  "jobs": 2,
+  "this_run": {
+    "film-artifacts": "fail",
+    "invert": "pass",
+    "solarize": "pass",
+    "tape-damage": "pass",
+    "threshold-bw": "pass",
+    "tilt-shift": "pass",
+    "two-ink-print": "pass",
+    "unsharp-sharpen": "pass",
+    "chroma-key-blue": "pass",
+    "chroma-key-green": "pass",
+    "drifting-dust": "fail",
+    "dust-and-scratches": "fail",
+    "fractal-noise": "pass",
+    "progress-bar": "pass",
+    "kinetic-scale": "pass",
+    "slide-over": "pass",
+    "spin-rotate": "fail"
+  },
+  "effects": {
+    "bell-eq": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:10:30Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.18
+    },
+    "bitcrusher": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:09:59Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.0
+    },
+    "chorus": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:09:59Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.0
+    },
+    "compressor": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:10:21Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.09
+    },
+    "echo-delay": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:11:33Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.02
+    },
+    "gain": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:11:33Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.02
+    },
+    "high-pass": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:11:54Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.21
+    },
+    "high-shelf": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:12:03Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.38
+    },
+    "limiter": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:13:03Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.0
+    },
+    "low-pass": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:13:03Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.0
+    },
+    "low-shelf": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:13:33Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.38
+    },
+    "noise-gate": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:13:35Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.39
+    },
+    "phaser": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:14:33Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.0
+    },
+    "pitch-shift": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:14:33Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.0
+    },
+    "reverb": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:15:09Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.13
+    },
+    "saturation-drive": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:15:07Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.19
+    },
+    "true-peak-limiter": {
+      "family": "audio",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:16:41Z",
+      "photosensitivity": "not-applicable",
+      "render_cost_multiplier": 1.06
+    },
+    "camera-shake": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:18:44Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 2.02
+    },
+    "crash-zoom": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:19:38Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "directional-blur": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:19:19Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "dutch-tilt": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:19:51Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "handheld-drift": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:22:56Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.64
+    },
+    "ken-burns-pan": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:23:36Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.05
+    },
+    "perspective-tilt": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:23:36Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.03
+    },
+    "punch-in": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:24:05Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.45
+    },
+    "roll-in": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:26:43Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.29
+    },
+    "self-displace": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:26:37Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.29
+    },
+    "slow-push": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:26:40Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.25
+    },
+    "wave-warp": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:28:10Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.3
+    },
+    "zoom-bounce": {
+      "family": "camera-and-motion",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:30:39Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.31
+    },
+    "blur-fill-reframe": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:30:31Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "callout-box": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:30:44Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.28
+    },
+    "compare-wipe": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:32:27Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.23
+    },
+    "face-cam-bubble": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:34:26Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.62
+    },
+    "lower-third": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:34:31Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.35
+    },
+    "photo-card": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:34:18Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.02
+    },
+    "picture-in-picture": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:36:22Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.34
+    },
+    "screen-frame": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:38:05Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "split-screen-side": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:38:41Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.82
+    },
+    "split-screen-stack": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:38:48Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.76
+    },
+    "spotlight-focus": {
+      "family": "creator-composites",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:41:02Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.54
+    },
+    "ascii-art": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:42:54Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "bloom": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:43:15Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.1
+    },
+    "blur": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:42:42Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.09
+    },
+    "channel-separation": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:44:03Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "chroma-softening": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:45:44Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.51
+    },
+    "comic-ink-posterize": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:47:26Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.24
+    },
+    "cool-highlight-halo": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:47:56Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "crosshatch": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:47:28Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.13
+    },
+    "crt-curvature": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:49:10Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.09
+    },
+    "diffusion-glow": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:52:21Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "digital-glitch": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:50:53Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.18
+    },
+    "duotone": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:52:55Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "edge-glow": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:54:12Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "emboss": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:55:39Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "engraving": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:55:39Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.01
+    },
+    "film-artifacts": {
+      "family": "image-effects",
+      "result": "fail",
+      "limited": false,
+      "verified_at": "2026-10-27T19:06:38Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "film-grain": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T15:58:35Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "film-halation": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:06:54Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "halftone": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:02:34Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.04
+    },
+    "ink-spread": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:06:37Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.59
+    },
+    "invert": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:07:01Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "kuwahara-paint": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:12:14Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "mono-screen": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:11:31Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.49
+    },
+    "ordered-dither": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:13:48Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "pixelate": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:12:48Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "posterize": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:16:56Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.0
+    },
+    "pulsing-bloom": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:17:19Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.32
+    },
+    "scanlines": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:17:55Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "sepia-tone": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T16:21:28Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "solarize": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:09:33Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.1
+    },
+    "tape-damage": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:09:32Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "threshold-bw": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:12:17Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.21
+    },
+    "tilt-shift": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:12:38Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.18
+    },
+    "two-ink-print": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:13:39Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "unsharp-sharpen": {
+      "family": "image-effects",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:14:14Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "chroma-key-blue": {
+      "family": "keying-and-subject",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:15:55Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.14
+    },
+    "chroma-key-green": {
+      "family": "keying-and-subject",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:16:33Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "colour-isolate": {
+      "family": "keying-and-subject",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:19:46Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.32
+    },
+    "garbage-matte": {
+      "family": "keying-and-subject",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:18:44Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "luma-key": {
+      "family": "keying-and-subject",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:22:33Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "spill-reduction": {
+      "family": "keying-and-subject",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:21:31Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "bleach-bypass": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:23:03Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "bright-pop": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:23:39Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "clean-studio": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:24:50Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "cold-noir": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:25:37Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.1
+    },
+    "contrast": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:25:34Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "creator-camcorder": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:26:36Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "cross-process": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:27:49Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "dark-bronze-grade": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:28:41Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.44
+    },
+    "day-for-night": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:28:42Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.39
+    },
+    "deep-contrast": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:29:48Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "eerie-green-grade": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:32:05Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "exposure-stops": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:33:06Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "faded-print-matte": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:33:12Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.15
+    },
+    "food-pop": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:34:39Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.35
+    },
+    "golden-hour-grade": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:35:40Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "high-contrast-bw": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:36:41Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.25
+    },
+    "home-movie-8mm": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:36:47Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.35
+    },
+    "hue-shift": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:37:55Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "late-night-cool-grade": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:38:58Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "lift-gamma-gain": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:39:21Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.02
+    },
+    "magenta-cyan-split-tone": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:39:53Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.04
+    },
+    "mono-clean": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:41:14Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "mono-fade": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:42:04Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.18
+    },
+    "muted-editorial": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:42:27Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "nature-saturation-boost": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:43:09Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "night-lift": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:44:49Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "pastel-magenta-cyan-cast": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:46:08Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.05
+    },
+    "s-curve-contrast": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:46:27Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "saturation": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:46:41Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.17
+    },
+    "shadow-highlight-recover": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:48:26Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "skin-soft": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:49:52Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.14
+    },
+    "sky-deepen": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:50:16Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.46
+    },
+    "soft-boost": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:50:22Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "soft-cool-bw": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:52:14Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "steel-teal-grade": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:55:08Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "sun-bleached-fade": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:55:28Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.11
+    },
+    "teal-orange": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:55:35Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.15
+    },
+    "vhs-playback": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:57:34Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "vibrance": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:58:42Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "vignette": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:58:57Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "vintage-wash": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T17:59:33Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "vivid-punch": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:02:19Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.35
+    },
+    "warm-cream-matte": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:03:19Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.32
+    },
+    "warm-daylight": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:03:27Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "white-balance": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:03:30Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "wintry-blue-matte": {
+      "family": "looks-and-grades",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:05:32Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.14
+    },
+    "blueprint-grid": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:07:18Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.53
+    },
+    "bokeh-drift": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:07:02Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "confetti-burst": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:07:03Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.03
+    },
+    "drifting-dust": {
+      "family": "overlays-and-generators",
+      "result": "fail",
+      "limited": false,
+      "verified_at": "2026-10-27T19:18:09Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.09
+    },
+    "dust-and-scratches": {
+      "family": "overlays-and-generators",
+      "result": "fail",
+      "limited": false,
+      "verified_at": "2026-10-27T19:18:45Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.27
+    },
+    "fractal-noise": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:19:57Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.1
+    },
+    "gradient-wash": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:11:21Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "letterbox-bars": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:13:53Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.55
+    },
+    "light-leak-glow": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:14:11Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "progress-bar": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:20:21Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "rainfall": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:15:29Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "rec-hud": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:18:04Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "scan-bar": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:18:05Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "snowfall": {
+      "family": "overlays-and-generators",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:18:40Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.74
+    },
+    "blur-in": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:19:46Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.16
+    },
+    "glitch-text": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:22:26Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.71
+    },
+    "highlight-sweep": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:22:37Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.68
+    },
+    "kinetic-scale": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:22:32Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 2.0
+    },
+    "letter-drop": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:24:38Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.44
+    },
+    "outline-reveal": {
+      "family": "text-and-title",
+      "result": "fail",
+      "limited": false,
+      "verified_at": "2026-10-27T18:28:47Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 2.36
+    },
+    "scramble-text": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:28:47Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.06
+    },
+    "slide-up-reveal": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:29:33Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.39
+    },
+    "tracking-expand": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:31:08Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.51
+    },
+    "typewriter": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:33:35Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.37
+    },
+    "word-pop": {
+      "family": "text-and-title",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:34:36Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.55
+    },
+    "barn-door": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:33:51Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "blinds": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:34:58Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.92
+    },
+    "blur-dissolve": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:37:03Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "chromatic-split": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:37:17Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.3
+    },
+    "cinematic-zoom": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:37:50Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "clock-wipe": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:38:31Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.05
+    },
+    "cross-warp-morph": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:40:30Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.25
+    },
+    "crossfade": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:40:44Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.13
+    },
+    "cube-rotate": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:41:22Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.04
+    },
+    "diamond-wipe": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:42:53Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.06
+    },
+    "dip-to-colour": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:45:03Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.87
+    },
+    "domain-warp": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:45:03Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.35
+    },
+    "fade-through-black": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:46:19Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.27
+    },
+    "flash-through-white": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:47:31Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.07
+    },
+    "glitch-cut": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:49:12Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.0
+    },
+    "gravitational-lens": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:49:14Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.16
+    },
+    "light-leak-wash": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:50:12Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.19
+    },
+    "linear-wipe": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:51:31Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "push-slide": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:52:38Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.06
+    },
+    "ridged-burn": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:52:25Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "ripple-waves": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:53:33Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "sdf-iris": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:54:42Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.03
+    },
+    "slide-over": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T19:22:15Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.57
+    },
+    "spin-rotate": {
+      "family": "transitions",
+      "result": "fail",
+      "limited": false,
+      "verified_at": "2026-10-27T19:23:50Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.82
+    },
+    "swirl-vortex": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:57:08Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.29
+    },
+    "thermal-distortion": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:58:00Z",
+      "photosensitivity": "pass",
+      "render_cost_multiplier": 1.0
+    },
+    "whip-pan": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:58:56Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.0
+    },
+    "zoom-through": {
+      "family": "transitions",
+      "result": "pass",
+      "limited": false,
+      "verified_at": "2026-10-27T18:59:15Z",
+      "photosensitivity": "warn",
+      "render_cost_multiplier": 1.25
+    }
+  }
+}

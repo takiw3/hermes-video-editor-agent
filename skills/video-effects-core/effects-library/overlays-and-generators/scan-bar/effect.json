@@ -1,0 +1,45 @@
+{
+  "effect_id": "scan-bar",
+  "display_name": "Scan bar",
+  "family": "overlays-and-generators",
+  "kind": "overlay",
+  "description": "A soft bright band rolls down the screen, like a refresh line on an old monitor.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "overlay",
+  "applies_to": [
+    "composition"
+  ],
+  "parameters": [
+    {
+      "key": "speed",
+      "label": "Rolls per second",
+      "min": 0.1,
+      "max": 1,
+      "default": 0.35,
+      "unit": "Hz",
+      "animatable": false
+    },
+    {
+      "key": "strength",
+      "label": "Brightness",
+      "min": 0.05,
+      "max": 0.4,
+      "default": 0.15,
+      "unit": "0-1",
+      "animatable": true
+    }
+  ],
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

@@ -1,8 +1,8 @@
 # Hermes video editor agent
 
-A Hermes profile that edits video for a business owner. It studies outlier videos in your niche before it cuts, offers to match that style as a test, and renders locally through a pinned copy of HeyGen HyperFrames.
+A Hermes profile that edits video for a business owner. It studies outlier videos in your niche before it cuts, offers to match that style as a test, renders locally through a pinned copy of HeyGen HyperFrames, and ships a library of verified visual effects.
 
-Release status: **edit-and-render release**. Local editing and rendering are tested. No connected research mode and no external-services mode ship. Read [what it cannot verify](#what-it-cannot-verify) and [unresolved limits](#unresolved-limits) before relying on it.
+Release status: **edit-and-render release** with an effects library; the [effects library](#effects-library) section states the exact verified count. Local editing and rendering are tested. No connected research mode and no external-services mode ship. Read [what it cannot verify](#what-it-cannot-verify) and [unresolved limits](#unresolved-limits) before relying on it.
 
 ## What it is
 
@@ -35,6 +35,45 @@ It does not write scripts, choose topics, set strategy, write post captions, ana
 - Review a render by frame and by audio measurement, and report pass or fail with timecodes.
 - Apply revision notes as a new version and show what changed.
 - Exchange tasks with teammate profiles through Hermes Kanban, by file path and checksum.
+- Apply verified effects: looks, picture effects, transitions, camera moves, keys, overlays, text animation, creator layouts, and audio effects, from an effect plan you approve.
+- Check every render with effects for flashes against WCAG 2.3.1 before you see it.
+
+## Effects library
+
+Every effect here passed a 12-check gate in an installed temporary profile, rendered on synthetic media with the network switched off. Each one is rendered at default, minimum and maximum. It must render identically twice, render the same frame when seeked alone, animate as keyed, make no network request, have a recorded flash check and a measured render cost, come with reference stills, and pass a copy check. Only effects with a passing record count. [How the gate works](docs/effects/verification.md).
+
+<!-- effect-counts:begin -->
+Verified on 2026-10-27. Release status: **full release**.
+
+| Family | Verified | Limited | Target |
+| --- | --- | --- | --- |
+| Looks and grades | 46 | 0 | 25 or more |
+| Image effects | 34 | 0 | 25 or more |
+| Transitions | 27 | 0 | 20 or more |
+| Camera and motion | 13 | 0 | 12 or more |
+| Keying and subject | 6 | 0 | 6 or more |
+| Overlays and generators | 12 | 0 | 10 or more |
+| Text and titles | 10 | 0 | 8 or more |
+| Creator composites | 11 | 0 | 10 or more |
+| **Picture effects** | **159** | 0 | more than 100 |
+| Audio (separate) | 17 | 0 | none set |
+<!-- effect-counts:end -->
+
+Built in this order:
+
+1. **What HyperFrames already ships:** its media effects, color presets and grading engine, 14 shader transitions and crossfade, vfx kernels, and audio effects.
+2. **Original effects** written for this profile: CSS and SVG filters, GSAP moves, canvas generators, keys, text animation, and creator layouts.
+3. **Behavior studied clean-room** from another open-source editor, [Concat](https://github.com/jub0t/concat).
+
+The full list, with each effect's route, cost and flash rating, is in [docs/effects/catalog.md](docs/effects/catalog.md).
+
+**The Concat study, in plain words.** Concat is an open-source desktop video editor under the AGPL. We read its effect descriptions and docs as text only, from one pinned commit, and deleted the copy afterwards. We did not build it, run it, download its binaries or models, connect to its agent API, or look at its voice-cloning code. We found one file in it that tells coding agents to build and launch the app, and ignored it. A separate session then built our effects from plain-language notes about what each effect looks like. No Concat code, shader, preset value, image or name entered this repository, and a copy check in CI looks for any. The review covers what was read. It does not say Concat is safe to run. Details: [safety review](docs/concat-safety-review.md), [clean-room process](docs/effects/clean-room-process.md).
+
+**HDR.** Effects run on HyperFrames' standard pipeline. A native HDR layer keeps its own pixels and shows no effect. If your footage is HDR, the editor asks you to approve an SDR working copy first.
+
+**Photosensitivity.** Every effect has a flash rating from its verification, and every render with effects gets a fresh check, because your footage and timing can create flashes the catalog never saw. A failing render is never delivered. The check follows WCAG 2.3.1 as published by the W3C (read 2026-10-21). It is a screening tool, not a broadcast certification. [How it works](docs/photosensitivity-and-accessibility.md).
+
+**Your own effects and recipes** live in `local/effects/` and `local/effect-recipes/` in the profile. Updates never touch them, they never ship, and a new effect counts only after it passes the same gate.
 
 ## What it cannot verify
 
@@ -46,6 +85,8 @@ It does not write scripts, choose topics, set strategy, write post captions, ana
 - Who made a style choice. It records the choice. See [how the outlier-first rule is enforced](#how-the-outlier-first-workflow-works).
 - Numeric safe zones on any platform. No official page read states them. They come from you.
 - Whether a file was approved or posted. It never posts and cannot see your accounts.
+- Whether an effect suits your video. Effects are verified to render correctly, not to look good on your footage. You approve from a contact sheet.
+- That a render is safe for everyone with photosensitive epilepsy. The flash check screens against WCAG 2.3.1; it is not a broadcast certification.
 
 ## How the outlier-first workflow works
 
@@ -198,13 +239,13 @@ The bundled upstream workflows (`talking-head-recut`, `embedded-captions`, `moti
 <!-- longform:begin -->
 | | |
 | --- | --- |
-| Duration rendered | 600 seconds (10 minutes), 30 segments as sub-compositions |
-| Resolution | 1920x1080, 30 frames per second |
+| Duration rendered | 120 seconds (2 minutes), 6 segments as sub-compositions |
+| Resolution | 1280x720, 30 frames per second |
 | Quality | draft |
-| Render time | 895 seconds (1.49 times the video's length) |
-| Workers | 2, planned from 3561 MB of free memory |
-| Peak memory, whole render process tree | 779 MB |
-| Hardware | Apple M2, 8 cores, 16 GB memory, macOS 26.6.2, Node.js v22.23.1, ffmpeg version 8.1 |
+| Render time | 74 seconds (0.62 times the video's length) |
+| Workers | 3, planned from 4246 MB of free memory |
+| Peak memory, whole render process tree | 1410 MB |
+| Hardware | Apple M2, 8 cores, 16 GB memory, macOS 26.6.2, Node.js v22.23.1, ffmpeg version 9.0.1 |
 | Checked | Picture and sound of every segment against synthetic ground truth, total duration, audio present |
 <!-- longform:end -->
 
@@ -214,8 +255,8 @@ That is the longest render the release tests made, on that machine, at draft qua
 
 | | |
 | --- | --- |
-| Hermes | Tested on 0.21.4 (build 2026.9.21, upstream commit `16fe260aab45a524df94c8f635352fd9e6e66fe5`) and 0.21.5 (tag `v2026.9.24`, commit `f97608f178d1ffeca59860195ab7da295f7c8e5f`). `hermes_requires` is `>=0.21.4`, the earliest version tested. |
-| HyperFrames | `v0.8.138`, commit `0ca28db4f8671a2e2262594e03c566222d695920`, npm `hyperframes@0.8.138`, published 2026-10-06. Apache-2.0, Copyright 2026 HeyGen, Inc. |
+| Hermes | Tested on 0.21.4 (build 2026.9.21, upstream commit `16fe260aab45a524df94c8f635352fd9e6e66fe5`) and 0.22.5 (tag `v0.22.5`, commit `bf0203a794a07aac3ff764972ab9087baa4e4f4e`). `hermes_requires` is `>=0.21.4`, the earliest version tested. |
+| HyperFrames | `v0.8.183`, commit `7e2817619f340f9302eeaef185e73be39a19858d`, npm `hyperframes@0.8.183`, published 2026-10-21. Apache-2.0, Copyright 2026 HeyGen, Inc. The toolchain also pins `@hyperframes/shader-transitions@0.8.183` so shader transitions render with no CDN. |
 | Integration | A derivative of the upstream skills with recorded patches. Every file's checksum, every patch, and every removed file is in `vendor/hyperframes.lock.yaml`. |
 
 ## What is bundled from HyperFrames
@@ -280,7 +321,7 @@ Each download shows its item, source, size, and license and asks you to confirm.
 
 | Item | Source | Size | License |
 | --- | --- | --- | --- |
-| HyperFrames CLI `hyperframes@0.8.138`, GSAP 3.14.2, and dependencies (172 locked packages) | registry.npmjs.org, `npm ci` from the shipped lockfile, integrity-checked | about 240 MB | Apache-2.0 for HyperFrames. GSAP Standard License for GSAP, which is not an OSI license. Each other package under its own license. |
+| HyperFrames CLI `hyperframes@0.8.183`, GSAP 3.14.2, `@hyperframes/shader-transitions@0.8.183`, and dependencies (178 locked packages, 130 installed on macOS arm64) | registry.npmjs.org, `npm ci` from the shipped lockfile, integrity-checked | about 155 MB | Apache-2.0 for HyperFrames. GSAP Standard License for GSAP, which is not an OSI license. Each other package under its own license. |
 | Headless Chrome, `chrome-headless-shell` build 152.0.7977.30 | Chrome for Testing | about 190 MB | Chromium open-source licenses |
 | Optional: Parakeet TDT 0.6B v3 speech model and sherpa-onnx | Hugging Face | about 670 MB | CC-BY-4.0 for the model, Apache-2.0 for the runtime |
 | Optional, per item: a registry item | The upstream repository's `main` branch | not known before the fetch | The upstream repository's license. Some items carry third-party code and assets. |
@@ -394,6 +435,14 @@ Kanban carries references, not media. With an approved handoff folder, the edito
 - Apply revision notes from this review as version 3 and show me what changed.
 - Ask the social media agent whether the opening delivers the hook, then revise.
 - Tell me which of my last ten edits used which blueprint, and what the measured results say.
+- Give this interview a warm, calm look and show me two options first.
+- Hide the licence plate in this clip for the three seconds it is on screen.
+- Put a push transition between the talking head and the slide, and a word-pop on the hook.
+- Key out my green screen and put the office b-roll behind me.
+- Put my screen recording in a browser frame with my face cam in a bubble, bottom left.
+- What does this reference video do for its look and transitions, and which of your effects match?
+- Save this grade, grain and letterbox as my cinematic recipe.
+- Is this render safe for people with photosensitive epilepsy?
 
 Worked examples with synthetic data are in [examples/](examples/).
 
@@ -428,6 +477,30 @@ Custom skills, under `skills/video-editor-core/`:
 | `edit-performance-feedback` | What measured results support, contradict, or cannot address |
 | `cross-team-edit-handoffs` | Kanban tasks with teammates, by reference |
 | `weekly-edit-review` | A manual weekly review from records |
+
+Effects skills, under `skills/video-effects-core/`:
+
+| Skill | Job |
+| --- | --- |
+| `effects-catalog-and-selection` | Choose verified effects for the edit and write the effect plan you approve |
+| `effect-preview-and-contact-sheets` | Show an effect on your footage before it goes in |
+| `effect-application-and-animation` | Apply, keyframe, and cleanly remove effects |
+| `effect-stacking-and-recipes` | Combine effects safely, check the stack, save and reuse your recipes |
+| `looks-and-grades` | Color looks and single corrections |
+| `image-effects` | Picture treatments: blur, pixelate, halftone, grain, glow, and more |
+| `transitions` | HyperFrames shader transitions and this profile's wipes, pushes, and dips |
+| `camera-and-motion-effects` | Punch-ins, pushes, shakes, tilts, warps |
+| `keying-and-subject-effects` | Green and blue screen keys, luma key, spill, mattes, color isolate |
+| `overlays-and-generators` | Weather, dust, light leaks, bars, HUDs, progress bars, confetti |
+| `text-and-title-effects` | Typewriter, word pop, slide-up, scramble, highlighter, and more |
+| `creator-composite-effects` | Split screens, picture in picture, face-cam bubble, frames, lower thirds |
+| `audio-effects` | Filters, EQ, dynamics, echo, reverb, pitch, counted apart |
+| `effect-performance-budget` | Keep the render cost of a stack inside budget |
+| `photosensitivity-and-accessibility-check` | WCAG 2.3.1 flash check and text contrast on every render with effects |
+| `effect-authoring-and-verification` | Build your own effect and pass it through the gate |
+| `reference-editor-study` | Learn another editor's effect from its behavior, never its code |
+
+`edit-style-analysis` also writes reference style notes for a single reference video and names the catalog effects that match its look.
 
 Under `skills/integrations/`: `editor-hyperframes`, the wrapper that governs every HyperFrames call.
 
@@ -471,7 +544,15 @@ A profile is not a tenant-security boundary. Profiles share an operating-system 
 hermes profile update video-editor
 ```
 
-This replaces distribution-owned files and preserves your credentials, memory, sessions, `local/` (editor profile, style library, toolchain), configuration overrides, workspace, and your own skills. If the pinned HyperFrames version changed, run `setup --install-cli` again.
+This replaces distribution-owned files and preserves your credentials, memory, sessions, `local/` (editor profile, style library, toolchain, your effects and recipes), configuration overrides, workspace, and your own skills. If the pinned HyperFrames version changed, run `setup --install-cli` again.
+
+### Upgrading from 1.0.0 to 1.1.0
+
+- The HyperFrames pin moved from 0.8.138 to 0.8.183. Run `hf setup --install-cli` once after updating, so the new CLI and the shader-transition build are installed.
+- New owned path: `skills/video-effects-core/`, with 17 skills and the effects library. Nothing was removed or renamed: every 1.0.0 skill, template, contract field, and owned path is still there.
+- New template fields: `effect_preferences`, `effects_requested`, and `effect_approver` on the task; `effect_plan_reference`, `effects_used`, `effect_versions`, and `photosensitivity_result` on the result. Old tasks without them still validate.
+- New edit state `effect_plan_approved` and status `effect plan recorded`.
+- How Hermes treats a skill a distribution stops shipping depends on your Hermes version. Before 0.22, `profile update` replaces an owned folder wholesale, so a retired skill disappears. From 0.22, Hermes merges owned skill folders per skill, so a retired skill stays until you delete it. This release retires none; the install tests check both behaviors.
 
 ## Remove
 
@@ -508,9 +589,14 @@ Your workspace is outside the profile and is never deleted. Node.js and FFmpeg a
 | --- | --- | --- | --- | --- |
 | Measurement and evidence rules | 25 | 0 | 0 | `python3 tests/run.py tests.test_tools` |
 | Launcher gates, against a stand-in CLI | 32 | 0 | 0 | `python3 tests/run.py tests.test_gates` |
-| Install, payload, update, deny rules, Kanban exchange on Hermes 0.21.5 | 111 | 0 | 0 | `python3 tests/test_install.py` |
-| The same on Hermes 0.21.4 | 111 | 0 | 0 | `python3 tests/test_install.py` |
+| Effects library: catalog, apply and remove, stacking, flash check, copy check | 27 | 0 | 0 | `python3 tests/run.py tests.test_effects` |
+| Install, payload, update, deny rules, Kanban exchange on Hermes 0.22.5 | 113 | 0 | 1 | `python3 tests/test_install.py` |
+| The same on Hermes 0.21.4 | 113 | 0 | 1 | `python3 tests/test_install.py` |
 | Renders from an installed temporary profile, checked against ground truth | 17 | 0 | 0 | `python3 tests/run.py tests.test_renders` |
+
+Not run:
+
+- install from github.com/takiw3/hermes-video-editor-agent: set VE_TEST_PUBLISHED_URL after publication (and GH_TOKEN while the repository is private)
 <!-- test-status:end -->
 
 The table is from runs on the release test machine (macOS, Apple silicon). CI on Ubuntu also runs repository validation, the measurement suite, and the launcher-gate suite on every push. It has no Hermes install and no render toolchain, so it reports the Hermes-dependent install steps and the render suite as not run.
@@ -528,6 +614,9 @@ Not run in any environment: a model-backed behavior evaluation, an end-to-end Ka
 - X specifications, and numeric safe zones on every platform, are not verified.
 - The reference exclusion compares checksums and paths, so a re-encoded copy is not detected.
 - The browser download, the speech model install, and a registry fetch were tested only up to their confirmation prompt. The release tests used a headless Chrome already on the machine.
+- Effects were verified at 320x180 on synthetic media. Cost figures are rough rankings measured with four renders running at once.
+- `wave-warp` and `self-displace` need Chrome's canvas-draw-element flag in a browser preview. Renders do not.
+- A shader transition in a `png-sequence` render hard-cuts at HyperFrames 0.8.183. Use MP4 for anything with shader transitions.
 - Renders and installs were tested on macOS with Apple silicon only. CI runs the measurement and launcher-gate suites on Ubuntu. Windows was not tested.
 
 ## Contributing
@@ -541,6 +630,8 @@ See [SECURITY.md](SECURITY.md).
 ## Licensing
 
 Original work in this repository is MIT, Copyright (c) 2026 TakiGPT AI Inc. See [LICENSE](LICENSE).
+
+The effects library is original MIT work. Effects that wrap HyperFrames features use HyperFrames' own code from the pinned packages; it is not copied here. Clean-room effects were built from plain-language behavior notes, and no code, shader, preset value, image, or name from Concat (AGPL-3.0-or-later) is in this repository.
 
 The HyperFrames material under `skills/hyperframes-video/` and `vendor/upstream/hyperframes/` is Apache-2.0, Copyright 2026 HeyGen, Inc., and is not relicensed. Its license text ships beside it, modified files are marked, and every bundled asset has a recorded license. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). This project is not affiliated with or endorsed by HeyGen.
 

@@ -1,0 +1,50 @@
+{
+  "effect_id": "handheld-drift",
+  "display_name": "Handheld drift",
+  "family": "camera-and-motion",
+  "kind": "camera",
+  "description": "A gentle float, as if the camera were held by a calm operator.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "wrapper",
+  "applies_to": [
+    "video",
+    "image",
+    "element"
+  ],
+  "parameters": [
+    {
+      "key": "amplitude",
+      "label": "Drift",
+      "min": 0.3,
+      "max": 2,
+      "default": 0.8,
+      "unit": "% of height",
+      "animatable": true
+    },
+    {
+      "key": "speed",
+      "label": "Speed",
+      "min": 0.2,
+      "max": 1.5,
+      "default": 0.5,
+      "unit": "Hz",
+      "animatable": false
+    }
+  ],
+  "writes": [
+    "transform"
+  ],
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}

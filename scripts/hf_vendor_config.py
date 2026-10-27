@@ -6,17 +6,17 @@ review the resulting diff in a pull request. See docs/updating-vendored-code.md.
 """
 
 UPSTREAM_REPOSITORY = "https://github.com/heygen-com/hyperframes"
-UPSTREAM_TAG = "v0.8.138"
-UPSTREAM_COMMIT = "0ca28db4f8671a2e2262594e03c566222d695920"
+UPSTREAM_TAG = "v0.8.183"
+UPSTREAM_COMMIT = "7e2817619f340f9302eeaef185e73be39a19858d"
 UPSTREAM_PATHS = ["skills/", ".claude/skills/captions-overlay/"]
-UPSTREAM_PUBLISHED_AT = "2026-10-06T18:19:06Z"
-RETRIEVED_AT = "2026-10-06"
+UPSTREAM_PUBLISHED_AT = "2026-10-21T11:42:34Z"
+RETRIEVED_AT = "2026-10-21"
 
 NPM_PACKAGE = "hyperframes"
-NPM_VERSION = "0.8.138"
+NPM_VERSION = "0.8.183"
 NPM_INTEGRITY = (
-    "sha512-1xeNRkGeCobo9wbNht4BH1Y3FdSswHuo5R8UgCB8ea5eGqdRyQ7GkK8B6MGAbrhu"
-    "9o7+jV7qUa2kRxjQ9KSGmg=="
+    "sha512-uRIV8jZyckP95+skfYkEqE7TFx/UXmxIUd//UjvL57VZn6vU+QUxI3vbkWID8lyis"
+    "+qk+2OKTnV534AcDfaKQQ=="
 )
 NODE_MINIMUM_MAJOR = 22
 

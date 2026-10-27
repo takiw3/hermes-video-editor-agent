@@ -1,0 +1,38 @@
+{
+  "effect_id": "fade-through-black",
+  "display_name": "Fade through black",
+  "family": "transitions",
+  "kind": "transition",
+  "description": "The picture goes all the way to black, then the next shot rises out of it.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "scene-pair",
+  "applies_to": [
+    "scene-pair"
+  ],
+  "parameters": [
+    {
+      "key": "hold",
+      "label": "Time at black",
+      "min": 0,
+      "max": 0.4,
+      "default": 0.1,
+      "unit": "of the transition",
+      "animatable": false
+    }
+  ],
+  "fixture": "transition",
+  "default_duration": 0.6,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "clean-room",
+  "reference_id": "RS-005",
+  "license": "MIT",
+  "status": "implemented"
+}

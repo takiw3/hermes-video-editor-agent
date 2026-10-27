@@ -1,4 +1,4 @@
-> **Modified file. Derived from HeyGen HyperFrames v0.8.138 (commit 0ca28db), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
+> **Modified file. Derived from HeyGen HyperFrames v0.8.183 (commit 7e28176), licensed under Apache-2.0, Copyright 2026 HeyGen, Inc. Changed by TakiGPT AI Inc. for the Hermes video-editor profile. Rules applied: pin-cli. See skills/hyperframes-video/MODIFICATIONS.md.**
 
 ---
 name: hyperframes-waapi
@@ -6,6 +6,17 @@ description: Web Animations API adapter patterns for HyperFrames. Use when autho
 ---
 
 # Web Animations API for HyperFrames
+
+## Contents
+
+- [Contract](#contract)
+- [Basic Pattern](#basic-pattern)
+- [Stagger Pattern](#stagger-pattern)
+- [Good Uses](#good-uses)
+- [Composition Duration](#composition-duration)
+- [Avoid](#avoid)
+- [Validation](#validation)
+- [Credits And References](#credits-and-references)
 
 HyperFrames can seek Web Animations API animations through its `waapi` runtime adapter. WAAPI is useful when you want native browser keyframes with JavaScript-created timing and no GSAP dependency.
 

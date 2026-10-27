@@ -1,0 +1,48 @@
+{
+  "effect_id": "scramble-text",
+  "display_name": "Scramble",
+  "family": "text-and-title",
+  "kind": "text",
+  "description": "Letters cycle through random characters and settle on the real word, left to right.",
+  "implementation_route": "gsap-composite",
+  "hyperframes_feature": null,
+  "target": "text",
+  "applies_to": [
+    "text"
+  ],
+  "parameters": [
+    {
+      "key": "duration",
+      "label": "Settle time",
+      "min": 0.3,
+      "max": 1.8,
+      "default": 0.9,
+      "unit": "s",
+      "animatable": true
+    },
+    {
+      "key": "rate",
+      "label": "Changes per second",
+      "min": 6,
+      "max": 30,
+      "default": 15,
+      "unit": "Hz",
+      "animatable": false
+    }
+  ],
+  "fixture": "text",
+  "text_split": "chars",
+  "probe": 0.2,
+  "needs_model": false,
+  "needs_key_footage": false,
+  "hdr_behavior": "SDR only, like everything on the page compositor. A native HDR layer needs an SDR working copy the owner approves.",
+  "deterministic": true,
+  "seek_safe": true,
+  "photosensitivity": "measured",
+  "face_safe": true,
+  "render_cost_multiplier": null,
+  "provenance": "original",
+  "reference_id": null,
+  "license": "MIT",
+  "status": "implemented"
+}
