@@ -590,13 +590,9 @@ Your workspace is outside the profile and is never deleted. Node.js and FFmpeg a
 | Measurement and evidence rules | 25 | 0 | 0 | `python3 tests/run.py tests.test_tools` |
 | Launcher gates, against a stand-in CLI | 32 | 0 | 0 | `python3 tests/run.py tests.test_gates` |
 | Effects library: catalog, apply and remove, stacking, flash check, copy check | 27 | 0 | 0 | `python3 tests/run.py tests.test_effects` |
-| Install, payload, update, deny rules, Kanban exchange on Hermes 0.22.5 | 113 | 0 | 1 | `python3 tests/test_install.py` |
-| The same on Hermes 0.21.4 | 113 | 0 | 1 | `python3 tests/test_install.py` |
+| Install, payload, update, deny rules, Kanban exchange on Hermes 0.22.5 | 117 | 0 | 0 | `python3 tests/test_install.py` |
+| The same on Hermes 0.21.4 | 117 | 0 | 0 | `python3 tests/test_install.py` |
 | Renders from an installed temporary profile, checked against ground truth | 17 | 0 | 0 | `python3 tests/run.py tests.test_renders` |
-
-Not run:
-
-- install from github.com/takiw3/hermes-video-editor-agent: set VE_TEST_PUBLISHED_URL after publication (and GH_TOKEN while the repository is private)
 <!-- test-status:end -->
 
 The table is from runs on the release test machine (macOS, Apple silicon). CI on Ubuntu also runs repository validation, the measurement suite, and the launcher-gate suite on every push. It has no Hermes install and no render toolchain, so it reports the Hermes-dependent install steps and the render suite as not run.
