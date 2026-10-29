@@ -2,7 +2,7 @@
   "effect_id": "rec-hud",
   "result": "pass",
   "limited": [],
-  "verified_at": "2026-10-27T18:18:04Z",
+  "verified_at": "2026-10-29T04:32:17Z",
   "gate_version": "1.1.0",
   "profile_home": "temporary installed profile",
   "engine": "hyperframes@0.8.183",
@@ -46,7 +46,7 @@
         },
         "check": {
           "exit": 0,
-          "tail": "ments-Claude/f820ef2d-6ace-457e-85e2-956cc390597c/scratchpad/vhome/video-work/projects/fx-verify-rec-hud-20261027-141354/default/.hyperframes/artifacts/checks/8de25aaf-9555-412e-8d3d-10f197d9736f.json\nRevision: none (unversioned)\n[hyperframes] browserGpuMode probe \u2192 hardware (WebGL renderer vendor=\"Google Inc. (Apple)\" renderer=\"ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)\")\n"
+          "tail": "verify-rec-hud-20261029-003100/default/.hyperframes/artifacts/checks/6bb76f8c-67f7-42db-a630-12363717a785.json\nRevision: none (unversioned)\n[hyperframes] browserGpuMode probe \u2192 hardware (WebGL renderer vendor=\"Google Inc. (Apple)\" renderer=\"ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)\")\n\n   \u26a0 Runtime did not become render-ready within 3000ms \u2014 checking the current page state\n"
         }
       }
     },
@@ -85,8 +85,13 @@
           "min": 1.352
         },
         "tolerance": 1.0,
+        "changed_pixel_share": {
+          "default": 0.0289,
+          "max": 0.0291
+        },
+        "sparse_share_tolerance": 0.005,
         "probe_s": 1.0,
-        "note": "min may sit at the effect's identity value, so only default and max must differ"
+        "note": "min may sit at the effect's identity value, so only default and max must differ; a sparse effect passes when at least 0.5% of pixels change by more than 24 levels"
       }
     },
     {
@@ -250,9 +255,9 @@
       "detail": {
         "multiplier": 1.0,
         "capture_s": {
-          "baseline": 7.0,
-          "effect": 5.8,
-          "effect_repeat": 5.6
+          "baseline": 4.0,
+          "effect": 3.2,
+          "effect_repeat": 3.0
         },
         "capture_mode": {
           "base": "drawelement, hardware gpu",

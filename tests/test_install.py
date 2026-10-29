@@ -35,7 +35,7 @@ CORE_SKILLS = 25
 VENDORED_SKILLS = 16          # 15 published plus the internal captions-overlay
 EFFECT_SKILLS = 17            # skills/video-effects-core; effects-library/ beside them is data, not a skill
 HF = "skills/integrations/editor-hyperframes/scripts/hf.py"
-VERSION = "1.1.0"  # the release under test; the manifest must say the same
+VERSION = "1.2.0"  # the release under test; the manifest must say the same
 
 # Command forms the profile's deny rules must block at the Hermes approval
 # floor, and sanctioned forms they must leave alone.

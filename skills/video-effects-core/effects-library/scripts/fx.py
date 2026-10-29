@@ -3,7 +3,7 @@
 
     python3 "$HERMES_HOME/skills/video-effects-core/effects-library/scripts/fx.py" <command> ...
 
-  list [--family F] [--status S] [--route R]   effects in the catalog, with their verified status
+  list [--family F] [--status S] [--route R] [--featured]   effects in the catalog, with their verified status
   show <effect_id>                             one catalog entry
   apply <project> --effect ID [--target SEL] [--from SEL --to SEL] [--at S] [--duration S]
         [--param k=v ...] [--animate k=t:v,t:v[:ease] ...] [--container SEL] [--iid ID]
@@ -41,7 +41,7 @@ import time
 from html.parser import HTMLParser
 from pathlib import Path
 
-TOOL_VERSION = "1.1.0"
+TOOL_VERSION = "1.2.0"
 SCRIPT = Path(__file__).resolve()
 LIBRARY = SCRIPT.parents[1]
 PROFILE_HOME = SCRIPT.parents[4]
@@ -52,6 +52,7 @@ ENGINE_FILE = ENGINE_DIR / "engine.json"
 LAUNCHER = PROFILE_HOME / "skills" / "integrations" / "editor-hyperframes" / "scripts" / "hf.py"
 PIN_FILE = PROFILE_HOME / "skills" / "integrations" / "editor-hyperframes" / "toolchain" / "pin.json"
 CATALOG = LIBRARY / "catalog.yaml"
+FEATURED = LIBRARY / "featured.json"
 RUNTIME = LIBRARY / "runtime" / "fx-runtime.js"
 INSTANCES = "fx-instances.json"
 
@@ -219,6 +220,18 @@ def get_effect(effect_id: str) -> dict:
     return effects[effect_id]
 
 
+_FEATURED: dict[str, str] | None = None
+
+
+def featured_ids() -> dict[str, str]:
+    """The hand-curated first picks, reviewed at full size: effect_id -> use."""
+    global _FEATURED
+    if _FEATURED is None:
+        data = json.loads(FEATURED.read_text(encoding="utf-8")) if FEATURED.is_file() else {}
+        _FEATURED = {f["effect_id"]: f["use_for"] for f in data.get("effects", [])}
+    return _FEATURED
+
+
 def public_entry(spec: dict) -> dict:
     keep = ["effect_id", "display_name", "family", "kind", "description", "implementation_route",
             "hyperframes_feature", "parameters", "applies_to", "needs_model", "needs_key_footage",
@@ -227,6 +240,10 @@ def public_entry(spec: dict) -> dict:
     entry = {k: spec.get(k) for k in keep}
     entry["status"] = status_of(spec)
     entry["origin"] = spec.get("_origin")
+    # Only shipped effects can be featured; an owner effect never is.
+    use = featured_ids().get(spec.get("effect_id")) if spec.get("_origin") == "shipped" else None
+    entry["featured"] = use is not None
+    entry["featured_use"] = use
     rec = spec.get("_verification") or {}
     if rec:
         entry["render_cost_multiplier"] = rec.get("render_cost_multiplier", entry["render_cost_multiplier"])
@@ -237,9 +254,12 @@ def public_entry(spec: dict) -> dict:
 
 def cmd_list(args: list[str]) -> int:
     family, status, route = take(args, "--family"), take(args, "--status"), take(args, "--route")
+    only_featured = take_flag(args, "--featured")
     rows = []
     for spec in library().values():
         e = public_entry(spec)
+        if only_featured and not (e["featured"] and e["status"] == "verified"):
+            continue
         if family and e["family"] != family:
             continue
         if status and e["status"] != status:
@@ -247,7 +267,7 @@ def cmd_list(args: list[str]) -> int:
         if route and e["implementation_route"] != route:
             continue
         rows.append({k: e[k] for k in ("effect_id", "display_name", "family", "implementation_route", "status",
-                                       "render_cost_multiplier", "photosensitivity", "origin")})
+                                       "render_cost_multiplier", "photosensitivity", "origin", "featured", "featured_use")})
     counts: dict[str, int] = {}
     for r in rows:
         if r["status"] == "verified" and r["family"] != "audio":

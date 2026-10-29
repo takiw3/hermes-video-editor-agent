@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-10-27T19:23:50Z",
+  "recorded_at": "2026-10-29T04:32:31Z",
   "hermes": "Hermes Agent v0.21.4 (2026.9.21) \u00b7 upstream 16fe260a",
   "machine": {
     "system": "Darwin",
@@ -8,23 +8,8 @@
   },
   "jobs": 2,
   "this_run": {
-    "film-artifacts": "fail",
-    "invert": "pass",
-    "solarize": "pass",
-    "tape-damage": "pass",
-    "threshold-bw": "pass",
-    "tilt-shift": "pass",
-    "two-ink-print": "pass",
-    "unsharp-sharpen": "pass",
-    "chroma-key-blue": "pass",
-    "chroma-key-green": "pass",
-    "drifting-dust": "fail",
-    "dust-and-scratches": "fail",
-    "fractal-noise": "pass",
-    "progress-bar": "pass",
-    "kinetic-scale": "pass",
-    "slide-over": "pass",
-    "spin-rotate": "fail"
+    "lower-third": "pass",
+    "rec-hud": "pass"
   },
   "effects": {
     "bell-eq": {
@@ -303,7 +288,7 @@
       "family": "creator-composites",
       "result": "pass",
       "limited": false,
-      "verified_at": "2026-10-27T15:34:31Z",
+      "verified_at": "2026-10-29T04:32:31Z",
       "photosensitivity": "pass",
       "render_cost_multiplier": 1.35
     },
@@ -1143,7 +1128,7 @@
       "family": "overlays-and-generators",
       "result": "pass",
       "limited": false,
-      "verified_at": "2026-10-27T18:18:04Z",
+      "verified_at": "2026-10-29T04:32:17Z",
       "photosensitivity": "pass",
       "render_cost_multiplier": 1.0
     },

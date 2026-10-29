@@ -18,9 +18,9 @@ Hermes under test: Unavailable. HyperFrames `0.8.183`.
 | Duration rendered | 120 seconds (2 minutes), 6 segments as sub-compositions |
 | Resolution | 1280x720, 30 frames per second |
 | Quality | draft |
-| Render time | 74 seconds (0.62 times the video's length) |
-| Workers | 3, planned from 4246 MB of free memory |
-| Peak memory, whole render process tree | 1410 MB |
+| Render time | 64 seconds (0.53 times the video's length) |
+| Workers | 4, planned from 4589 MB of free memory |
+| Peak memory, whole render process tree | 1833 MB |
 | Hardware | Apple M2, 8 cores, 16 GB memory, macOS 26.6.2, Node.js v22.23.1, ffmpeg version 9.0.1 |
 | Checked | Picture and sound of every segment against synthetic ground truth, total duration, audio present |
 <!-- longform:end -->
@@ -32,18 +32,18 @@ This is the longest render the release tests made. It is not a ceiling. A longer
 <!-- renders:begin -->
 | Test render | Render seconds | Workers | Peak memory (MB) |
 | --- | --- | --- | --- |
-| music bed with voice carve and clipping | 8.4 | 1 | 602 |
-| vertical captions lower third and callout | 9.8 | 1 | 553 |
-| grade changes the picture and contact sheets exist | 5.6 | 1 | 632 |
-| cut trim splice reorder then final | 8.6 | 2 | 974 |
-| keep ranges from transcript timings | 8.2 | 2 | 967 |
-| sound leads picture | 8.3 | 2 | 975 |
-| multi segment long form with measurements | 74.1 | 3 | 1410 |
-| punch in and crossfade | 10.9 | 2 | 844 |
-| reframe v1-16x9 | 7.4 | 1 | 598 |
-| reframe v2-9x16 | 5.9 | 3 | 1338 |
-| reframe v3-4x5 | 5.5 | 3 | 1214 |
-| slow motion and held frame | 7.7 | 3 | 1335 |
+| music bed with voice carve and clipping | 10.1 | 4 | 1593 |
+| vertical captions lower third and callout | 8.1 | 4 | 1765 |
+| grade changes the picture and contact sheets exist | 6.4 | 5 | 2076 |
+| cut trim splice reorder then final | 8.0 | 4 | 1755 |
+| keep ranges from transcript timings | 7.6 | 4 | 1749 |
+| sound leads picture | 8.4 | 5 | 2099 |
+| multi segment long form with measurements | 63.7 | 4 | 1833 |
+| punch in and crossfade | 7.5 | 5 | 2138 |
+| reframe v1-16x9 | 7.3 | 5 | 1974 |
+| reframe v2-9x16 | 6.5 | 4 | 1571 |
+| reframe v3-4x5 | 6.1 | 4 | 1615 |
+| slow motion and held frame | 8.3 | 5 | 2136 |
 
 Other measurements from the same run:
 

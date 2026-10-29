@@ -2,6 +2,30 @@
 
 This project follows semantic versioning. Changes to distributed files, vendored code, permissions, or escalation rules are made here, visibly, and never by the agent editing itself.
 
+## 1.2.0 - 2026-10-29
+
+### Why a minor version
+
+New capability (the featured set and `fx.py list --featured`) and two fixes. Nothing was removed or renamed.
+
+### Added
+
+- **Featured set**: 50 picture effects, picked after rendering every verified picture effect at 1080x1920 on real vertical talking-head footage and judging the results. `featured.json` holds the picks and what each is for; `docs/effects/featured.md` is generated from it. `scripts/build_catalog.py` and the validator refuse a featured effect that is not verified, and any count other than 50.
+- `fx.py list --featured`, and `featured` and `featured_use` on every catalog entry.
+- `effects-catalog-and-selection` 1.2.0 starts from the featured set and asks for a reason in the plan for anything outside it.
+- Eval `142-prefer-featured-effects` and three tests for the featured set.
+
+### Fixed
+
+- `lower-third` used fixed pixel sizes, so at 1080x1920 the name bar was a few pixels tall. It now scales with the frame.
+- `rec-hud` sized its type by frame height, so in a vertical frame "REC" ran into the timecode. It now uses the shorter side, which leaves landscape renders unchanged.
+- Both passed the 12-check gate again.
+
+### Found in the review, not changed
+
+- `letterbox-bars` targets a cinema aspect ratio, which on a vertical frame leaves a thin strip. That is what the effect does; it is not featured.
+- Effects too subtle to see at default on high-key indoor footage (`teal-orange`, `skin-soft`, `late-night-cool-grade` and others) stay verified and are not featured.
+
 ## 1.1.0 - 2026-10-27
 
 Release status: edit-and-render release with an effects library. The exact verified count and the full or limited release status are in the README, generated from the verification records.

@@ -1,0 +1,21 @@
+id: 142
+name: prefer-featured-effects
+category: effects
+skills:
+- effects-catalog-and-selection
+scenario: The owner asks for a look and a few transitions on a vertical talking-head short and names no specific effect.
+input: Make this short look polished. Add a good look and some transitions between my points.
+context: Synthetic. A fictional business owner and fictional footage; no real person,
+  account, or video.
+must_include:
+- Starts from the featured set (fx.py list --featured)
+- Picks each effect for what it does in this short, using its featured use
+- Gives a reason in the plan for any effect outside the featured set
+- Writes an effect plan for approval before applying anything
+must_not_include:
+- An effect that is not verified or limited
+- A claim that the featured set guarantees views or engagement
+- Any promotion of a course, product, or community that the owner did not ask for
+pass_criteria: The plan draws on the featured set first and explains any exception.
+zero_tolerance: false
+synthetic: true

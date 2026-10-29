@@ -43,7 +43,7 @@ It does not write scripts, choose topics, set strategy, write post captions, ana
 Every effect here passed a 12-check gate in an installed temporary profile, rendered on synthetic media with the network switched off. Each one is rendered at default, minimum and maximum. It must render identically twice, render the same frame when seeked alone, animate as keyed, make no network request, have a recorded flash check and a measured render cost, come with reference stills, and pass a copy check. Only effects with a passing record count. [How the gate works](docs/effects/verification.md).
 
 <!-- effect-counts:begin -->
-Verified on 2026-10-27. Release status: **full release**.
+Verified on 2026-10-29. Release status: **full release**.
 
 | Family | Verified | Limited | Target |
 | --- | --- | --- | --- |
@@ -57,6 +57,8 @@ Verified on 2026-10-27. Release status: **full release**.
 | Creator composites | 11 | 0 | 10 or more |
 | **Picture effects** | **159** | 0 | more than 100 |
 | Audio (separate) | 17 | 0 | none set |
+
+Featured: **50** of these were reviewed at 1080x1920 on real vertical talking-head footage and are the editor's first picks. See [docs/effects/featured.md](docs/effects/featured.md).
 <!-- effect-counts:end -->
 
 Built in this order:
@@ -66,6 +68,8 @@ Built in this order:
 3. **Behavior studied clean-room** from another open-source editor, [Concat](https://github.com/jub0t/concat).
 
 The full list, with each effect's route, cost and flash rating, is in [docs/effects/catalog.md](docs/effects/catalog.md).
+
+**The featured 50.** Passing the gate proves an effect renders correctly and safely, not that it looks good in a real edit. So every verified picture effect was also rendered at 1080x1920 on real vertical talking-head footage and judged by eye. The 50 that read clearly on a phone, keep faces and captions intact, and look finished at their default settings are the editor's first picks, each with a line on what it is for: `fx.py list --featured`, or [docs/effects/featured.md](docs/effects/featured.md). The rest stay available; the editor explains in the effect plan when it reaches past the featured set. That review is a judgment call, written down, not a measurement.
 
 **The Concat study, in plain words.** Concat is an open-source desktop video editor under the AGPL. We read its effect descriptions and docs as text only, from one pinned commit, and deleted the copy afterwards. We did not build it, run it, download its binaries or models, connect to its agent API, or look at its voice-cloning code. We found one file in it that tells coding agents to build and launch the app, and ignored it. A separate session then built our effects from plain-language notes about what each effect looks like. No Concat code, shader, preset value, image or name entered this repository, and a copy check in CI looks for any. The review covers what was read. It does not say Concat is safe to run. Details: [safety review](docs/concat-safety-review.md), [clean-room process](docs/effects/clean-room-process.md).
 
@@ -242,9 +246,9 @@ The bundled upstream workflows (`talking-head-recut`, `embedded-captions`, `moti
 | Duration rendered | 120 seconds (2 minutes), 6 segments as sub-compositions |
 | Resolution | 1280x720, 30 frames per second |
 | Quality | draft |
-| Render time | 74 seconds (0.62 times the video's length) |
-| Workers | 3, planned from 4246 MB of free memory |
-| Peak memory, whole render process tree | 1410 MB |
+| Render time | 64 seconds (0.53 times the video's length) |
+| Workers | 4, planned from 4589 MB of free memory |
+| Peak memory, whole render process tree | 1833 MB |
 | Hardware | Apple M2, 8 cores, 16 GB memory, macOS 26.6.2, Node.js v22.23.1, ffmpeg version 9.0.1 |
 | Checked | Picture and sound of every segment against synthetic ground truth, total duration, audio present |
 <!-- longform:end -->
@@ -546,6 +550,11 @@ hermes profile update video-editor
 
 This replaces distribution-owned files and preserves your credentials, memory, sessions, `local/` (editor profile, style library, toolchain, your effects and recipes), configuration overrides, workspace, and your own skills. If the pinned HyperFrames version changed, run `setup --install-cli` again.
 
+### Upgrading from 1.1.0 to 1.2.0
+
+- New: the featured set, `skills/video-effects-core/effects-library/featured.json`, and `fx.py list --featured`. Effect selection starts from it.
+- Fixed: `lower-third` and `rec-hud` were sized for a landscape frame and broke at 1080x1920. Both now scale with the frame and passed the gate again. Nothing was removed or renamed.
+
 ### Upgrading from 1.0.0 to 1.1.0
 
 - The HyperFrames pin moved from 0.8.138 to 0.8.183. Run `hf setup --install-cli` once after updating, so the new CLI and the shader-transition build are installed.
@@ -589,10 +598,14 @@ Your workspace is outside the profile and is never deleted. Node.js and FFmpeg a
 | --- | --- | --- | --- | --- |
 | Measurement and evidence rules | 25 | 0 | 0 | `python3 tests/run.py tests.test_tools` |
 | Launcher gates, against a stand-in CLI | 32 | 0 | 0 | `python3 tests/run.py tests.test_gates` |
-| Effects library: catalog, apply and remove, stacking, flash check, copy check | 27 | 0 | 0 | `python3 tests/run.py tests.test_effects` |
-| Install, payload, update, deny rules, Kanban exchange on Hermes 0.22.5 | 117 | 0 | 0 | `python3 tests/test_install.py` |
-| The same on Hermes 0.21.4 | 117 | 0 | 0 | `python3 tests/test_install.py` |
+| Effects library: catalog, apply and remove, stacking, flash check, copy check | 30 | 0 | 0 | `python3 tests/run.py tests.test_effects` |
+| Install, payload, update, deny rules, Kanban exchange on Hermes 0.22.5 | 113 | 0 | 1 | `python3 tests/test_install.py` |
+| The same on Hermes 0.21.4 | 113 | 0 | 1 | `python3 tests/test_install.py` |
 | Renders from an installed temporary profile, checked against ground truth | 17 | 0 | 0 | `python3 tests/run.py tests.test_renders` |
+
+Not run:
+
+- install from github.com/takiw3/hermes-video-editor-agent: set VE_TEST_PUBLISHED_URL after publication (and GH_TOKEN while the repository is private)
 <!-- test-status:end -->
 
 The table is from runs on the release test machine (macOS, Apple silicon). CI on Ubuntu also runs repository validation, the measurement suite, and the launcher-gate suite on every push. It has no Hermes install and no render toolchain, so it reports the Hermes-dependent install steps and the render suite as not run.

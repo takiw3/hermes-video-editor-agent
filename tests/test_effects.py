@@ -141,6 +141,47 @@ class Catalog(unittest.TestCase):
                 self.assertNotIn(banned, text, f"{p.parent.name} uses {banned}")
 
 
+class Featured(unittest.TestCase):
+    """The hand-curated first picks: exactly 50, each a verified picture effect."""
+
+    @staticmethod
+    def build_catalog():
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("build_catalog", REPO / "scripts/build_catalog.py")
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod
+
+    def test_the_featured_set_is_fifty_verified_picture_effects(self):
+        cat = json.loads("\n".join(l for l in (LIB / "catalog.yaml").read_text().splitlines() if not l.startswith("#")))
+        picks = [e for e in cat["effects"] if e["featured"]]
+        self.assertEqual(len(picks), 50)
+        for e in picks:
+            self.assertEqual(e["status"], "verified", e["effect_id"])
+            self.assertNotEqual(e["family"], "audio", e["effect_id"])
+            self.assertTrue(e["featured_use"].strip(), e["effect_id"])
+
+    def test_list_featured_returns_the_fifty_with_their_use(self):
+        proc = fx("list", "--featured")
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        data = json.loads(proc.stdout)
+        self.assertEqual(data["count"], 50)
+        self.assertTrue(all(e["featured"] and e["featured_use"] for e in data["effects"]))
+
+    def test_the_build_refuses_an_unverified_or_unknown_featured_effect(self):
+        mod = self.build_catalog()
+        rows = mod.entries()
+        real = mod.featured()
+        unverified = next(r["effect_id"] for r in rows if r["status"] == "implemented")
+        for swap in (unverified, "no-such-effect"):
+            effects = [{"effect_id": swap, "use_for": "x"}] + real["effects"][1:]
+            mod.featured = lambda effects=effects: {**real, "effects": effects}
+            problems = mod.featured_problems(rows)
+            self.assertTrue(any(swap in p for p in problems), problems)
+        mod.featured = lambda: {**real, "effects": real["effects"][:49]}
+        self.assertTrue(any("not 50" in p for p in mod.featured_problems(rows)))
+
+
 class ApplyAndRemove(unittest.TestCase):
     CASES = [
         ("posterize", ["--target", "#w1"]),

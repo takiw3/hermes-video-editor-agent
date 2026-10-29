@@ -8,6 +8,6 @@ HFX.define("lower-third", {
     bar.style.opacity = "1";
     bar.style.borderLeftColor = "hsl(" + s.hue + ",95%,55%)";
     bar.style.clipPath = "inset(0 " + ((1 - e) * 100).toFixed(2) + "% 0 0)";
-    bar.style.transform = "translateX(" + (-(1 - e) * 12).toFixed(2) + "px)";
+    bar.style.transform = "translateX(" + (-(1 - e) * 0.9).toFixed(3) + "em)";
   },
 });

@@ -49,7 +49,7 @@ DOCS = """architecture.md hyperframes-setup.md hyperframes-integration.md outlie
 research-sources-and-platform-terms.md permissions-and-security.md editor-onboarding.md
 short-form-and-long-form-workflows.md render-performance-and-limits.md media-rights-and-consent.md
 team-integration.md privacy-and-retention.md updating-vendored-code.md evaluations.md effects/catalog.md
-effects/reference-study.md effects/clean-room-process.md effects/verification.md effects/performance.md
+effects/reference-study.md effects/clean-room-process.md effects/verification.md effects/performance.md effects/featured.md
 concat-safety-review.md photosensitivity-and-accessibility.md""".split()
 FACTS = f"{WRAPPER}/references/platform-facts.yaml"
 REQUIRED_FILES = [
@@ -64,7 +64,7 @@ REQUIRED_FILES = [
     "tests/fixtures/compat-baseline-2026-10-06.yaml",
     "docs/test-results/tools.json", "docs/test-results/gates.json", "docs/test-results/renders.json",
     "docs/test-results/install-hermes-0.21.4.json", "docs/test-results/install-hermes-0.22.5.json", "docs/test-results/effects.json", "docs/test-results/effects.tests.json",
-    f"{EFFECTS}/effects-library/catalog.yaml", f"{EFFECTS}/effects-library/runtime/fx-runtime.js",
+    f"{EFFECTS}/effects-library/catalog.yaml", f"{EFFECTS}/effects-library/featured.json", f"{EFFECTS}/effects-library/runtime/fx-runtime.js",
     f"{EFFECTS}/effects-library/scripts/fx.py", "scripts/copy_check.py", "scripts/build_catalog.py",
     "scripts/verify_effects.py", "tests/fixtures/concat-fingerprints.json", "tests/test_effects.py",
 ] + [f"templates/{t}" for t in TEMPLATES] + [f"docs/{d}" for d in DOCS]
@@ -275,7 +275,7 @@ def validate_tree() -> None:
 
     # manifest
     m = yaml.safe_load((REPO / "distribution.yaml").read_text(encoding="utf-8"))
-    check(m.get("name") == PROFILE and str(m.get("version")) == "1.1.0" and m.get("license") == "MIT",
+    check(m.get("name") == PROFILE and str(m.get("version")) == "1.2.0" and m.get("license") == "MIT",
           "manifest name, version, license")
     check(not m.get("env_requires"), "manifest requires no environment variable")
     check("skills" not in m["distribution_owned"], "manifest never owns the whole skills directory")
@@ -655,6 +655,11 @@ def validate_effects() -> None:
     counts = cat["counts"]
     readme = (REPO / "README.md").read_text(encoding="utf-8")
     check(f"| **Picture effects** | **{counts['visual_verified']}** |" in readme, "README verified count equals the catalog's verified count")
+    picks = [e for e in cat["effects"] if e.get("featured")]
+    check(counts.get("featured") == 50 and len(picks) == 50, "the featured set names exactly 50 effects")
+    check(all(e["status"] == "verified" and e["family"] != "audio" for e in picks),
+          "every featured effect is a verified picture effect, not limited")
+    check(all((e.get("featured_use") or "").strip() for e in picks), "every featured effect says what it is for")
     status = "full release" if counts["visual_verified"] >= 101 else "limited release"
     check(status in readme and (status == "full release" or str(counts["visual_verified"]) in readme),
           "README states full or limited release with the exact count")

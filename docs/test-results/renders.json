@@ -104,29 +104,29 @@
   ],
   "measurements": {
     "test_music_bed_with_voice_carve_and_clipping": {
-      "render_seconds": 8.4,
-      "peak_tree_rss_mb": 602,
-      "workers": 1
+      "render_seconds": 10.1,
+      "peak_tree_rss_mb": 1593,
+      "workers": 4
     },
     "duck_check": {
       "voice_over_music_margin_db": 11.73,
       "music_carve_depth_db": 19.83
     },
     "test_vertical_captions_lower_third_and_callout": {
-      "render_seconds": 9.8,
-      "peak_tree_rss_mb": 553,
-      "workers": 1
+      "render_seconds": 8.1,
+      "peak_tree_rss_mb": 1765,
+      "workers": 4
     },
     "test_grade_changes_the_picture_and_contact_sheets_exist": {
-      "render_seconds": 5.6,
-      "peak_tree_rss_mb": 632,
-      "workers": 1
+      "render_seconds": 6.4,
+      "peak_tree_rss_mb": 2076,
+      "workers": 5
     },
     "grade_shift_rgb_distance": 31.4,
     "test_cut_trim_splice_reorder_then_final": {
-      "render_seconds": 8.6,
-      "peak_tree_rss_mb": 974,
-      "workers": 2
+      "render_seconds": 8.0,
+      "peak_tree_rss_mb": 1755,
+      "workers": 4
     },
     "draft_vs_final": {
       "draft_bytes": 161482,
@@ -138,57 +138,57 @@
       "threshold": 0.3
     },
     "test_keep_ranges_from_transcript_timings": {
-      "render_seconds": 8.2,
-      "peak_tree_rss_mb": 967,
-      "workers": 2
+      "render_seconds": 7.6,
+      "peak_tree_rss_mb": 1749,
+      "workers": 4
     },
     "test_sound_leads_picture": {
-      "render_seconds": 8.3,
-      "peak_tree_rss_mb": 975,
-      "workers": 2
+      "render_seconds": 8.4,
+      "peak_tree_rss_mb": 2099,
+      "workers": 5
     },
     "test_multi_segment_long_form_with_measurements": {
-      "render_seconds": 74.1,
-      "peak_tree_rss_mb": 1410,
-      "workers": 3
+      "render_seconds": 63.7,
+      "peak_tree_rss_mb": 1833,
+      "workers": 4
     },
     "longform": {
       "duration_seconds": 120,
       "segments": 6,
       "resolution": "1280x720",
       "stage": "draft",
-      "wall_seconds": 74.4,
-      "planned_workers": 3,
-      "available_memory_mb_before": 4246,
+      "wall_seconds": 64.1,
+      "planned_workers": 4,
+      "available_memory_mb_before": 4589,
       "total_memory_mb": 16384,
-      "render_seconds": 74.1,
-      "peak_tree_rss_mb": 1410,
-      "workers": 3
+      "render_seconds": 63.7,
+      "peak_tree_rss_mb": 1833,
+      "workers": 4
     },
     "test_punch_in_and_crossfade": {
-      "render_seconds": 10.9,
-      "peak_tree_rss_mb": 844,
-      "workers": 2
+      "render_seconds": 7.5,
+      "peak_tree_rss_mb": 2138,
+      "workers": 5
     },
     "reframe_v1-16x9": {
-      "render_seconds": 7.4,
-      "peak_tree_rss_mb": 598,
-      "workers": 1
+      "render_seconds": 7.3,
+      "peak_tree_rss_mb": 1974,
+      "workers": 5
     },
     "reframe_v2-9x16": {
-      "render_seconds": 5.9,
-      "peak_tree_rss_mb": 1338,
-      "workers": 3
+      "render_seconds": 6.5,
+      "peak_tree_rss_mb": 1571,
+      "workers": 4
     },
     "reframe_v3-4x5": {
-      "render_seconds": 5.5,
-      "peak_tree_rss_mb": 1214,
-      "workers": 3
+      "render_seconds": 6.1,
+      "peak_tree_rss_mb": 1615,
+      "workers": 4
     },
     "test_slow_motion_and_held_frame": {
-      "render_seconds": 7.7,
-      "peak_tree_rss_mb": 1335,
-      "workers": 3
+      "render_seconds": 8.3,
+      "peak_tree_rss_mb": 2136,
+      "workers": 5
     },
     "retime_tone_hz": {
       "source_hz": 740,

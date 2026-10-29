@@ -8,6 +8,10 @@ An effect is `verified` only when its verification.json says pass; `limited`
 when it passed with a written limit. Everything else stays `implemented`.
 The README count is the verified count, by family, with the date of the
 newest record. Audio effects are counted separately.
+
+The featured set (effects-library/featured.json) is hand-curated after a
+full-size review. It must name exactly FEATURED_COUNT effects, each verified
+and not limited; the build refuses anything else.
 """
 
 from __future__ import annotations
@@ -21,6 +25,9 @@ REPO = Path(__file__).resolve().parent.parent
 LIB = REPO / "skills/video-effects-core/effects-library"
 CATALOG = LIB / "catalog.yaml"
 DOC = REPO / "docs/effects/catalog.md"
+FEATURED = LIB / "featured.json"
+FEATURED_DOC = REPO / "docs/effects/featured.md"
+FEATURED_COUNT = 50
 README = REPO / "README.md"
 VISUAL = ["looks-and-grades", "image-effects", "transitions", "camera-and-motion", "keying-and-subject",
           "overlays-and-generators", "text-and-title", "creator-composites"]
@@ -37,7 +44,12 @@ FIELDS = ["effect_id", "display_name", "family", "kind", "description", "impleme
           "provenance", "reference_id", "license", "status"]
 
 
+def featured() -> dict:
+    return json.loads(FEATURED.read_text(encoding="utf-8"))
+
+
 def entries() -> list[dict]:
+    picks = {f["effect_id"]: f["use_for"] for f in featured()["effects"]}
     rows = []
     for spec_path in sorted(LIB.glob("*/*/effect.json")):
         d = spec_path.parent
@@ -61,6 +73,8 @@ def entries() -> list[dict]:
             entry["photosensitivity"] = (rec.get("photosensitivity") or {}).get("result") or entry["photosensitivity"]
             entry["verified_at"] = rec.get("verified_at")
             entry["limits"] = rec.get("limited") or []
+        entry["featured"] = entry["effect_id"] in picks
+        entry["featured_use"] = picks.get(entry["effect_id"])
         rows.append(entry)
     return rows
 
@@ -79,7 +93,26 @@ def counts(rows: list[dict]) -> dict:
     dates = sorted(r.get("verified_at") or "" for r in rows if r["status"] in {"verified", "limited"})
     return {"by_family": by, "limited_by_family": limited, "visual_verified": sum(by.values()),
             "visual_limited": sum(limited.values()), "audio_verified": audio, "latest": (dates[-1][:10] if dates else None),
-            "total_entries": len(rows)}
+            "featured": sum(1 for r in rows if r["featured"]), "total_entries": len(rows)}
+
+
+def featured_problems(rows: list[dict]) -> list[str]:
+    ids = [f["effect_id"] for f in featured()["effects"]]
+    by_id = {r["effect_id"]: r for r in rows}
+    problems = []
+    if len(ids) != FEATURED_COUNT:
+        problems.append(f"featured.json names {len(ids)} effects, not {FEATURED_COUNT}")
+    if len(set(ids)) != len(ids):
+        problems.append("featured.json names an effect twice")
+    for eid in ids:
+        r = by_id.get(eid)
+        if r is None:
+            problems.append(f"featured effect {eid} does not exist")
+        elif r["status"] != "verified":
+            problems.append(f"featured effect {eid} is {r['status']}, not verified")
+        elif r["family"] == "audio":
+            problems.append(f"featured effect {eid} is audio; the featured set is picture effects")
+    return problems
 
 
 def catalog_text(rows: list[dict], c: dict) -> str:
@@ -95,16 +128,38 @@ def doc_text(rows: list[dict], c: dict) -> str:
            "with a written limit; **implemented** when it has no passing record yet. See [verification.md](verification.md).", "",
            f"Verified picture effects: **{c['visual_verified']}** (plus {c['visual_limited']} limited). Verified audio effects: "
            f"**{c['audio_verified']}**, counted separately. Newest record: {c['latest'] or 'none'}.", ""]
+    out += [f"Featured: **{c['featured']}**, reviewed at full size. See [featured.md](featured.md).", ""]
     for fam in VISUAL + ["audio"]:
         fam_rows = [r for r in rows if r["family"] == fam]
         if not fam_rows:
             continue
-        out += [f"## {TITLES[fam]}", "", "| Effect | Route | Status | Cost | Flash check | Provenance |", "| --- | --- | --- | --- | --- | --- |"]
+        out += [f"## {TITLES[fam]}", "", "| Effect | Route | Status | Featured | Cost | Flash check | Provenance |",
+                "| --- | --- | --- | --- | --- | --- | --- |"]
         for r in fam_rows:
             cost = r.get("render_cost_multiplier")
             out.append(f"| `{r['effect_id']}` {r['display_name']} | {r['implementation_route']} | {r['status']} | "
-                       f"{cost if cost is not None else 'n/a'} | {r.get('photosensitivity') or 'n/a'} | "
+                       f"{'yes' if r['featured'] else ''} | {cost if cost is not None else 'n/a'} | {r.get('photosensitivity') or 'n/a'} | "
                        f"{r['provenance']}{' ' + r['reference_id'] if r.get('reference_id') else ''} |")
+        out.append("")
+    return "\n".join(out)
+
+
+def featured_text(rows: list[dict]) -> str:
+    meta = featured()
+    out = ["# Featured effects", "",
+           "Generated by `scripts/build_catalog.py` from `skills/video-effects-core/effects-library/featured.json`, which is "
+           "edited by hand. The editor reaches for these first: `fx.py list --featured`.", "",
+           f"Reviewed {meta['reviewed_at']}. {meta['method']}", "",
+           "Every featured effect is verified (all 12 checks) and not limited. The build fails otherwise. A `warn` in the "
+           "flash check column means fast motion flipped high-contrast edges in a small area, with no flash at the default "
+           "setting; the flash check still runs on every real render.", ""]
+    for fam in VISUAL:
+        fam_rows = [r for r in rows if r["family"] == fam and r["featured"]]
+        if not fam_rows:
+            continue
+        out += [f"## {TITLES[fam]} ({len(fam_rows)})", "", "| Effect | Use it for | Flash check |", "| --- | --- | --- |"]
+        out += [f"| `{r['effect_id']}` {r['display_name']} | {r['featured_use']} | {r.get('photosensitivity') or 'n/a'} |"
+                for r in fam_rows]
         out.append("")
     return "\n".join(out)
 
@@ -117,7 +172,9 @@ def readme_block(c: dict) -> str:
     rows.append(f"| Audio (separate) | {c['audio_verified']} | 0 | none set |")
     status = ("full release" if c["visual_verified"] >= RELEASE_MIN
               else f"limited release: {c['visual_verified']} verified picture effects, fewer than {RELEASE_MIN}")
-    return (f"Verified on {c['latest'] or 'no date'}. Release status: **{status}**.\n\n" + "\n".join(rows))
+    return (f"Verified on {c['latest'] or 'no date'}. Release status: **{status}**.\n\n" + "\n".join(rows)
+            + f"\n\nFeatured: **{c['featured']}** of these were reviewed at 1080x1920 on real vertical talking-head footage "
+              "and are the editor's first picks. See [docs/effects/featured.md](docs/effects/featured.md).")
 
 
 def replace_marker(text: str, name: str, body: str) -> str:
@@ -131,8 +188,13 @@ def replace_marker(text: str, name: str, body: str) -> str:
 def main() -> int:
     check = "--check" in sys.argv
     rows = entries()
+    problems = featured_problems(rows)
+    for problem in problems:
+        print(f"  FAIL  {problem}")
+    if problems:
+        return 1
     c = counts(rows)
-    outputs = {CATALOG: catalog_text(rows, c), DOC: doc_text(rows, c)}
+    outputs = {CATALOG: catalog_text(rows, c), DOC: doc_text(rows, c), FEATURED_DOC: featured_text(rows)}
     readme = README.read_text(encoding="utf-8")
     outputs[README] = replace_marker(readme, "effect-counts", readme_block(c))
     stale = [p for p, text in outputs.items() if not p.is_file() or p.read_text(encoding="utf-8") != text]

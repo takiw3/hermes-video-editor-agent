@@ -2,7 +2,7 @@
 
 ## Behavior fixtures
 
-`evals/` holds 141 synthetic scenarios (82 from 1.0.0, 59 added for the effects library in 1.1.0), one file each. Every fixture names the skills involved, the input, what a passing response must include, what it must not include, and whether the scenario is zero tolerance. No fixture uses a real person, account, or video.
+`evals/` holds 142 synthetic scenarios (82 from 1.0.0, 59 added for the effects library in 1.1.0, 1 for the featured set in 1.2.0), one file each. Every fixture names the skills involved, the input, what a passing response must include, what it must not include, and whether the scenario is zero tolerance. No fixture uses a real person, account, or video.
 
 ```bash
 python3 scripts/run_evals.py          # validate the fixtures
@@ -39,7 +39,7 @@ One wrong response in any of these fails the release: a fabricated figure about 
 
 | Evaluation | Status |
 | --- | --- |
-| Fixture validation (141 scenarios) | pass |
+| Fixture validation (142 scenarios) | pass |
 | Model-backed evaluation | not run. It needs runtime model credentials for a Hermes profile. This repository ships none. |
 | End-to-end Kanban evaluation with a dispatcher | not run. It needs temporary Executive, `social-media`, and `video-editor` profiles, model access, and a running dispatcher. |
 

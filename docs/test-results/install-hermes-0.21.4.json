@@ -1,9 +1,9 @@
 {
   "suite": "installation tests",
   "counts": {
-    "pass": 117,
+    "pass": 113,
     "fail": 0,
-    "not run": 0
+    "not run": 1
   },
   "tests": [
     {
@@ -17,7 +17,7 @@
       "detail": ""
     },
     {
-      "name": "version is 1.1.0",
+      "name": "version is 1.2.0",
       "status": "pass",
       "detail": ""
     },
@@ -72,7 +72,7 @@
       "detail": ""
     },
     {
-      "name": "profile info reports version 1.1.0",
+      "name": "profile info reports version 1.2.0",
       "status": "pass",
       "detail": ""
     },
@@ -572,24 +572,9 @@
       "detail": ""
     },
     {
-      "name": "`hermes profile install https://github.com/takiw3/hermes-video-editor-agent --alias` succeeds with the confirmation prompt",
-      "status": "pass",
-      "detail": ""
-    },
-    {
-      "name": "published install matches this checkout's payload byte for byte",
-      "status": "pass",
-      "detail": ""
-    },
-    {
-      "name": "published install copies no repository-only file",
-      "status": "pass",
-      "detail": ""
-    },
-    {
-      "name": "profile info records the published source",
-      "status": "pass",
-      "detail": ""
+      "name": "install from github.com/takiw3/hermes-video-editor-agent",
+      "status": "not run",
+      "detail": "set VE_TEST_PUBLISHED_URL after publication (and GH_TOKEN while the repository is private)"
     }
   ]
 }

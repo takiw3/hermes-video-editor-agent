@@ -64,6 +64,8 @@ limited-release-wording contrast-fails-over-effect effect-on-timed-video-element
 social-media-requests-effects result-fields-complete update-keeps-local-effects retired-skill-question
 hyperframes-update-mid-edit-effects png-sequence-with-shader glitch-on-brand-video effect-promise-engagement
 key-blue-wardrobe copy-check-question flash-check-on-real-render fourth-effect-revision""".split()
+# Featured set (1.2.0).
+REQUIRED += ["prefer-featured-effects"]
 
 # Scenarios where a single wrong behavior fails the release.
 ZERO_TOLERANCE_REQUIRED = {

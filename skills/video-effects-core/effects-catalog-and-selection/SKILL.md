@@ -2,7 +2,7 @@
 name: effects-catalog-and-selection
 description: >-
   Use to choose effects for an edit from the verified catalog and write the effect plan the owner approves. Picks for the story and the platform, never for novelty.
-version: 1.1.0
+version: 1.2.0
 author: Taki Wong / TakiGPT AI Inc.
 license: MIT
 metadata:
@@ -51,8 +51,8 @@ Ask one question at a time, in this order, and stop asking as soon as you can pr
 
 ## Procedure
 
-1. List the verified catalog: `python3 "$HERMES_HOME/skills/video-effects-core/effects-library/scripts/fx.py" list --status verified` (add `--family` to narrow it).
-2. Map each moment that needs an effect to one catalog entry. Prefer HyperFrames' own effects first, then this profile's.
+1. Start from the featured set: `python3 "$HERMES_HOME/skills/video-effects-core/effects-library/scripts/fx.py" list --featured`. These 50 were reviewed at 1080x1920 on real vertical talking-head footage, and each comes with what it is for. Go to the full verified catalog (`list --status verified`, add `--family` to narrow it) only when no featured effect does the job, and say why in the plan.
+2. Map each moment that needs an effect to one catalog entry. Among effects that do the same job, prefer HyperFrames' own effects, then this profile's.
 3. Keep the stack small: one look, one transition style, one text style, few overlays.
 4. Fill `$HERMES_HOME/templates/effect-plan.yaml`: every effect, its target, window, parameters, and why it serves the edit.
 5. Check it: `python3 "$HERMES_HOME/skills/video-effects-core/effects-library/scripts/fx.py" check-plan <effect-plan.yaml>`.
@@ -71,6 +71,7 @@ effect_approver:
 ## Checks before completion
 
 - Every effect in the plan is verified or limited.
+- Every effect outside the featured set has a reason in the plan.
 - `check-plan` passes.
 - The approver is named.
 

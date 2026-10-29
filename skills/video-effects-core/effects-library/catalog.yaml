@@ -26,7 +26,8 @@
   "visual_verified": 159,
   "visual_limited": 0,
   "audio_verified": 17,
-  "latest": "2026-10-27",
+  "latest": "2026-10-29",
+  "featured": 50,
   "total_entries": 181
  },
  "effects": [
@@ -80,7 +81,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:10:30Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "bitcrusher",
@@ -132,7 +135,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:09:59Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "chorus",
@@ -193,7 +198,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:09:59Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "compressor",
@@ -254,7 +261,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:10:21Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "echo-delay",
@@ -315,7 +324,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:11:33Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "gain",
@@ -358,7 +369,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:11:33Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "high-pass",
@@ -401,7 +414,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:11:54Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "high-shelf",
@@ -453,7 +468,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:12:03Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "limiter",
@@ -496,7 +513,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:13:03Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "low-pass",
@@ -539,7 +558,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:13:03Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "low-shelf",
@@ -591,7 +612,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:13:33Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "noise-gate",
@@ -643,7 +666,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:13:35Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "phaser",
@@ -695,7 +720,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:14:33Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "pitch-shift",
@@ -738,7 +765,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:14:33Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "reverb",
@@ -790,7 +819,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:15:09Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "saturation-drive",
@@ -842,7 +873,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:15:07Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "true-peak-limiter",
@@ -885,7 +918,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:16:41Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "camera-shake",
@@ -948,7 +983,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:18:44Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Impact on a beat drop or a big number."
   },
   {
    "effect_id": "crash-zoom",
@@ -1002,7 +1039,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:19:38Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Hard emphasis on a surprising claim or a punchline."
   },
   {
    "effect_id": "directional-blur",
@@ -1057,7 +1096,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:19:19Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "dutch-tilt",
@@ -1102,7 +1143,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:19:51Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "handheld-drift",
@@ -1156,7 +1199,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:22:56Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "ken-burns-pan",
@@ -1219,7 +1264,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:23:36Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Brings a still image or a screenshot to life."
   },
   {
    "effect_id": "perspective-tilt",
@@ -1282,7 +1329,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:23:36Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "punch-in",
@@ -1354,7 +1403,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:24:05Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Emphasis on a key line; the most useful talking-head move."
   },
   {
    "effect_id": "roll-in",
@@ -1408,7 +1459,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:26:43Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "self-displace",
@@ -1452,7 +1505,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:26:37Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "slow-push",
@@ -1497,7 +1552,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:26:40Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Builds tension under a long sentence."
   },
   {
    "effect_id": "wave-warp",
@@ -1550,7 +1607,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:28:10Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "zoom-bounce",
@@ -1604,7 +1663,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:30:39Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "blur-fill-reframe",
@@ -1658,7 +1719,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:30:31Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Fits landscape or off-ratio footage into 9:16 without black bars."
   },
   {
    "effect_id": "callout-box",
@@ -1740,7 +1803,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:30:44Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "compare-wipe",
@@ -1795,7 +1860,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:32:27Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Before/after comparison with a moving divider."
   },
   {
    "effect_id": "face-cam-bubble",
@@ -1859,7 +1926,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:34:26Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Round face cam over a screen recording; not over a talking head."
   },
   {
    "effect_id": "lower-third",
@@ -1913,8 +1982,10 @@
    "reference_id": null,
    "license": "MIT",
    "status": "verified",
-   "verified_at": "2026-10-27T15:34:31Z",
-   "limits": []
+   "verified_at": "2026-10-29T04:32:31Z",
+   "limits": [],
+   "featured": true,
+   "featured_use": "Name and role when a person first appears; replace the placeholder text."
   },
   {
    "effect_id": "photo-card",
@@ -1968,7 +2039,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:34:18Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "picture-in-picture",
@@ -2031,7 +2104,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:36:22Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Small face cam over a demo or a second angle."
   },
   {
    "effect_id": "screen-frame",
@@ -2086,7 +2161,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:38:05Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Frames a screen recording in a browser window on a gradient."
   },
   {
    "effect_id": "split-screen-side",
@@ -2140,7 +2217,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:38:41Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "split-screen-stack",
@@ -2194,7 +2273,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:38:48Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Vertical before/after or face over demo; the 9:16 native split."
   },
   {
    "effect_id": "spotlight-focus",
@@ -2267,7 +2348,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:41:02Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Darkens the frame around one point for a key line; set cx and cy on the speaker's face."
   },
   {
    "effect_id": "ascii-art",
@@ -2319,7 +2402,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:42:54Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "bloom",
@@ -2371,7 +2456,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:43:15Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "blur",
@@ -2414,7 +2501,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:42:42Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "channel-separation",
@@ -2466,7 +2555,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:44:03Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "chroma-softening",
@@ -2509,7 +2600,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:45:44Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "comic-ink-posterize",
@@ -2564,7 +2657,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:47:26Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "cool-highlight-halo",
@@ -2628,7 +2723,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:47:56Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "crosshatch",
@@ -2671,7 +2768,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:47:28Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Hand-drawn sketch look for a flashback or a 'before' beat."
   },
   {
    "effect_id": "crt-curvature",
@@ -2714,7 +2813,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:49:10Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "diffusion-glow",
@@ -2769,7 +2870,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:52:21Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Dreamy softness for an aspirational or 'imagine this' beat."
   },
   {
    "effect_id": "digital-glitch",
@@ -2812,7 +2915,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:50:53Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "A short glitch moment on a hook, a reveal or a 'broken' idea."
   },
   {
    "effect_id": "duotone",
@@ -2876,7 +2981,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:52:55Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Two-colour treatment for a title card or an intro; set the two hues to the brand colours."
   },
   {
    "effect_id": "edge-glow",
@@ -2931,7 +3038,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:54:12Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "emboss",
@@ -2986,7 +3095,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:55:39Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "engraving",
@@ -3029,7 +3140,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:55:39Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "film-artifacts",
@@ -3072,7 +3185,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "implemented",
    "verified_at": "2026-10-27T19:06:38Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "film-grain",
@@ -3124,7 +3239,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T15:58:35Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Finishing texture that makes phone footage feel shot on film."
   },
   {
    "effect_id": "film-halation",
@@ -3188,7 +3305,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:06:54Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Soft red glow on highlights for a nostalgic or cinematic segment."
   },
   {
    "effect_id": "halftone",
@@ -3240,7 +3359,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:02:34Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "ink-spread",
@@ -3286,7 +3407,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:06:37Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "invert",
@@ -3330,7 +3453,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:07:01Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "kuwahara-paint",
@@ -3382,7 +3507,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:12:14Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "mono-screen",
@@ -3434,7 +3561,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:11:31Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "ordered-dither",
@@ -3486,7 +3615,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:13:48Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "pixelate",
@@ -3529,7 +3660,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:12:48Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Hide a screen, a name or a number; or a retro moment."
   },
   {
    "effect_id": "posterize",
@@ -3575,7 +3708,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:16:56Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "pulsing-bloom",
@@ -3628,7 +3763,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:17:19Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "scanlines",
@@ -3680,7 +3817,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:17:55Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "sepia-tone",
@@ -3724,7 +3863,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T16:21:28Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "solarize",
@@ -3770,7 +3911,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:09:33Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "tape-damage",
@@ -3822,7 +3965,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:09:32Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "threshold-bw",
@@ -3868,7 +4013,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:12:17Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "tilt-shift",
@@ -3923,7 +4070,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:12:38Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "two-ink-print",
@@ -3975,7 +4124,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:13:39Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "unsharp-sharpen",
@@ -4021,7 +4172,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:14:14Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "chroma-key-blue",
@@ -4085,7 +4238,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:15:55Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "chroma-key-green",
@@ -4149,7 +4304,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:16:33Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Green-screen footage onto any background."
   },
   {
    "effect_id": "colour-isolate",
@@ -4204,7 +4361,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:19:46Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "garbage-matte",
@@ -4285,7 +4444,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:18:44Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "luma-key",
@@ -4349,7 +4510,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:22:33Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "spill-reduction",
@@ -4395,7 +4558,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:21:31Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "bleach-bypass",
@@ -4438,7 +4603,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:23:03Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Desaturated filmic look for a cinematic segment."
   },
   {
    "effect_id": "bright-pop",
@@ -4481,7 +4648,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:23:39Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Default talking-head look: brighter, warmer skin, more punch."
   },
   {
    "effect_id": "clean-studio",
@@ -4524,7 +4693,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:24:50Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "cold-noir",
@@ -4567,7 +4738,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:25:37Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "A serious or dramatic beat; near-monochrome with a cool cast."
   },
   {
    "effect_id": "contrast",
@@ -4610,7 +4783,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:25:34Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "creator-camcorder",
@@ -4653,7 +4828,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:26:36Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "cross-process",
@@ -4696,7 +4873,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:27:49Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "dark-bronze-grade",
@@ -4739,7 +4918,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:28:41Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Moody, premium feel for a reveal or a story beat."
   },
   {
    "effect_id": "day-for-night",
@@ -4782,7 +4963,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:28:42Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "deep-contrast",
@@ -4825,7 +5008,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:29:48Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Adds depth to flat indoor footage without changing colour."
   },
   {
    "effect_id": "eerie-green-grade",
@@ -4868,7 +5053,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:32:05Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "exposure-stops",
@@ -4911,7 +5098,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:33:06Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "faded-print-matte",
@@ -4954,7 +5143,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:33:12Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "food-pop",
@@ -4997,7 +5188,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:34:39Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "golden-hour-grade",
@@ -5040,7 +5233,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:35:40Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "high-contrast-bw",
@@ -5083,7 +5278,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:36:41Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Punchy black and white for a quote or a turning point."
   },
   {
    "effect_id": "home-movie-8mm",
@@ -5126,7 +5323,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:36:47Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "hue-shift",
@@ -5170,7 +5369,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:37:55Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "late-night-cool-grade",
@@ -5213,7 +5414,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:38:58Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "lift-gamma-gain",
@@ -5274,7 +5477,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:39:21Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "magenta-cyan-split-tone",
@@ -5317,7 +5522,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:39:53Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "mono-clean",
@@ -5360,7 +5567,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:41:14Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "mono-fade",
@@ -5403,7 +5612,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:42:04Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "muted-editorial",
@@ -5446,7 +5657,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:42:27Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Calm, magazine-style look for explainers."
   },
   {
    "effect_id": "nature-saturation-boost",
@@ -5489,7 +5702,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:43:09Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "night-lift",
@@ -5532,7 +5747,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:44:49Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "pastel-magenta-cyan-cast",
@@ -5575,7 +5792,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:46:08Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "s-curve-contrast",
@@ -5618,7 +5837,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:46:27Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "saturation",
@@ -5661,7 +5882,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:46:41Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "shadow-highlight-recover",
@@ -5704,7 +5927,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:48:26Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "skin-soft",
@@ -5747,7 +5972,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:49:52Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "sky-deepen",
@@ -5790,7 +6017,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:50:16Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "soft-boost",
@@ -5833,7 +6062,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:50:22Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "soft-cool-bw",
@@ -5876,7 +6107,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:52:14Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "steel-teal-grade",
@@ -5919,7 +6152,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:55:08Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Cool, tech-flavoured contrast for AI and product topics."
   },
   {
    "effect_id": "sun-bleached-fade",
@@ -5962,7 +6197,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:55:28Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "teal-orange",
@@ -6005,7 +6242,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:55:35Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "vhs-playback",
@@ -6048,7 +6287,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:57:34Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "vibrance",
@@ -6091,7 +6332,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:58:42Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "vignette",
@@ -6134,7 +6377,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:58:57Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Pulls the eye to the face; safe on almost any shot."
   },
   {
    "effect_id": "vintage-wash",
@@ -6177,7 +6422,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T17:59:33Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "vivid-punch",
@@ -6220,7 +6467,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:02:19Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "warm-cream-matte",
@@ -6263,7 +6512,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:03:19Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "warm-daylight",
@@ -6306,7 +6557,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:03:27Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Warm, friendly look for personal stories."
   },
   {
    "effect_id": "white-balance",
@@ -6349,7 +6602,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:03:30Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "wintry-blue-matte",
@@ -6392,7 +6647,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:05:32Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "blueprint-grid",
@@ -6445,7 +6702,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:07:18Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "bokeh-drift",
@@ -6507,7 +6766,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:07:02Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "confetti-burst",
@@ -6569,7 +6830,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:07:03Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Celebrating a win, a result or a milestone."
   },
   {
    "effect_id": "drifting-dust",
@@ -6622,7 +6885,9 @@
    "license": "MIT",
    "status": "implemented",
    "verified_at": "2026-10-27T19:18:09Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "dust-and-scratches",
@@ -6675,7 +6940,9 @@
    "license": "MIT",
    "status": "implemented",
    "verified_at": "2026-10-27T19:18:45Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "fractal-noise",
@@ -6718,7 +6985,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:19:57Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "gradient-wash",
@@ -6780,7 +7049,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:11:21Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "letterbox-bars",
@@ -6833,7 +7104,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:13:53Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "light-leak-glow",
@@ -6886,7 +7159,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:14:11Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Warm ambient glow over a static shot."
   },
   {
    "effect_id": "progress-bar",
@@ -6939,7 +7214,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:20:21Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Retention bar along the bottom of a short."
   },
   {
    "effect_id": "rainfall",
@@ -7001,7 +7278,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:15:29Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "rec-hud",
@@ -7053,8 +7332,10 @@
    "reference_id": null,
    "license": "MIT",
    "status": "verified",
-   "verified_at": "2026-10-27T18:18:04Z",
-   "limits": []
+   "verified_at": "2026-10-29T04:32:17Z",
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "scan-bar",
@@ -7107,7 +7388,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:18:05Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "snowfall",
@@ -7169,7 +7452,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:18:40Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "blur-in",
@@ -7221,7 +7506,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:19:46Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Soft, premium title entrance."
   },
   {
    "effect_id": "glitch-text",
@@ -7273,7 +7560,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:22:26Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "highlight-sweep",
@@ -7325,7 +7614,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:22:37Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "kinetic-scale",
@@ -7377,7 +7668,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:22:32Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Hook title that slams in."
   },
   {
    "effect_id": "letter-drop",
@@ -7429,7 +7722,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:24:38Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "outline-reveal",
@@ -7481,7 +7776,9 @@
    "license": "MIT",
    "status": "implemented",
    "verified_at": "2026-10-27T18:28:47Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "scramble-text",
@@ -7533,7 +7830,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:28:47Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "slide-up-reveal",
@@ -7585,7 +7884,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:29:33Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Clean word-by-word title reveal."
   },
   {
    "effect_id": "tracking-expand",
@@ -7637,7 +7938,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:31:08Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "typewriter",
@@ -7680,7 +7983,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:33:35Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Prompts, code and AI output typed on screen."
   },
   {
    "effect_id": "word-pop",
@@ -7732,7 +8037,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:34:36Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Bouncy word-by-word title for energetic hooks."
   },
   {
    "effect_id": "barn-door",
@@ -7784,7 +8091,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:33:51Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "blinds",
@@ -7836,7 +8145,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:34:58Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "blur-dissolve",
@@ -7879,7 +8190,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:37:03Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Smooth time-jump or topic change."
   },
   {
    "effect_id": "chromatic-split",
@@ -7911,7 +8224,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:37:17Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "cinematic-zoom",
@@ -7943,7 +8258,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:37:50Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Energetic scene change with zoom and blur."
   },
   {
    "effect_id": "clock-wipe",
@@ -7986,7 +8303,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:38:31Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "cross-warp-morph",
@@ -8018,7 +8337,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:40:30Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "crossfade",
@@ -8050,7 +8371,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:40:44Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "The safe default between two shots."
   },
   {
    "effect_id": "cube-rotate",
@@ -8093,7 +8416,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:41:22Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "diamond-wipe",
@@ -8145,7 +8470,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:42:53Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "dip-to-colour",
@@ -8198,7 +8525,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:45:03Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Brand-colour dip between chapters."
   },
   {
    "effect_id": "domain-warp",
@@ -8230,7 +8559,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:45:03Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "fade-through-black",
@@ -8274,7 +8605,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:46:19Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Ending a section or a calm reset."
   },
   {
    "effect_id": "flash-through-white",
@@ -8306,7 +8639,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:47:31Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Impact cut on a reveal; passed the flash check, still use sparingly."
   },
   {
    "effect_id": "glitch-cut",
@@ -8338,7 +8673,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:49:12Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Tech-flavoured hard change for AI topics."
   },
   {
    "effect_id": "gravitational-lens",
@@ -8370,7 +8707,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:49:14Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "light-leak-wash",
@@ -8402,7 +8741,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:50:12Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Warm, organic transition for lifestyle or story moments."
   },
   {
    "effect_id": "linear-wipe",
@@ -8454,7 +8795,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:51:31Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "push-slide",
@@ -8497,7 +8840,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:52:38Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Clean slide to the next point, like swiping a story."
   },
   {
    "effect_id": "ridged-burn",
@@ -8529,7 +8874,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:52:25Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "ripple-waves",
@@ -8561,7 +8908,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:53:33Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "sdf-iris",
@@ -8593,7 +8942,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:54:42Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "slide-over",
@@ -8636,7 +8987,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T19:22:15Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "spin-rotate",
@@ -8679,7 +9032,9 @@
    "license": "MIT",
    "status": "implemented",
    "verified_at": "2026-10-27T19:23:50Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "swirl-vortex",
@@ -8711,7 +9066,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:57:08Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "thermal-distortion",
@@ -8743,7 +9100,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:58:00Z",
-   "limits": []
+   "limits": [],
+   "featured": false,
+   "featured_use": null
   },
   {
    "effect_id": "whip-pan",
@@ -8775,7 +9134,9 @@
    "license": "Apache-2.0 (HyperFrames built-in, Copyright 2026 HeyGen, Inc.); this catalog entry is MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:58:56Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Fast cut between points in a list."
   },
   {
    "effect_id": "zoom-through",
@@ -8818,7 +9179,9 @@
    "license": "MIT",
    "status": "verified",
    "verified_at": "2026-10-27T18:59:15Z",
-   "limits": []
+   "limits": [],
+   "featured": true,
+   "featured_use": "Punchy forward move into the next scene."
   }
  ]
 }

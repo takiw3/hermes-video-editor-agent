@@ -1,7 +1,7 @@
 {
   "suite": "tests.test_effects",
   "counts": {
-    "pass": 27,
+    "pass": 30,
     "fail": 0,
     "not run": 0
   },
@@ -103,6 +103,21 @@
     },
     {
       "name": "CopyCheck: the studied projects name is caught outside the allowed files",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Featured: list featured returns the fifty with their use",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Featured: the build refuses an unverified or unknown featured effect",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Featured: the featured set is fifty verified picture effects",
       "status": "pass",
       "detail": ""
     },
